@@ -17,14 +17,11 @@ import java.util.*;
  */
 public class PrintXML {
     List<List<NPObj>> clustersToCheckForRef;
-    List<String> allRefIds;
+    List<String> listOfConsideredIDs;
+    List<String> listNegIDs;
 
-    //private static PrintXML ourInstance = new PrintXML();
-//    public static PrintXML getInstance() {
-//        return ourInstance;
-//    }
     public PrintXML() {
-       this.clustersToCheckForRef = new ArrayList<List<NPObj>>();
+        this.clustersToCheckForRef = new ArrayList<List<NPObj>>();
     }
 
 
@@ -44,44 +41,40 @@ public class PrintXML {
 
 
     public String getReferenceID(String ID){
+
         boolean flag = false;
+        int smallestPos = Integer.MAX_VALUE;
+        NPObj smallestPosNPObj = new NPObj("", "", "", 0);
         List<NPObj> saveCluster = new ArrayList<NPObj>();
+
+
         for(List<NPObj> cluster : this.clustersToCheckForRef){
             if(cluster.size() > 1)
-            for(NPObj npObj: cluster){
-                if(npObj.getID().equals(ID)){
-                    flag = true;
-                    saveCluster = cluster;
-                    break;
+                for(NPObj npObj: cluster){
+                    if(npObj.getID().equals(ID)){
+                        flag = true;
+                        saveCluster = cluster;
+                        break;
+                    }
                 }
-            }
             if (flag) break;
         }
 
         if(flag){
-            int smallestPos = Integer.MAX_VALUE;
-            NPObj smallestPosNPObj = new NPObj("", "", "", 0);
-            int smallestPositivePos = Integer.MAX_VALUE;
-            NPObj smallestPositivePosNPObj = new NPObj("", "", "", 0);
-            int count = 0;
+
             for(NPObj npObj: saveCluster){
-                if(this.allRefIds.contains(npObj.getID()) && npObj.getPos() < smallestPos){
+
+                if(this.listOfConsideredIDs.contains(npObj.getID())
+                        && npObj.getPos() < smallestPos
+                        && !npObj.getID().equals(ID)) {
+
                     smallestPos = npObj.getPos();
                     smallestPosNPObj = npObj;
                 }
-//                if(npObj.getPos() < smallestPositivePos && Integer.parseInt(npObj.getID()) > 0 ){
-//                    smallestPositivePos = npObj.getPos();
-//                    smallestPositivePosNPObj = npObj;
-//                    count++;
-//                }
             }
-
-//            if(smallestPositivePos  != Integer.MAX_VALUE && count > 1)
-//                return smallestPositivePosNPObj.getID();
-
-            return smallestPosNPObj.getID();
         }
-        return "";
+
+        return smallestPosNPObj.getID();
     }
 
 
@@ -102,7 +95,10 @@ public class PrintXML {
 
         sentenceWithXML = sentenceWithXML.replaceAll("<SENT>","");
         sentenceWithXML = sentenceWithXML.replaceAll("</SENT>","");
+//        sentenceWithXML = sentenceWithXML.replaceAll("<TXT>","");
+//        sentenceWithXML = sentenceWithXML.replaceAll("</TXT>","");
 
+        this.listOfConsideredIDs = new ArrayList<String>();
         NPObj arrNPObj[] = new NPObj[clusters.size()+1];
 
         //System.out.println("------------------------------");
@@ -135,14 +131,13 @@ public class PrintXML {
             }
         }
 
-        allRefIds = new ArrayList<String>();
 
         //add all the positive id
         for(List<NPObj> cluster : this.clustersToCheckForRef){
             for(NPObj npObj: cluster){
                 if(Integer.parseInt(npObj.getID()) > 0) {
-                    if (!allRefIds.contains(npObj.getID())) {
-                        this.allRefIds.add(npObj.getID());
+                    if (!listOfConsideredIDs.contains(npObj.getID())) {
+                        this.listOfConsideredIDs.add(npObj.getID());
                     }
                 }
             }
@@ -154,25 +149,24 @@ public class PrintXML {
             NPObj npObj = arrNPObj[arrIndex];
             if(npObj != null){
 
-                int startLoc = remainingXML.indexOf(npObj.getStrNP());
-                if(startLoc > 0) {
+                int startLoc = remainingXML.toLowerCase().indexOf(npObj.getStrNP().toLowerCase());
+                if(startLoc >= 0) {
                     int endloc = startLoc + npObj.getStrNP().length();
                     String xml = remainingXML.substring(0, endloc);
 
-                    if(getSubtringCount(xml,"COREF") % 2 == 0 && !allRefIds.contains(npObj.getID())) {
-                        allRefIds.remove(npObj.getID());
+                    if( getSubtringCount(xml,"COREF") % 2 == 0 ) {
 
-                        remainingXML = remainingXML.substring(endloc + 1);
-                        xml = xml.replaceFirst(npObj.getStrNP(),
-                                "<COREF ID=\""
-                                        + npObj.getID()
+                        remainingXML = remainingXML.substring(endloc);
+                        String corefXML = xml.substring(0,startLoc)
+                                        + "<COREF ID=\"" + npObj.getID()
                                         + "\">"
-                                        + npObj.getStrNP()
-                                        + "</COREF>");
-                        newXML += xml;
+                                        + xml.substring(startLoc, startLoc + npObj.getStrNP().length())
+                                        + "</COREF>"
+                                        + xml.substring(endloc);
 
-                        //todo hack
-                        allRefIds.add(npObj.getID());
+                        newXML += corefXML;
+
+                        listOfConsideredIDs.add(npObj.getID());
                     }
                 }
             }
@@ -194,11 +188,6 @@ public class PrintXML {
             builder = factory.newDocumentBuilder();
             doc = builder.parse(is);
 
-            Set<String> hs = new HashSet<String>();
-            hs.addAll(allRefIds);
-            allRefIds.clear();
-            allRefIds.addAll(hs);
-
             NodeList nList = doc.getElementsByTagName("COREF");
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Node nNode = nList.item(temp);
@@ -208,9 +197,8 @@ public class PrintXML {
                     String ID = eElement.getAttribute("ID");
                     String REF = getReferenceID(ID);
 
-                    if(!REF.equals("") && !REF.equals(ID) /*&& (allRefIds.contains(REF))*/) {
-                        /*allRefIds.remove(REF);*/
-                        //System.out.println("CHECK" + (allRefIds.contains(REF)));
+                    if(!REF.equals("") && !REF.equals(ID)) {
+
                         eElement.setAttribute("REF", REF);
                     }
                 }

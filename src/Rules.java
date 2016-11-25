@@ -103,9 +103,9 @@ public class Rules {
 		else if(matchPronounType(reflexiveList,words)){
 			pronounType = "REF";
 		}
-		else if(matchPronounType(ambiguousList,words)){
-			pronounType = "AMB";
-		}
+//		else if(matchPronounType(ambiguousList,words)){
+//			pronounType = "AMB";
+//		}
 
 		return pronounType;
 	}

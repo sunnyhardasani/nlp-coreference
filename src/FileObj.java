@@ -111,8 +111,12 @@ public class FileObj {
 
         // read some text from the file..
         File inputFile = new File(fileName);
+
+        System.out.println(inputFile);
         this.sentenceWithXML = Files.toString(inputFile, Charset.forName("UTF-8"));
         //this.sentenceWithXML = new Scanner(new File(fileName)).useDelimiter("\\Z").next();
+//        this.sentenceWithXML = this.sentenceWithXML.replaceAll(" ", " ");
+//        this.sentenceWithXML = this.sentenceWithXML.replaceAll("-", " ");
 //        this.sentenceWithXML = this.sentenceWithXML.replaceAll("'s", " ");
 //        this.sentenceWithXML = this.sentenceWithXML.replaceAll("'S", " ");
 //        this.sentenceWithXML = this.sentenceWithXML.replaceAll("(\\r|\\n|\\r\\n)+", " ");
@@ -128,6 +132,7 @@ public class FileObj {
         this.sentenceWithXML = this.sentenceWithXML.replaceAll("</COREF>","</COREF><SENT>");
 
         try {
+            
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             InputSource is = new InputSource(new StringReader(this.sentenceWithXML));

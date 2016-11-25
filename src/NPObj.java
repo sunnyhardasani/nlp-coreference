@@ -77,7 +77,7 @@ public class NPObj {
     }
 
     public String getStrNP() {
-        return strNP.trim();
+        return strNP.trim().toLowerCase();
     }
 
     public void setMaxDifference(int maxDifference) {
@@ -86,5 +86,13 @@ public class NPObj {
 
     public int getMaxDifference() {
         return maxDifference;
+    }
+
+    public int compareTo(NPObj compareNPObj) {
+
+        int compareID = Integer.parseInt(compareNPObj.getID());
+
+        //ascending order
+        return Integer.parseInt(this.getID()) - compareID;
     }
 }

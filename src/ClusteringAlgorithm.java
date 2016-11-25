@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by sunny on 11/6/16.
@@ -43,12 +40,21 @@ public class ClusteringAlgorithm {
         this.listOfListOfNPObjs = new ArrayList<List<NPObj>>();
     }
 
+
     public void loadData(List<NPObj> listNPObjs){
+
+        Collections.sort(listNPObjs, new Comparator<NPObj>() {
+            public int compare(NPObj np1, NPObj np2) {
+                return Integer.parseInt(np1.getID()) - Integer.parseInt(np2.getID());
+            }
+        });
+
+
         for(NPObj npObj: listNPObjs){
             List<NPObj> listOfNPObj = new ArrayList<NPObj>();
             listOfNPObj.add(npObj);
 
-            System.out.println("string :" + npObj.getStrNP() + " id:" + npObj.getID());
+            System.out.println(" id:" + npObj.getID() + "\tstring :" + npObj.getStrNP());
             this.listOfListOfNPObjs.add(listOfNPObj);
         }
     }
@@ -59,7 +65,7 @@ public class ClusteringAlgorithm {
         Double maxValue = 1000000.0;
         for(NPObj NPa: Cj){
             for(NPObj NPb: Ci){
-                if(distanceObj.calculate(NPa,NPb) >= maxValue){
+                if(distanceObj.calculate(NPa,NPb) >= 5/*maxValue*/){
                     return false;
                 }
             }
@@ -82,7 +88,6 @@ public class ClusteringAlgorithm {
 
                 Double distance = distanceObj.calculate(NPi,NPj);
                 if(distance < radius && allNPCompatible(Cj, Ci)){
-
                     Cj = union(Ci,Cj);
                     this.listOfListOfNPObjs.set(j,Cj);
                 }
@@ -94,9 +99,13 @@ public class ClusteringAlgorithm {
             index++;
             if(listNPObjs.size() > 1) {
                 for(NPObj npObj: listNPObjs){
-                    //System.out.print(" ," + npObj.getID());
-                    System.out.print(" ," + npObj.getStrNP());
+                    System.out.print( npObj.getStrNP() + "\t\t" ) ;
                 }
+                System.out.println("");
+                for(NPObj npObj: listNPObjs){
+                    System.out.print( npObj.getID() + "\t\t" );
+                }
+                System.out.println("\n\n");
             }
 
         }

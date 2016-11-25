@@ -76,6 +76,14 @@ public class Distance {
         return list;
     }
 
+    public boolean isArticle(String word) {
+        if( word.equals("a") || word.equals("the") || word.equals("an") ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
     public double calculate(NPObj np1, NPObj np2){
         double distance = 0.0;
@@ -95,18 +103,22 @@ public class Distance {
         if(featureObj1.getRuleTwo_PronounType().equals("NONE") && featureObj2.getRuleTwo_PronounType().equals("NONE")) {
             for (int sIndex = 0; sIndex < shortWords.size(); sIndex++) {
                 for (int lIndex = 0; lIndex < longerWords.size(); lIndex++) {
-                    if (longerWords.get(lIndex).trim().toLowerCase().equals(shortWords.get(sIndex).trim().toLowerCase())) {
+                    String longerWord = longerWords.get(lIndex).trim().toLowerCase();
+                    String shortWord = shortWords.get(sIndex).trim().toLowerCase();
+                    if (longerWord.equals(shortWord) && !isArticle(longerWord) && !isArticle(shortWord)) {
                         mactchCount++;
                         break;
                     }
                 }
             }
         }
-
-        Double weight1 = (double)((shortWords.size() - mactchCount)/(double)longerWords.size()) * this.weightMap.get("words");
+        Double weight1 = this.weightMap.get("words");
+        if(mactchCount >= 1){
+            weight1 = 0.0;
+        }
+        //Double weight1 = (double)((shortWords.size() - mactchCount)/(double)longerWords.size()) *
         //system.out.println("\nWeight 1 - Words");
         //system.out.println(weight1);
-        this.listWeight.add(weight1);
 
         //Apply Rule 2
         Double incompatibityFunction2 = 0.0;
@@ -116,7 +128,7 @@ public class Distance {
         Double weight2 = (incompatibityFunction2 * weightMap.get("headnoun"));
         //system.out.println("\nWeight 2 - Head Noun");
         //system.out.println(weight2);
-        this.listWeight.add(weight2);
+
 
         //Apply Rule 3
         Double maxDifference = (double)np1.getMaxDifference();
@@ -124,7 +136,7 @@ public class Distance {
         Double weight3 = ((posDifference/maxDifference) *  this.weightMap.get("position"));
         //system.out.println("\nWeight 3 - Position");
         //system.out.println(weight3);
-        this.listWeight.add(weight3);
+
 
         //Apply Rule 4
         Double incompatibityFunction4 = 0.0;
@@ -135,7 +147,7 @@ public class Distance {
         Double weight4 = (incompatibityFunction4 * this.weightMap.get("pronoun"));
         //system.out.println("\nWeight 4 - Pronoun");
         //system.out.println(weight4);
-        this.listWeight.add(weight4);
+
 
         //todo Apply Rule 5
         //todo modified rule
@@ -156,7 +168,7 @@ public class Distance {
         Double weight6 = (incompatibityFunction6 * this.weightMap.get("words-substring"));
         //system.out.println("\nWeight 6 - Words Substring");
         //system.out.println(weight6);
-        this.listWeight.add(weight6);
+
 
         //todo Apply Rule 7
         //APPOSITIVE
@@ -172,7 +184,7 @@ public class Distance {
         Double weight8 = (incompatibityFunction8 * this.weightMap.get("number"));
         //system.out.println("\nWeight 8 - Number");
         //system.out.println(weight8);
-        this.listWeight.add(weight8);
+
 
         //Apply Rule 9
         //PROPER-NAME
@@ -184,7 +196,7 @@ public class Distance {
         Double weight9 = (incompatibityFunction9 * this.weightMap.get("proper-name"));
         //system.out.println("\nWeight 9 - Proper Name");
         //system.out.println(weight9);
-        this.listWeight.add(weight9);
+
 
         //Apply Rule 10
         //SEMANTIC CLASS
@@ -195,7 +207,7 @@ public class Distance {
         Double weight10 = (incompatibityFunction10 * this.weightMap.get("semantic-class"));
         //system.out.println("\nWeight 10 - Semantic Class");
         //system.out.println(weight10);
-        this.listWeight.add(weight10);
+
 
         //Apply Rule 11
         //GENDER
@@ -217,7 +229,7 @@ public class Distance {
         Double weight11 = (incompatibityFunction11 * this.weightMap.get("gender"));
         //system.out.println("\nWeight 11 - Gender");
         //system.out.println(weight11);
-        this.listWeight.add(weight11);
+
 
         //Apply Rule 12
         //ANIMACY
@@ -226,11 +238,24 @@ public class Distance {
             incompatibityFunction12 = 1.0;
         }
         Double weight12 = (incompatibityFunction12 * this.weightMap.get("animacy"));
-        this.listWeight.add(weight12);
+
         //system.out.println("\nWeight 12 - Animacy");
         //system.out.println(weight12);
 
         //system.out.println("------------");
+
+        System.out.println(" words match count = " + Math.round(weight1) + "\t" + np1.getStrNP() + ",\t" + np2.getStrNP());
+        this.listWeight.add(weight1);  //words
+//        this.listWeight.add(weight2);  //headnoun
+//        this.listWeight.add(weight3);  //position
+//        this.listWeight.add(weight4);  //pronoun
+//        this.listWeight.add(weight6);  //words substring
+//        this.listWeight.add(weight8);  //number
+//        this.listWeight.add(weight9);  //proper name
+//        this.listWeight.add(weight10); //semantic class
+//        this.listWeight.add(weight11); //gender
+//        this.listWeight.add(weight12); //animacy
+
         for(double weight: this.listWeight){
             //system.out.println(weight);
             distance += weight;

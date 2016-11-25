@@ -29,6 +29,11 @@ public class Coref {
         String line = null;
         while ((line = br.readLine()) != null)
         {
+            //todo rmeove
+            if(line.equals("EOF")){
+                break;
+            }
+
             String crfName = line;
             FileObj fobj = new FileObj(crfName);
 

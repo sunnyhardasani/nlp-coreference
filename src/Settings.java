@@ -30,7 +30,7 @@ public class Settings {
     Double weightAnimacy        =  maxValue;
 
     //NP TYPES
-    NPTYPE nptype = NPTYPE.ELLEN;
+    NPTYPE nptype = NPTYPE.BASE;
 
 
     //getters

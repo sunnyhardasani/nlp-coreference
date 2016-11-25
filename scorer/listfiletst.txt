@@ -1,1 +1,15 @@
+scorer/tst1/b13.crf
 scorer/tst1/b11.crf
+scorer/tst1/b12.crf
+scorer/tst1/b14.crf
+scorer/tst1/b15.crf
+scorer/tst1/b16.crf
+scorer/tst1/b17.crf
+scorer/tst1/b18.crf
+scorer/tst1/b19.crf
+scorer/tst1/b20.crf
+scorer/tst1/a13.crf
+scorer/tst1/a14.crf
+scorer/tst1/a15.crf
+scorer/tst1/a16.crf
+scorer/tst1/a17.crf
