@@ -6,7 +6,7 @@
  04-06 
 
 BC-<COREF ID="1" REF="-15">CRASH</COREF>-<COREF ID="2" REF="5">BROWN</COREF>-NYT
-SOMBER FAREWELL IN <COREF ID="-5" REF="4">CROATIA</COREF> FOR <COREF ID="-6" REF="48">U.S. VICTIMS</COREF>
+SOMBER FAREWELL IN <COREF ID="-5" REF="4">CROATIA</COREF> FOR U.S. VICTIMS
 (th)
 By CHRIS HEDGES
 c.1996 N.Y. Times News Service
@@ -14,14 +14,14 @@ c.1996 N.Y. Times News Service
 DUBROVNIK, <COREF ID="4" REF="-5">Croatia</COREF>  @amp;MD;  The coffins carrying the remains of
 <COREF ID="5" REF="2">Commerce Secretary Ron Brown and 32 other Americans</COREF> killed in a
 <COREF ID="-14" REF="-85">plane</COREF> <COREF ID="-15" REF="1">crash</COREF> Wednesday were loaded onto two C-17 transport <COREF ID="-20" REF="56">planes</COREF>
-that took off for Dover Air Force Base in Delaware after <COREF ID="10">a somber
-farewell ceremony</COREF> in <COREF ID="11" REF="-116">Dubrovnik</COREF> on <COREF ID="-24" REF="35">Saturday morning</COREF>.
+that took off for Dover Air Force Base in Delaware after <COREF ID="10" REF="15">a somber
+farewell ceremony</COREF> in <COREF ID="11" REF="-116">Dubrovnik</COREF> on Saturday morning.
 
 
-Croatian and American officials, flanked by 19 American and 19
+<COREF ID="-26" REF="13">Croatian</COREF> and American officials, flanked by 19 American and 19
 Croatian honor guards, stood as the last four coffins, two covered
 with the American flag and two with the Croatian flag, were laid on
-the tarmac. Two of those who died in the <COREF ID="-43" REF="1">crash</COREF> were <COREF ID="13">Croatian
+the tarmac. Two of those who died in the <COREF ID="-43" REF="1">crash</COREF> were <COREF ID="13" REF="-26">Croatian
 citizens</COREF>.
 
 
@@ -39,7 +39,7 @@ memory.''
 <COREF ID="31" REF="52">He</COREF> posthumously awarded <COREF ID="32" REF="2">Brown</COREF> a high Croatian decoration.
 
 In a brief euology, the American <COREF ID="-66" REF="37">ambassador</COREF> to <COREF ID="-67" REF="-5">Croatia</COREF>, <COREF ID="34" REF="50">Peter W. Galbraith</COREF>, 
-reminded those present that <COREF ID="35" REF="-24">Saturday</COREF> was <COREF ID="36">Easter eve</COREF>.
+reminded those present that <COREF ID="35" REF="58">Saturday</COREF> was <COREF ID="36">Easter eve</COREF>.
 
 ``As Jesus said in the Sermon on the Mount,'' <COREF ID="37" REF="-66">the ambassador</COREF>
 said, ``blessed are the peacemakers, for <COREF ID="38">they</COREF> shall be called <COREF ID="39">the
@@ -52,7 +52,7 @@ St. John the Baptist on Wednesday in heavy rain and fog. <COREF ID="45">The 35
 passengers on board</COREF> were killed, most instantly.
 
 
-The two Croatians and <COREF ID="-96" REF="2">Brown</COREF> are <COREF ID="48" REF="-6">the only victims whose bodies
+The two Croatians and <COREF ID="-96" REF="2">Brown</COREF> are <COREF ID="48">the only victims whose bodies
 have been identified</COREF>. The remaining bodies, many badly burned or
 mutilated, will be identified by forensic experts in the <COREF ID="49">United
 States</COREF>.
@@ -63,8 +63,8 @@ States</COREF>.
 to people who in the last five years have suffered so much.''
 
 
-<COREF ID="52" REF="31">He</COREF> called on Americans, Croats and Bosnians to build the
-``decent, honorable and wonderfully ordinary lives that <COREF ID="53" REF="19">we
+<COREF ID="52" REF="31">He</COREF> called on <COREF ID="-109" REF="53">Americans</COREF>, Croats and Bosnians to build the
+``decent, honorable and wonderfully ordinary lives that <COREF ID="53" REF="-109">we
 Americans</COREF> too often take for granted.''
 
 
@@ -75,10 +75,10 @@ planes</COREF> taxied to the runway and lifted off in a clear sky for the
 
 
 American investigators continued to search the <COREF ID="57" REF="1">crash</COREF> site
-<COREF ID="58" REF="-24">Saturday</COREF> and had cordoned off a debris-covered area with orange
+<COREF ID="58" REF="35">Saturday</COREF> and had cordoned off a debris-covered area with orange
 tape and also marked several pieces of wreckage with tape. The
 <COREF ID="59">investigating team</COREF> that will try to determine the causes of <COREF ID="60">the
-accident</COREF> arrived in <COREF ID="61" REF="11">Dubrovnik</COREF> on <COREF ID="62" REF="-24">Saturday</COREF>.
+accident</COREF> arrived in <COREF ID="61" REF="11">Dubrovnik</COREF> on <COREF ID="62" REF="35">Saturday</COREF>.
 
 
 The white tail section of <COREF ID="63" REF="-14">the plane</COREF>, with the Stars and Stripes
