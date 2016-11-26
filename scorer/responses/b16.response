@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
  880316-0101 
- <COREF ID="-2" REF="2">Chrysler</COREF> to Create <COREF ID="-3" REF="3">Grievance</COREF> <COREF ID="-4" REF="19">Process</COREF> For Non-Union Staff 
+ <COREF ID="-1" REF="2">Chrysler</COREF> to Create <COREF ID="-2" REF="3">Grievance</COREF> <COREF ID="-3" REF="19">Process</COREF> For Non-Union Staff 
  Jacob M. Schlesinger (WSJ Staff) 
  
  C LABOR 
@@ -8,53 +8,53 @@
  ROCHESTER, Mich.  
 
 
- <COREF ID="2" REF="-2">Chrysler Corp.</COREF> this year will take the highly unusual step of setting up <COREF ID="3" REF="-3">a formal grievance procedure</COREF> for its non-union white-collar <COREF ID="-19" REF="-22">employees</COREF>. 
+ <COREF ID="2" REF="-1">Chrysler Corp.</COREF> this year will take the highly unusual step of setting up <COREF ID="3" REF="-2">a formal grievance procedure</COREF> for its non-union white-collar <COREF ID="-21" REF="16">employees</COREF>. 
 
 
- "<COREF ID="6">We</COREF> understand that (<COREF ID="7" REF="2">Chrysler</COREF>'s) dramatic restructuring . . . will inevitably lead many <COREF ID="-22" REF="-19">employees</COREF> to question <COREF ID="-24" REF="12">management</COREF>'s decisions and actions," Anthony P. <COREF ID="-29" REF="13">St.</COREF> John, <COREF ID="8" REF="33">vice president for human resources</COREF> of the <COREF ID="-31" REF="22">auto</COREF> maker's <COREF ID="-33" REF="2">Chrysler</COREF> Motors subsidiary, said in a speech at Oakland University <COREF ID="10">here</COREF> yesterday. 
- "<COREF ID="-40" REF="-19">Employees</COREF> may not feel that <COREF ID="11" REF="30">they</COREF> are being treated fairly." 
+ "<COREF ID="6">We</COREF> understand that (<COREF ID="7" REF="2">Chrysler</COREF>'s) dramatic restructuring . . . will inevitably lead many <COREF ID="-26" REF="16">employees</COREF> to question <COREF ID="-28" REF="12">management</COREF>'s decisions and actions," Anthony P. <COREF ID="-35" REF="13">St.</COREF> John, <COREF ID="8" REF="33">vice president for human resources</COREF> of the <COREF ID="-38" REF="22">auto</COREF> maker's <COREF ID="-40" REF="2">Chrysler</COREF> Motors subsidiary, said in a speech at Oakland University <COREF ID="10">here</COREF> yesterday. 
+ "<COREF ID="-51" REF="16">Employees</COREF> may not feel that <COREF ID="11" REF="30">they</COREF> are being treated fairly." 
 
 
- To "strengthen <COREF ID="12" REF="-24">management</COREF>'s credibility," <COREF ID="13" REF="-29">Mr. St. John</COREF> added, <COREF ID="14" REF="-83">the company</COREF> will set up <COREF ID="15" REF="-50">an "alternative disputes resolution" system</COREF> similar to a traditional union <COREF ID="-43" REF="-3">grievance</COREF> procedure. 
+ To "strengthen <COREF ID="12" REF="-28">management</COREF>'s credibility," <COREF ID="13" REF="-35">Mr. St. John</COREF> added, <COREF ID="14" REF="-136">the company</COREF> will set up <COREF ID="15">an "alternative disputes resolution" system</COREF> similar to a traditional union <COREF ID="-61" REF="3">grievance</COREF> procedure. 
 
 
- "For the first time <COREF ID="16" REF="-19">these employees</COREF> will be guaranteed <COREF ID="17" REF="3">a formal and impartial internal mechanism</COREF> to resolve discipline, discharge, and employment opportunity <COREF ID="-50" REF="15">disputes</COREF>," <COREF ID="18" REF="-29">Mr. St. John</COREF> said. 
+ "For the first time <COREF ID="16" REF="-21">these employees</COREF> will be guaranteed <COREF ID="17" REF="3">a formal and impartial internal mechanism</COREF> to resolve discipline, discharge, and employment opportunity disputes," <COREF ID="18" REF="13">Mr. St. John</COREF> said. 
 
 
- <COREF ID="19" REF="-4">The process</COREF> will have several steps, concluding with final <COREF ID="-52" REF="29">arbitration</COREF> handled by a neutral third party. 
+ <COREF ID="19" REF="-3">The process</COREF> will have several steps, concluding with final <COREF ID="-78" REF="29">arbitration</COREF> handled by a neutral third party. 
 
 
- <COREF ID="-54" REF="2">Chrysler</COREF>'s <COREF ID="-55" REF="27">move</COREF> apparently was inspired by the turmoil created by <COREF ID="21" REF="23">its</COREF> current cost-cutting and restructuring, forces which are transforming many industrial companies. 
- <COREF ID="22" REF="-31">The auto maker</COREF> is significantly changing wage and benefit plans, and is trying to slash <COREF ID="23" REF="21">its</COREF> white-collar rolls, particularly in the wake of <COREF ID="24" REF="21">its</COREF> acquisition last year of American Motors Corp. 
+ <COREF ID="-81" REF="2">Chrysler</COREF>'s <COREF ID="-82" REF="27">move</COREF> apparently was inspired by the turmoil created by <COREF ID="21" REF="23">its</COREF> current cost-cutting and restructuring, forces which are transforming many industrial companies. 
+ <COREF ID="22" REF="-38">The auto maker</COREF> is significantly changing wage and benefit plans, and is trying to slash <COREF ID="23" REF="21">its</COREF> white-collar rolls, particularly in the wake of <COREF ID="24" REF="21">its</COREF> acquisition last year of American Motors Corp. 
 
 
- <COREF ID="25" REF="2">Chrysler</COREF> has <COREF ID="26" REF="-19">about 31,000 white-collar employees in the U.S.</COREF>, up sharply from roughly 21,000 in 1982. 
+ <COREF ID="25" REF="2">Chrysler</COREF> has <COREF ID="26" REF="16">about 31,000 white-collar employees in the U.S.</COREF>, up sharply from roughly 21,000 in 1982. 
  About 6,000 salaried workers are currently represented by the United Auto Workers union. 
- Some analysts speculated <COREF ID="27" REF="-55">the move</COREF> is designed to stave off further union organizing in <COREF ID="28" REF="26">the white-collar ranks</COREF>. 
+ Some analysts speculated <COREF ID="27" REF="-82">the move</COREF> is designed to stave off further union organizing in <COREF ID="28" REF="26">the white-collar ranks</COREF>. 
 
 
- Several <COREF ID="-78" REF="-24">management</COREF> consultants said <COREF ID="29" REF="3">a formal grievance procedure with third-party arbitration</COREF> was common for government <COREF ID="-81" REF="-19">employees</COREF>, but <COREF ID="30" REF="11">they</COREF> had never heard of such <COREF ID="31" REF="-107">a policy</COREF> for non-union <COREF ID="-82" REF="-19">employees</COREF> at a major private <COREF ID="-83" REF="14">company</COREF>. 
+ Several <COREF ID="-125" REF="12">management</COREF> consultants said <COREF ID="29" REF="3">a formal grievance procedure with third-party arbitration</COREF> was common for government <COREF ID="-131" REF="16">employees</COREF>, but <COREF ID="30" REF="11">they</COREF> had never heard of such <COREF ID="31" REF="-175">a policy</COREF> for non-union <COREF ID="-135" REF="16">employees</COREF> at a major private <COREF ID="-136" REF="14">company</COREF>. 
 
 
- "<COREF ID="32" REF="49">It</COREF> has the potential of undermining supervisory and <COREF ID="-85" REF="-24">management</COREF> responsibility and authority," said Jerrold Bratkovich, <COREF ID="33" REF="8">a vice president</COREF> in the Los Angeles office of the Hay Group, a <COREF ID="-95" REF="-24">management</COREF> consulting firm. 
+ "<COREF ID="32" REF="49">It</COREF> has the potential of undermining supervisory and <COREF ID="-140" REF="12">management</COREF> responsibility and authority," said Jerrold Bratkovich, <COREF ID="33" REF="8">a vice president</COREF> in the Los Angeles office of the Hay Group, a <COREF ID="-154" REF="12">management</COREF> consulting firm. 
  "That's one of the main reasons employers don't want to have unionization." 
 
 
- A <COREF ID="-99" REF="2">Chrysler</COREF> <COREF ID="-100" REF="42">spokesman</COREF> said <COREF ID="37" REF="14">the company</COREF> had studied "a couple" of other companies that had <COREF ID="38" REF="-52">arbitration for nonunion employees</COREF>, but <COREF ID="39">he</COREF> couldn't recall which companies. 
+ A <COREF ID="-160" REF="2">Chrysler</COREF> <COREF ID="-161" REF="42">spokesman</COREF> said <COREF ID="37" REF="14">the company</COREF> had studied "a couple" of other companies that had <COREF ID="38" REF="29">arbitration for nonunion employees</COREF>, but <COREF ID="39">he</COREF> couldn't recall which companies. 
 
 
- A more common business approach is the "open-door" <COREF ID="-107" REF="31">policy</COREF> such as that at International Business Machines Corp., where "any employee who has a problem which has not been resolved to satisfaction . . . can bring the complaint to the attention of higher <COREF ID="-117" REF="-24">management</COREF>," said an <COREF ID="-118" REF="41">IBM</COREF> <COREF ID="-119" REF="42">spokesman</COREF>. 
+ A more common business approach is the "open-door" <COREF ID="-175" REF="31">policy</COREF> such as that at International Business Machines Corp., where "any employee who has a problem which has not been resolved to satisfaction . . . can bring the complaint to the attention of higher <COREF ID="-186" REF="12">management</COREF>," said an <COREF ID="-190" REF="41">IBM</COREF> <COREF ID="-191" REF="42">spokesman</COREF>. 
 
 
- "If the employee is still not satisfied, the problem can be reviewed with the <COREF ID="41" REF="-118">IBM</COREF> chief executive officer," <COREF ID="42" REF="-100">the spokesman</COREF> added. 
+ "If the employee is still not satisfied, the problem can be reviewed with the <COREF ID="41" REF="-190">IBM</COREF> chief executive officer," <COREF ID="42" REF="-161">the spokesman</COREF> added. 
 
 
  <COREF ID="43" REF="2">Chrysler</COREF> will implement <COREF ID="44" REF="21">its system</COREF> later this year. 
  The details haven't yet been worked out, <COREF ID="46" REF="2">Chrysler</COREF> said. 
 
 
- According to a slide used in <COREF ID="47" REF="-29">Mr. St. John</COREF>'s presentation, <COREF ID="48" REF="31">the policy</COREF> would cover all "professional, administrative, <COREF ID="-128" REF="-24">management</COREF> and executive <COREF ID="-129" REF="-19">employees</COREF>." 
- <COREF ID="49" REF="32">It</COREF> would also have <COREF ID="50" REF="-3">a four-step grievance process</COREF>, just as <COREF ID="51">UAW</COREF>-represented workers have. 
+ According to a slide used in <COREF ID="47" REF="13">Mr. St. John</COREF>'s presentation, <COREF ID="48" REF="31">the policy</COREF> would cover all "professional, administrative, <COREF ID="-216" REF="12">management</COREF> and executive <COREF ID="-217" REF="16">employees</COREF>." 
+ <COREF ID="49" REF="32">It</COREF> would also have <COREF ID="50" REF="3">a four-step grievance process</COREF>, just as <COREF ID="51">UAW</COREF>-represented workers have. 
 
 
 </TXT>

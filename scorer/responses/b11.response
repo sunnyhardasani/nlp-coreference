@@ -5,33 +5,33 @@
  WALL STREET JOURNAL (J)
  EUROP
 TENDER OFFERS, MERGERS, ACQUISITIONS (TNM)
-FINANCIAL, <COREF ID="-15" REF="-20">INSURANCE</COREF>, MUTUAL FUNDS, ACCOUNTING, LEASING (FIN)
-<COREF ID="-20" REF="-15">INSURANCE</COREF> (INS)
+FINANCIAL, <COREF ID="-20" REF="21">INSURANCE</COREF>, MUTUAL FUNDS, ACCOUNTING, LEASING (FIN)
+<COREF ID="-28" REF="21">INSURANCE</COREF> (INS)
 BANKS, THRIFT INSTITUTIONS (BNK)
 BOND MARKET NEWS (BON)
-<COREF ID="-30" REF="2">AUTO</COREF>S, AUTO PARTS (AUT) 
+<COREF ID="-39" REF="2">AUTO</COREF>S, AUTO PARTS (AUT) 
 
 
- BAYERISCHE MOTOREN WERKE AG, or <COREF ID="1">BMW</COREF>, said parent-company sales rose 17% in 1987's first 10 months, to 14.4 billion West German marks ($8.66 billion) from 12.3 billion marks a <COREF ID="-44" REF="28">year</COREF> earlier. 
- <COREF ID="2" REF="-30">The auto maker</COREF> didn't disclose consolidated sales or earnings but predicted a rise in <COREF ID="-48" REF="21">group</COREF> sales to about 19 billion marks in <COREF ID="3" REF="8">1987</COREF> from 17.52 billion marks in <COREF ID="4">1986</COREF>. 
+ BAYERISCHE MOTOREN WERKE AG, or <COREF ID="1">BMW</COREF>, said parent-company sales rose 17% in 1987's first 10 months, to 14.4 billion West German marks ($8.66 billion) from 12.3 billion marks a <COREF ID="-59" REF="28">year</COREF> earlier. 
+ <COREF ID="2" REF="-39">The auto maker</COREF> didn't disclose consolidated sales or earnings but predicted a rise in <COREF ID="-66" REF="21">group</COREF> sales to about 19 billion marks in <COREF ID="3" REF="8">1987</COREF> from 17.52 billion marks in <COREF ID="4">1986</COREF>. 
 
 
- <COREF ID="-52" REF="10">Moody</COREF>'s Investors Service <COREF ID="-55" REF="36">Inc.</COREF> placed the long-term <COREF ID="-56" REF="13">debt</COREF> of DEN NORSKE CREDITBANK under <COREF ID="-60" REF="15">review</COREF> for possible downgrading, following <COREF ID="6" REF="-75">the bank</COREF>'s announcement last Friday that <COREF ID="7" REF="-87">it</COREF> may have incurred trading losses of more than 600 million Norwegian kroner ($94.3 million) over the past month -- enough to wipe out <COREF ID="8" REF="3">1987</COREF> net income -- partly through unauthorized dealing by an individual broker in <COREF ID="9" REF="6">the bank</COREF>'s own portfolio. 
- <COREF ID="10" REF="-52">Moody's</COREF>, which currently rates the long-term <COREF ID="-73" REF="-56">debt</COREF> of Norway's largest <COREF ID="-75" REF="6">bank</COREF> double-A-3, said <COREF ID="13" REF="-56">about $1.2 billion of debt</COREF> is affected by <COREF ID="15" REF="-60">the review</COREF>. 
+ <COREF ID="-73" REF="10">Moody</COREF>'s Investors Service <COREF ID="-76" REF="36">Inc.</COREF> placed the long-term <COREF ID="-78" REF="13">debt</COREF> of DEN NORSKE CREDITBANK under <COREF ID="-82" REF="15">review</COREF> for possible downgrading, following <COREF ID="6" REF="-105">the bank</COREF>'s announcement last Friday that <COREF ID="7" REF="-124">it</COREF> may have incurred trading losses of more than 600 million Norwegian kroner ($94.3 million) over the past month -- enough to wipe out <COREF ID="8" REF="3">1987</COREF> net income -- partly through unauthorized dealing by an individual broker in <COREF ID="9" REF="6">the bank</COREF>'s own portfolio. 
+ <COREF ID="10" REF="-73">Moody's</COREF>, which currently rates the long-term <COREF ID="-103" REF="13">debt</COREF> of Norway's largest <COREF ID="-105" REF="6">bank</COREF> double-A-3, said <COREF ID="13" REF="-78">about $1.2 billion of debt</COREF> is affected by <COREF ID="15" REF="-82">the review</COREF>. 
 
 
- DEUTSCHE GENOSSENSCHAFTS <COREF ID="-78" REF="6">BANK</COREF> said <COREF ID="16" REF="7">it</COREF> intends to acquire a majority stake in the trade union-owned <COREF ID="-82" REF="-15">insurance</COREF> <COREF ID="-83" REF="-48">group</COREF> <COREF ID="-84" REF="20">VOLKSFUERSORGE</COREF> through an <COREF ID="-85" REF="-15">insurance</COREF> <COREF ID="-86" REF="-92">concern</COREF> <COREF ID="-87" REF="7">it</COREF> controls. 
- The combination of <COREF ID="20" REF="-84">Volksfuersorge</COREF> and <COREF ID="21" REF="-15">the insurance group R@amp;V ALLGEMEINE VERSICHERUNGS AG</COREF> would form West Germany's second-largest retail-insurance <COREF ID="-92" REF="-86">concern</COREF>. 
+ DEUTSCHE GENOSSENSCHAFTS <COREF ID="-113" REF="6">BANK</COREF> said <COREF ID="16" REF="7">it</COREF> intends to acquire a majority stake in the trade union-owned <COREF ID="-119" REF="21">insurance</COREF> <COREF ID="-120" REF="21">group</COREF> <COREF ID="-121" REF="20">VOLKSFUERSORGE</COREF> through an <COREF ID="-122" REF="21">insurance</COREF> <COREF ID="-123" REF="41">concern</COREF> <COREF ID="-124" REF="7">it</COREF> controls. 
+ The combination of <COREF ID="20" REF="-121">Volksfuersorge</COREF> and <COREF ID="21" REF="-20">the insurance group R@amp;V ALLGEMEINE VERSICHERUNGS AG</COREF> would form West Germany's second-largest retail-insurance <COREF ID="-132" REF="41">concern</COREF>. 
  A spokesman for the trade-union holding company said <COREF ID="24" REF="7">it</COREF> is likely to sell slightly more than 50% of <COREF ID="25" REF="20">Volksfuersorge</COREF>. 
 
 
- LINDE AG said that <COREF ID="26" REF="-48">group sales</COREF> fell 6.7% in <COREF ID="27" REF="3">1987</COREF>'s first nine months, to 2.56 billion West German marks ($1.54 billion) from 2.73 billion marks <COREF ID="28" REF="-44">a year earlier</COREF>, but that <COREF ID="29" REF="3">1987</COREF> sales are expected to rise as much as 9% as the result of several large orders booked in the fourth quarter. 
- <COREF ID="30" REF="2">The machinery maker</COREF>'s earnings <COREF ID="31" REF="-44">this year</COREF> are likely to be "wholly satisfactory," Chairman Hans Meinhardt said. 
- Analysts expect domestic group profit to rise from <COREF ID="32" REF="-44">last year</COREF>'s 106 million marks ($63.7 million). 
+ LINDE AG said that <COREF ID="26" REF="21">group sales</COREF> fell 6.7% in <COREF ID="27" REF="3">1987</COREF>'s first nine months, to 2.56 billion West German marks ($1.54 billion) from 2.73 billion marks <COREF ID="28" REF="-59">a year earlier</COREF>, but that <COREF ID="29" REF="3">1987</COREF> sales are expected to rise as much as 9% as the result of several large orders booked in the fourth quarter. 
+ <COREF ID="30" REF="2">The machinery maker</COREF>'s earnings <COREF ID="31" REF="28">this year</COREF> are likely to be "wholly satisfactory," Chairman Hans Meinhardt said. 
+ Analysts expect domestic group profit to rise from <COREF ID="32" REF="28">last year</COREF>'s 106 million marks ($63.7 million). 
 
 
- NATIONALE NEDERLANDEN N.V. said <COREF ID="33" REF="7">it</COREF> expects to reach a definitive agreement "within the next few weeks" to sell <COREF ID="-123" REF="38">MIDWESTERN</COREF> UNITED LIFE <COREF ID="-126" REF="-15">INSURANCE</COREF> <COREF ID="-127" REF="-55">CO.</COREF>, one of its U.S. subsidiaries, to Ireland's largest insurer, <COREF ID="36" REF="-55">IRISH LIFE PLC. </COREF>
- <COREF ID="37" REF="-48">The Netherlands' biggest insurance group</COREF> said that <COREF ID="38" REF="-123">Midwestern United</COREF> duplicated the operations of one of <COREF ID="39" REF="42">its</COREF> other U.S. units and that <COREF ID="41" REF="-86">the Dutch concern</COREF> hasn't changed <COREF ID="42" REF="39">its</COREF> strategy of increasing <COREF ID="43" REF="39">its</COREF> North American presence through expansion of existing subsidiaries and new acquisitions. 
+ NATIONALE NEDERLANDEN N.V. said <COREF ID="33" REF="7">it</COREF> expects to reach a definitive agreement "within the next few weeks" to sell <COREF ID="-185" REF="38">MIDWESTERN</COREF> UNITED LIFE <COREF ID="-188" REF="21">INSURANCE</COREF> <COREF ID="-189" REF="36">CO.</COREF>, one of its U.S. subsidiaries, to Ireland's largest insurer, <COREF ID="36" REF="-76">IRISH LIFE PLC. </COREF>
+ <COREF ID="37" REF="21">The Netherlands' biggest insurance group</COREF> said that <COREF ID="38" REF="-185">Midwestern United</COREF> duplicated the operations of one of <COREF ID="39" REF="42">its</COREF> other U.S. units and that <COREF ID="41" REF="-123">the Dutch concern</COREF> hasn't changed <COREF ID="42" REF="39">its</COREF> strategy of increasing <COREF ID="43" REF="39">its</COREF> North American presence through expansion of existing subsidiaries and new acquisitions. 
 
 
 </TXT>
