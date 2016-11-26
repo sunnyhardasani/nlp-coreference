@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
  871125-0048. 
  Business Brief:
-<COREF ID="-3" REF="1">Communications</COREF> Satellite Corp.
+<COREF ID="-4" REF="1">Communications</COREF> Satellite Corp.
  11/25/87
  WALL STREET JOURNAL (J)
  CQ T
-TELECOMMUNICATIONS, BROADCASTING, <COREF ID="-14" REF="-29">TELEPHONE</COREF>, TELEGRAPH (TEL) 
+TELECOMMUNICATIONS, BROADCASTING, <COREF ID="-18" REF="8">TELEPHONE</COREF>, TELEGRAPH (TEL) 
 
 
- <COREF ID="1" REF="-3">Communications Satellite Corp., Washington</COREF>, said <COREF ID="3">it</COREF> submitted to the Federal Communications Commission a proposal to reduce by 50% rates for certain international telecommunication services. 
+ <COREF ID="1" REF="-4">Communications Satellite Corp., Washington</COREF>, said <COREF ID="3">it</COREF> submitted to the Federal Communications Commission a proposal to reduce by 50% rates for certain international telecommunication services. 
 
 
- In exchange for the <COREF ID="-26" REF="12">reductions</COREF>, customers such as American <COREF ID="-29" REF="-14">Telephone</COREF> @amp; Telegraph Co. would have to commit themselves to using one of two new types of digital satellite services for a 10-year period, <COREF ID="4" REF="5">Comsat</COREF> said. 
+ In exchange for the <COREF ID="-36" REF="12">reductions</COREF>, customers such as American <COREF ID="-40" REF="8">Telephone</COREF> @amp; Telegraph Co. would have to commit themselves to using one of two new types of digital satellite services for a 10-year period, <COREF ID="4" REF="5">Comsat</COREF> said. 
 
 
- The proposal is part of a multi-year agreement between <COREF ID="5" REF="4">Comsat</COREF> and <COREF ID="6" REF="10">AT@amp;T</COREF> that guarantees <COREF ID="7" REF="4">Comsat</COREF> a portion of <COREF ID="8" REF="-14">the telephone company</COREF>'s international business in the face of growing competition from fiber-optic cables. 
+ The proposal is part of a multi-year agreement between <COREF ID="5" REF="4">Comsat</COREF> and <COREF ID="6" REF="10">AT@amp;T</COREF> that guarantees <COREF ID="7" REF="4">Comsat</COREF> a portion of <COREF ID="8" REF="-18">the telephone company</COREF>'s international business in the face of growing competition from fiber-optic cables. 
 
 
- <COREF ID="9" REF="4">Comsat</COREF> said <COREF ID="10" REF="6">AT@amp;T</COREF> and other customers would be able to convert gradually to <COREF ID="11" REF="13">the new digital service</COREF> beginning next year, and that by 1994, as much as 83% of a customer's international circuits could qualify for <COREF ID="12" REF="-26">the price reductions</COREF>. 
+ <COREF ID="9" REF="4">Comsat</COREF> said <COREF ID="10" REF="6">AT@amp;T</COREF> and other customers would be able to convert gradually to <COREF ID="11" REF="13">the new digital service</COREF> beginning next year, and that by 1994, as much as 83% of a customer's international circuits could qualify for <COREF ID="12" REF="-36">the price reductions</COREF>. 
 
 
  <COREF ID="13" REF="11">Digital service</COREF> allows telecommunications customers to subdivide satellite circuits to handle more than one message at a time, <COREF ID="14" REF="4">Comsat</COREF> said. 

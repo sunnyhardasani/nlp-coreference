@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
  nyt960405.0560 
  A0222 
- BC-<COREF ID="-8" REF="8">AIRLINE</COREF>-LIABILITY-575 
+ BC-<COREF ID="-9" REF="8">AIRLINE</COREF>-LIABILITY-575 
  04-05 
  1094 
 
 BC-<COREF ID="2">AIRLINE-LIABILITY</COREF>-575@amp;AMP;ADD-NYT
-NEW PRESSURES ON AIRLINE CRASH-LIABILITY <COREF ID="-10" REF="11">ACCORD</COREF>
+NEW PRESSURES ON AIRLINE CRASH-LIABILITY <COREF ID="-11" REF="11">ACCORD</COREF>
 (lh)
 By MATTHEW L. WALD
 c.1996 N.Y. Times News Service
 
 
 
-WASHINGTON  @amp;MD;  <COREF ID="7" REF="22">The Warsaw Convention</COREF> governing <COREF ID="8" REF="-8">the liability of an
+WASHINGTON  @amp;MD;  <COREF ID="7" REF="22">The Warsaw Convention</COREF> governing <COREF ID="8" REF="-9">the liability of an
 airline when passengers die in a plane crash</COREF> is crumbling as
-<COREF ID="-25" REF="-37">airlines</COREF> try to raise <COREF ID="11" REF="-10">the accord</COREF>'s $75,000 <COREF ID="-26" REF="14">limit</COREF> on damages.
+<COREF ID="-28" REF="24">airlines</COREF> try to raise <COREF ID="11" REF="-11">the accord</COREF>'s $75,000 limit on damages.
 
 
-But prospects for a new <COREF ID="-28" REF="48">agreement</COREF> are uncertain, because the
-<COREF ID="-29" REF="-41">U.S.</COREF> Department of Transportation is demanding that <COREF ID="12" REF="-10">the accord</COREF>
-provide that damage suits involving <COREF ID="-34" REF="54">Americans</COREF> be heard in the
-<COREF ID="-35" REF="17">United</COREF> States. Some foreign <COREF ID="-37" REF="-25">airlines</COREF> reject that demand.
+But prospects for a new <COREF ID="-33" REF="48">agreement</COREF> are uncertain, because the
+<COREF ID="-35" REF="39">U.S.</COREF> Department of Transportation is demanding that <COREF ID="12" REF="11">the accord</COREF>
+provide that damage suits involving <COREF ID="-41" REF="54">Americans</COREF> be heard in the
+<COREF ID="-42" REF="17">United</COREF> States. Some foreign <COREF ID="-45" REF="24">airlines</COREF> reject that demand.
 
 
-This is <COREF ID="13">the third effort</COREF> to raise <COREF ID="14" REF="-26">the $75,000 limit</COREF>, which was
+This is <COREF ID="13">the third effort</COREF> to raise <COREF ID="14" REF="-174">the $75,000 limit</COREF>, which was
 set in 1966 and which all parties agree is now far too low. Efforts
-in 1977 and 1988 would have raised <COREF ID="15" REF="-26">the limit</COREF> several-fold and were
-eagerly supported by <COREF ID="-41" REF="-29">U.S.</COREF> officials, but the <COREF ID="17" REF="-35">United States</COREF> did not
+in 1977 and 1988 would have raised <COREF ID="15" REF="14">the limit</COREF> several-fold and were
+eagerly supported by <COREF ID="-57" REF="39">U.S.</COREF> officials, but the <COREF ID="17" REF="-42">United States</COREF> did not
 approve <COREF ID="18" REF="19">them</COREF>. Trial lawyers said the higher limits were still too
 low, and aircraft manufacturers feared high limits would encourage
 suits against <COREF ID="19" REF="18">them</COREF>.
 
 
-``The <COREF ID="-50" REF="42">amount</COREF> of time <COREF ID="-52" REF="30">it</COREF>'s taking to do something rational is
+``The <COREF ID="-77" REF="42">amount</COREF> of time <COREF ID="-79" REF="30">it</COREF>'s taking to do something rational is
 simply astonishing,'' said Jeffrey N. Shane, <COREF ID="20" REF="34">an aviation lawyer</COREF> who
 was assistant secretary of transportation for policy and
 international affairs from 1989 to 1993.
 
 
 <COREF ID="22" REF="7">The Warsaw Convention</COREF>, initiated in 1929 among 29 countries and
-joined by the <COREF ID="23" REF="-35">United States</COREF> in 1934, also governs who may sue and
+joined by the <COREF ID="23" REF="17">United States</COREF> in 1934, also governs who may sue and
 where, and details cargo rules. All nations with commercial
-<COREF ID="-66" REF="-25">airlines</COREF> have signed on, but <COREF ID="24" REF="-25">the airlines</COREF> agree that <COREF ID="25">the document</COREF>
+<COREF ID="-102" REF="24">airlines</COREF> have signed on, but <COREF ID="24" REF="-28">the airlines</COREF> agree that <COREF ID="25">the document</COREF>
 needs to be updated.
 
 
-Because of <COREF ID="26" REF="-26">the low liability limit</COREF>, many airlines are
+Because of <COREF ID="26" REF="14">the low liability limit</COREF>, many airlines are
 voluntarily paying more, either to spare <COREF ID="27">themselves</COREF> a lengthy trial
-at which <COREF ID="-69" REF="-83">families</COREF> will try to show negligence  @amp;MD;  which allows higher
+at which <COREF ID="-113" REF="41">families</COREF> will try to show negligence  @amp;MD;  which allows higher
 damages  @amp;MD;  or for general good will, or because <COREF ID="28" REF="58">they</COREF> do not think
 the limits will hold up in court.
 
 
-<COREF ID="-80" REF="33">American</COREF> <COREF ID="-81" REF="-25">Airlines</COREF>, for example, has told <COREF ID="-83" REF="-69">families</COREF> of the people
+<COREF ID="-125" REF="33">American</COREF> <COREF ID="-126" REF="24">Airlines</COREF>, for example, has told <COREF ID="-130" REF="41">families</COREF> of the people
 who died when one of <COREF ID="29" REF="52">its</COREF> planes crashed in Colombia in December
-that <COREF ID="30" REF="-52">it</COREF> would negotiate as if <COREF ID="31" REF="-26">the limit</COREF> did not exist; <COREF ID="32" REF="-52">it</COREF> is doing
+that <COREF ID="30" REF="-79">it</COREF> would negotiate as if <COREF ID="31" REF="14">the limit</COREF> did not exist; <COREF ID="32" REF="30">it</COREF> is doing
 the same for the 16 passengers on international trips who were on
-the <COREF ID="-90" REF="33">American</COREF> Eagle commuter flight that crashed in Roselawn, Ind.,
+the <COREF ID="-145" REF="33">American</COREF> Eagle commuter flight that crashed in Roselawn, Ind.,
 in October 1994.
 
 
-``The message <COREF ID="33" REF="-80">American</COREF> is sending is, `We'll do what's fair,
-because we know a jury will do what's fairer,''' said Barry Lambert
+``The message <COREF ID="33" REF="-125">American</COREF> is sending is, `We'll do what's fair,
+because we know a jury will do what's fairer,<COREF ID="-164" REF="60">''</COREF>' said Barry Lambert
 Harris, who was <COREF ID="34" REF="20">an acting administrator of the Federal Aviation
 Administration in the Bush administration</COREF>.
 
 
-But <COREF ID="35" REF="-25">the airlines</COREF> would like a realistic <COREF ID="-104" REF="-26">limit</COREF> and uniform
-system. Representatives of <COREF ID="36" REF="-25">airlines</COREF> from around the world met this
+But <COREF ID="35" REF="24">the airlines</COREF> would like a realistic <COREF ID="-174" REF="14">limit</COREF> and uniform
+system. Representatives of <COREF ID="36" REF="24">airlines</COREF> from around the world met this
 week in Montreal to try to work out the details of a system with no
-limits. <COREF ID="-114" REF="-29">U.S.</COREF> <COREF ID="-115" REF="-25">airlines</COREF> have received an antitrust exemption to
-negotiate an <COREF ID="-117" REF="-28">agreement</COREF>, which would be subject to government
+limits. <COREF ID="-188" REF="39">U.S.</COREF> <COREF ID="-189" REF="24">airlines</COREF> have received an antitrust exemption to
+negotiate an <COREF ID="-191" REF="48">agreement</COREF>, which would be subject to government
 approval.
 
 
-<COREF ID="38" REF="-25">The airlines</COREF> and <COREF ID="39" REF="-29">U.S. officials</COREF> envision fairly simple
-<COREF ID="-121" REF="47">negotiations</COREF> with <COREF ID="41" REF="-69">families</COREF> over ``economic damages,'' <COREF ID="42" REF="-50">the amount</COREF>
+<COREF ID="38" REF="24">The airlines</COREF> and <COREF ID="39" REF="-35">U.S. officials</COREF> envision fairly simple
+<COREF ID="-198" REF="47">negotiations</COREF> with <COREF ID="41" REF="-113">families</COREF> over ``economic damages,'' <COREF ID="42" REF="-77">the amount</COREF>
 that the victim was likely to have earned over the remaining years of his or her life, given normal life expectancy. The sticking
-point now is which court would resolve disputes if <COREF ID="47" REF="-121">negotiations</COREF> failed.
+point now is which court would resolve disputes if <COREF ID="47" REF="-198">negotiations</COREF> failed.
 
 
-Under <COREF ID="48" REF="-28">the current agreement</COREF>, <COREF ID="49">survivors</COREF> can bring suit in the
-country the plane was flying to, the home country of the <COREF ID="-136" REF="-8">airline</COREF>, a
-country where <COREF ID="51" REF="-8">the airline</COREF> has <COREF ID="52" REF="29">its</COREF> major operation or the country
+Under <COREF ID="48" REF="-33">the current agreement</COREF>, <COREF ID="49">survivors</COREF> can bring suit in the
+country the plane was flying to, the home country of the <COREF ID="-224" REF="8">airline</COREF>, a
+country where <COREF ID="51" REF="8">the airline</COREF> has <COREF ID="52" REF="29">its</COREF> major operation or the country
 where the contract for transportation was written.
 
 
-The <COREF ID="53" REF="-35">United States</COREF> wants a ``fifth <COREF ID="-143" REF="60">jurisdiction</COREF>'' for <COREF ID="54" REF="-34">Americans</COREF>:
-the <COREF ID="55" REF="-35">United States</COREF>. Since <COREF ID="56">domestic carriers</COREF> are based <COREF ID="57" REF="59">here</COREF>, <COREF ID="58" REF="28">they</COREF> can
-already be sued <COREF ID="59" REF="57">here</COREF>; adding <COREF ID="60" REF="-143">the ``fifth jurisdiction''</COREF> would
+The <COREF ID="53" REF="17">United States</COREF> wants a ``fifth jurisdiction'' for <COREF ID="54" REF="-41">Americans</COREF>:
+the <COREF ID="55" REF="17">United States</COREF>. Since <COREF ID="56">domestic carriers</COREF> are based <COREF ID="57" REF="59">here</COREF>, <COREF ID="58" REF="28">they</COREF> can
+already be sued <COREF ID="59" REF="57">here</COREF>; adding <COREF ID="60" REF="-164">the ``fifth jurisdiction''</COREF> would
 generally affect overseas carriers.
 
 
