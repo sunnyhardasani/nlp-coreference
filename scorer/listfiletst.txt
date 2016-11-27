@@ -1,6 +1,6 @@
-scorer/tst1/b13.crf
 scorer/tst1/b11.crf
 scorer/tst1/b12.crf
+scorer/tst1/b13.crf
 scorer/tst1/b14.crf
 scorer/tst1/b15.crf
 scorer/tst1/b16.crf
