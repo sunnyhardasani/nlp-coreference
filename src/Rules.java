@@ -353,11 +353,11 @@ public class Rules {
             if(isItemInList(malesPronounList,word)){
                 return Dictionaries.Gender.MALE;
             }
-            if(isItemInList(maleNamesList,word)){
-                return Dictionaries.Gender.MALE;
-            }
             if(isItemInList(femalesPronounList,word)){
                 return Dictionaries.Gender.FEMALE;
+            }
+            if(isItemInList(maleNamesList,word)){
+                return Dictionaries.Gender.MALE;
             }
             if(isItemInList(femaleNamesList,word)){
                 return Dictionaries.Gender.FEMALE;

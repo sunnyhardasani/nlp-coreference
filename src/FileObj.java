@@ -179,14 +179,25 @@ public class FileObj {
 
         for(int n = this.npObjList.size()-1; n >= 0 ; n--){
             NPObj nplast = this.npObjList.get(n);
-            Dictionaries.Gender npLastGender = Rules.getInstance().identifyGender(nplast.getFeaturesObj().getRuleOne_allWords());
 
             if(nplast.getStrNP().equals("he")
-                || nplast.getStrNP().equals("she")){
+                || nplast.getStrNP().equals("his")
+                || nplast.getStrNP().equals("himself")
+                || nplast.getStrNP().equals("him")
+                || nplast.getStrNP().equals("she")
+                || nplast.getStrNP().equals("her")
+                || nplast.getStrNP().equals("herself")
+                || nplast.getStrNP().equals("hers")){
+
+                Dictionaries.Gender npLastGender
+                        = Rules.getInstance().identifyGender(nplast.getFeaturesObj()
+                                        .getRuleOne_allWords());
 
                 for(int fromN = n-1; fromN >= 0 ;fromN--){
                     NPObj npFromN = this.npObjList.get(fromN);
+
                     if(npFromN.getStrNP().equals(nplast.getStrNP())){
+                    //if(npFromN.getGender() == npLastGender){
                         nplast.setREF(npFromN.getID());
                         break;
                     }
