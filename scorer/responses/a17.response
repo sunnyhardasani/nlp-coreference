@@ -67,9 +67,9 @@ San Mateo County Airport Land Use Committee</COREF> and was <COREF ID="52" REF="
 annual Half Moon Bay Fly-In and Air Show</COREF>.
 
 
-He and his wife, Ana, were <COREF ID="57">active parishioners</COREF> at Our Lady of
+He and his wife, <COREF ID="-92">Ana</COREF>, were <COREF ID="57" REF="-92">active parishioners</COREF> at Our Lady of
 the Pillar Catholic Church. <COREF ID="58" REF="-50">They</COREF> had two sons, Christopher, 27, of
-Occidental, and Matthew, 23, of Half Moon Bay.
+Occidental, and Matthew, 23, of Half <COREF ID="-102" REF="19">Moon Bay</COREF>.
 
 
 NYT-<COREF ID="62">04-12-96</COREF> 1145EDT

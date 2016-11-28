@@ -32,8 +32,8 @@ public class UtilitySingleton {
         return this.mapOfNPToMarkedID;
     }
 
-    public void updateMap(String key,String value, int pos){
-        this.mapOfNPToMarkedID.put(key,new NPObj(value,key,"",pos));
+    public void updateMap(String key,String value, int pos, boolean isPerson){
+        this.mapOfNPToMarkedID.put(key,new NPObj(value,key,"",pos, isPerson));
     }
 
     public void clearMap(){

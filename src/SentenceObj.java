@@ -133,7 +133,7 @@ public class SentenceObj {
                             String ID = utilitySingletonObj.getGenerateNewKey();
 
                             utilitySingletonObj.addListPersonID(ID);
-                            utilitySingletonObj.updateMap(ID, finalner.get(i), this.startPosIndex);
+                            utilitySingletonObj.updateMap(ID, finalner.get(i), this.startPosIndex, true);
                             this.startPosIndex++;
                         }
                     }
@@ -149,7 +149,7 @@ public class SentenceObj {
                             for (String npConj : breakAtConjunction(np)) {
 
                                 String ID = utilitySingletonObj.getGenerateNewKey();
-                                utilitySingletonObj.updateMap(ID, npConj, this.startPosIndex);
+                                utilitySingletonObj.updateMap(ID, npConj, this.startPosIndex, false);
                                 this.startPosIndex++;
                             }
                         }
@@ -163,7 +163,7 @@ public class SentenceObj {
                 if(commaCount > 0) {
 
                     commaID = utilitySingletonObj.getInstance().getGenerateNewKey();
-                    utilitySingletonObj.getInstance().updateMap(commaID, ",", this.startPosIndex);
+                    utilitySingletonObj.getInstance().updateMap(commaID, ",", this.startPosIndex, false);
                     this.startPosIndex++;
 
                     commaCount--;
@@ -173,7 +173,7 @@ public class SentenceObj {
         while(commaCount > 0) {
 
             commaID = utilitySingletonObj.getInstance().getGenerateNewKey();
-            utilitySingletonObj.getInstance().updateMap(commaID, ",", this.startPosIndex);
+            utilitySingletonObj.getInstance().updateMap(commaID, ",", this.startPosIndex, false);
             this.startPosIndex++;
 
             commaCount--;

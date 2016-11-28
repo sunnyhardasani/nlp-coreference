@@ -150,11 +150,16 @@ public class FileObj {
                 && ( Integer.parseInt(np1.getID()) > 0
                     || Integer.parseInt(np3.getID()) > 0)){
 
-                List<String> allWords = np3.getFeaturesObj().getRuleOne_allWords();
-                for(String word: allWords){
-                    if(isArticle(word)){
-                        np3.setREF(np1.getID());
-                        break;
+                if(np1.isEndingWithComma && np1.isPerson){
+                    np3.setREF(np1.getID());
+                }
+                else {
+                    List<String> allWords = np3.getFeaturesObj().getRuleOne_allWords();
+                    for (String word : allWords) {
+                        if (isArticle(word)) {
+                            np3.setREF(np1.getID());
+                            break;
+                        }
                     }
                 }
             }
@@ -172,6 +177,7 @@ public class FileObj {
             System.out.print(";" + np1.getStrNP().replaceAll("\\n",""));
             System.out.print("; " + np1.isEndingWithComma());
             System.out.print("; " + np1.getREF());
+            System.out.print("; " + np1.isPerson());
             System.out.println("");
         }
 
@@ -223,6 +229,8 @@ public class FileObj {
 
             NodeList sentNodeList = doc.getElementsByTagName("SENT");
             NodeList corefNodeList = doc.getElementsByTagName("COREF");
+            Rules ruleObj = Rules.getInstance();
+
             int sentIndex = 0;
             int corefIndex = 0;
             int pos = 0;
@@ -247,7 +255,13 @@ public class FileObj {
                         Element eElement = (Element) corefNode;
                         String textContent = eElement.getTextContent();
                         String ID = eElement.getAttribute("ID");
-                        UtilitySingleton.getInstance().updateMap(ID, textContent, pos);
+
+                        if(ruleObj.getNERtype(textContent,"PERSON") != null){
+                            UtilitySingleton.getInstance().updateMap(ID, textContent, pos, true);
+                        }
+                        else{
+                            UtilitySingleton.getInstance().updateMap(ID, textContent, pos, false);
+                        }
                     }
                     pos += 50;
                     corefIndex++;

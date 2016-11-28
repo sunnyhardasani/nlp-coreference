@@ -48,17 +48,17 @@ public class PrintXML {
         int largestClusterSize = Integer.MIN_VALUE;
 
         int smallestPos = Integer.MAX_VALUE;
-        NPObj smallestPosNPObj = new NPObj("", "", "", 0);
+        NPObj smallestPosNPObj = new NPObj("", "", "", 0, false);
 
         int smallestNeg = Integer.MAX_VALUE;
-        NPObj smallestNegNPObj = new NPObj("", "", "", 0);
+        NPObj smallestNegNPObj = new NPObj("", "", "", 0, false);
 
         int closestDistance = Integer.MAX_VALUE;
-        NPObj closestNPObj = new NPObj("", "", "", 0);
+        NPObj closestNPObj = new NPObj("", "", "", 0, false);
 
 
         int tempDis = Integer.MAX_VALUE;
-        NPObj tempNPObj = new NPObj("","","",0);
+        NPObj tempNPObj = new NPObj("","","",0, false);
 
         NPObj npIDObj = (NPObj) mapIdToNPObj.get(ID);
 
@@ -84,7 +84,8 @@ public class PrintXML {
                             largestClusterSize = cluster.size();
                             saveLargestCluster = cluster;
                         }
-                        //break;
+
+//                        break;
                     }
                 }
 //                if(flag) {
