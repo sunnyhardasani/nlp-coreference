@@ -37,4 +37,11 @@ public class UtilitySingleton {
         index = 0;
         this.mapOfNPToMarkedID.clear();
     }
+
+    public boolean removeKey(String key){
+        if(null == this.mapOfNPToMarkedID.remove(key)){
+            return false;
+        }
+        return true;
+    }
 }

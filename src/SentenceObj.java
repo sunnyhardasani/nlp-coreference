@@ -11,7 +11,7 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.tregex.TregexMatcher;
 import edu.stanford.nlp.trees.tregex.TregexPattern;
 import edu.stanford.nlp.simple.*;
-
+import org.apache.commons.lang3.StringUtils;
 import java.util.*;
 
 public class SentenceObj {
@@ -31,30 +31,6 @@ public class SentenceObj {
         parse(this.sentenceWithoutXML);
     }
 
-
-
-
-    private boolean checkChildren(Tree parse) {
-        TregexPattern pattern = TregexPattern.compile("@NNP");
-        TregexMatcher matcher = pattern.matcher(parse);
-        return matcher.find();
-    }
-    TregexPattern tPattern = TregexPattern.compile("(@NP)");
-
-//    public void printNP(String line){s
-//        //while ((line = br.readLine()) != null) {
-//        System.out.println("line = " + line);
-//        if(line.trim().length() > 0) {
-//            Tree t = Tree.valueOf(line);
-//            if( t != null ) {
-//                TregexMatcher tMatcher = tPattern.matcher(t);
-//                while (tMatcher.find()) {
-//                    System.out.println(tMatcher.getMatch());
-//                }
-//            }
-//        }
-//        //}
-//    }
 
     public String removeExtraSpace(String npWithSpaces, String sent){
         //apply the brtue force approach to remove the space from sentence
@@ -80,51 +56,54 @@ public class SentenceObj {
      */
     private List<String> getNounPhrases(Tree parse, String sentenceWithoutXML) {
         List<String> result = new ArrayList<String>();
-        TregexPattern pattern = TregexPattern.compile("(@NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP)");
+        //TregexPattern pattern = TregexPattern.compile("(NP < (NNP $++ NNP $++ NNP)) | (NP < (NNP $++ NNP )) | (@NNS) | (@NN) |(@NNPS) | (@PRP) | (@VBD)");
+        //TregexPattern pattern = TregexPattern.compile("(@NP < @NNP & < @NNP) | (@NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP) | (@VBD)");
+        //TregexPattern pattern = TregexPattern.compile("(@NP < @NNP & < @NNP) | (@NP < @NNP & < @NNP & < @NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP)");
+        TregexPattern pattern = TregexPattern.compile("(@NP < @NNP & < @NNP)  | (@NP < @NNP & < @NNP & < @NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP) ");
         TregexMatcher matcher = pattern.matcher(parse);
 
-        //while (matcher.find()) {
         while (matcher.findNextMatchingNode()) {
+
             Tree match = matcher.getMatch();
-//
-//            if(Settings.getInstance().getNptype().equals(NPTYPE.BASE)) {
-////                boolean isChildNP = false;
-////                for(Tree child:match.children()){
-////                    if(checkChildren(child)){
-////                        isChildNP = true;
-////                        break;
-////                    }
-////                }
-////                if(false == isChildNP) {
-////                    List<Tree> leaves = match.getLeaves();
-////                    //System.out.println("leaves = " + leaves);
-////                    String nounPhrase = Joiner.on(' ').join(Lists.transform(leaves, Functions.toStringFunction()));
-////                    result.add(nounPhrase);
-////                }
+            String sent = sentenceWithoutXML;
+            String np = SentenceUtils.listToString(match.yield());
 
-                String sent = sentenceWithoutXML;
-                String np = SentenceUtils.listToString(match.yield());
+            // check if there are any extra space
+            // if not then remove all the extra space
+            if(sent.indexOf(np) < 0) {
+                np = removeExtraSpace(np, sent);
+            }
 
-                //check if there are any extra space
-                //if not then remove all the extra space
-                if(sent.indexOf(np) < 0) {
-                    np = removeExtraSpace(np, sent);
-                }
+            // remove all appositive and
 
-                System.out.println("np = " + np);
-                //this will add the np by removing all the unnecessary spaces
-                result.add(np);
-//            }
-//            else if( Settings.getInstance().getNptype().equals(NPTYPE.ALL)
-//                    || Settings.getInstance().getNptype().equals(NPTYPE.ELLEN) ) {
-//
-//                List<Tree> leaves = match.getLeaves();
-//                String nounPhrase = Joiner.on(' ').join(Lists.transform(leaves, Functions.toStringFunction()));
-//                result.add(nounPhrase);
-//            }
 
+
+            // this will add the np by removing
+            // all the unnecessary spaces
+            System.out.println("np = " + np);
+            result.add(np);
         }
         return result;
+    }
+
+    public static List<String> breakAtConjunction(String nounPhrase){
+        List<String> wordList=new ArrayList<String>();
+        String[] splits = nounPhrase.split("\\band\\b|\\bor\\b|\\bfor\\b|\\bnor\\b|\\bbut\\b|\\byet\\b|\\bso\\b|\\bafter\\b|\\balthough\\b|\\bas\\b" +
+                "\\bas though\\b|\\bbecause\\b|\\bbefore\\b|\\beven\\b|\\bif\\b|\\bsince\\b|\\bso that\\b|\\bthan\\b|\\bthat\\b|\\bthough\\b|\\btill\\b|\\bunless\\b|\\buntil\\b" +
+                "\\bwhen\\b|\\bwhenever\\b|\\bwhere\\b|\\bwhile\\b|\\blest\\b|\\beither\\b|\\bneither\\b|\\bwhether\\b"+
+                "\\bAnd\\b|\\bOr\\b|\\bFor\\b|\\bNor\\b|\\bBut\\b|\\bYet\\b|\\bSo\\b|\\bAfter\\b|\\bAlthough\\b|\\bAs\\b" +
+                "\\bAs Though\\b|\\bBecause\\b|\\bBefore\\b|\\bEven\\b|\\bIf\\b|\\bSince\\b|\\bSo That\\b|\\bThan\\b|\\bThat\\b|\\bThough\\b|\\bTill\\b|\\bUnless\\b|\\bUntil\\b" +
+                "\\bWhen\\b|\\bWhenever\\b|\\bWhere\\b|\\bWhile\\b|\\bLest\\b|\\bEither\\b|\\bNeither\\b|\\bWhether\\b"+
+                "\\bAND\\b|\\bOR\\b|\\bFOR\\b|\\bNOR\\b|\\bBUT\\b|\\bYET\\b|\\bSO\\b|\\bAFTER\\b|\\bALTHOUGH\\b|\\bAS\\b" +
+                "\\bAS THOUGH\\b|\\bBECAUSE\\b|\\bBEFORE\\b|\\bEVEN\\b|\\bIF\\b|\\bSINCE\\b|\\bSO THAT\\b|\\bTHAN\\b|\\bTHAT\\b|\\bTHOUGH\\b|\\bTILL\\b|\\bUNLESS\\b|\\bUNTIL\\b" +
+                "\\bWHEN\\b|\\bWHENEVER\\b|\\bWHERE\\b|\\bWHILE\\b|\\bLEST\\b|\\bEITHER\\b|\\bNEITHER\\b|\\bWHETHER\\b");
+
+        for(int i=0;i<splits.length;i++) {
+            if (splits[i].trim().length() > 0){
+                wordList.add(splits[i].trim());
+            }
+        }
+        return wordList;
     }
 
     /**
@@ -134,21 +113,63 @@ public class SentenceObj {
      * @return
      */
     void parse(String sentenceWithoutXML){
-        if(sentenceWithoutXML.length() > 0) {
-            //printNP(sentenceWithoutXML);
+        String tokens[] =sentenceWithoutXML.split(",");
+        int commaCount = StringUtils.countMatches(sentenceWithoutXML, ",");
 
-            Sentence sent = new Sentence(sentenceWithoutXML);
+        UtilitySingleton utilitySingletonObj = UtilitySingleton.getInstance();
+        String commaID = "";
 
-            //parse result of all the sentence and
-            //add to the nplist of object
-            List<String> results = getNounPhrases(sent.parse(), sentenceWithoutXML);
-            UtilitySingleton utilitySingletonObj = UtilitySingleton.getInstance();
-            for (String np : results) {
+        this.startPosIndex++;
 
-                String ID = utilitySingletonObj.getInstance().getGenerateNewKey();
-                utilitySingletonObj.getInstance().updateMap(ID,np,this.startPosIndex);
-                this.startPosIndex++;
+        //take action if there are any tokens
+        if(tokens.length > 0) {
+
+            for (int t = 0; t < tokens.length; t++) {
+
+                String sentence = tokens[t].trim();
+                if (sentence.length() > 0) {
+
+                    Sentence sent = new Sentence(sentence);
+
+                    //parse result of all the sentence and
+                    //add to the nplist of object
+                    List<String> results = getNounPhrases(sent.parse(), sentence);
+                    for (String np : results) {
+
+                        for(String npConj : breakAtConjunction(np)) {
+
+                            String ID = utilitySingletonObj.getInstance().getGenerateNewKey();
+                            utilitySingletonObj.getInstance().updateMap(ID, npConj, this.startPosIndex);
+                            this.startPosIndex++;
+                        }
+
+//                        String ID = utilitySingletonObj.getInstance().getGenerateNewKey();
+//                        utilitySingletonObj.getInstance().updateMap(ID, np, this.startPosIndex);
+//                        this.startPosIndex++;
+                    }
+
+                    if(results.size() == 0){
+                        commaCount = 0;
+                    }
+                }
+
+                if(commaCount > 0) {
+
+                    commaID = utilitySingletonObj.getInstance().getGenerateNewKey();
+                    utilitySingletonObj.getInstance().updateMap(commaID, ",", this.startPosIndex);
+                    this.startPosIndex++;
+
+                    commaCount--;
+                }
             }
+        }
+        while(commaCount > 0) {
+
+            commaID = utilitySingletonObj.getInstance().getGenerateNewKey();
+            utilitySingletonObj.getInstance().updateMap(commaID, ",", this.startPosIndex);
+            this.startPosIndex++;
+
+            commaCount--;
         }
     }
 }

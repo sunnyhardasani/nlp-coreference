@@ -5,17 +5,17 @@
  @amp;LR; 
  04-06 
 
-BC-<COREF ID="1" REF="57">CRASH</COREF>-<COREF ID="2" REF="5">BROWN</COREF>-NYT
+BC-<COREF ID="1" REF="-15">CRASH</COREF>-<COREF ID="2" REF="5">BROWN</COREF>-NYT
 SOMBER FAREWELL IN <COREF ID="-5" REF="4">CROATIA</COREF> FOR <COREF ID="-6" REF="48">U.S. VICTIMS</COREF>
 (th)
 By CHRIS HEDGES
 c.1996 N.Y. Times News Service
 
-DUBROVNIK, <COREF ID="4" REF="23">Croatia</COREF>  @amp;MD;  The coffins carrying the remains of
+DUBROVNIK, <COREF ID="4" REF="-5">Croatia</COREF>  @amp;MD;  The coffins carrying the remains of
 <COREF ID="5" REF="2">Commerce Secretary Ron Brown and 32 other Americans</COREF> killed in a
-<COREF ID="-14" REF="63">plane</COREF> <COREF ID="-15" REF="1">crash</COREF> Wednesday were loaded onto two C-17 transport <COREF ID="-19" REF="56">planes</COREF>
-that took off for Dover Air Force Base in Delaware after <COREF ID="10">a somber
-farewell ceremony</COREF> in <COREF ID="11" REF="61">Dubrovnik</COREF> on <COREF ID="-22" REF="35">Saturday morning</COREF>.
+<COREF ID="-14" REF="-69">plane</COREF> <COREF ID="-15" REF="1">crash</COREF> Wednesday were loaded onto two C-17 transport <COREF ID="-19" REF="56">planes</COREF>
+that took off for Dover Air Force Base in Delaware after <COREF ID="10" REF="15">a somber
+farewell ceremony</COREF> in <COREF ID="11" REF="-95">Dubrovnik</COREF> on <COREF ID="-22" REF="35">Saturday morning</COREF>.
 
 
 Croatian and American officials, flanked by 19 American and 19
@@ -25,34 +25,34 @@ the tarmac. Two of those who died in the crash were <COREF ID="13" REF="-34">Cro
 citizens</COREF>.
 
 
-<COREF ID="-39" REF="28">President Franjo Tudjman</COREF> of <COREF ID="-40" REF="4">Croatia</COREF>, who spoke at <COREF ID="15" REF="10">the ceremony</COREF>,
-said <COREF ID="16">his nation</COREF> was ``shaken by pain <COREF ID="-50" REF="5">and</COREF> sorrow.''
+<COREF ID="-39" REF="28">President Franjo Tudjman</COREF> of <COREF ID="-40" REF="23">Croatia</COREF>, who spoke at <COREF ID="15" REF="-40">the ceremony</COREF>,
+said <COREF ID="16">his nation</COREF> was ``shaken by pain and sorrow.''
 
 
-``<COREF ID="18">Today</COREF> when <COREF ID="19">we</COREF> take <COREF ID="20" REF="30">our</COREF> leave from <COREF ID="21" REF="2">Ron Brown</COREF> and all other
-senior U.S. officials, on behalf of the whole of <COREF ID="23" REF="4">Croatia</COREF> and
+``<COREF ID="18">Today</COREF> when <COREF ID="19">we</COREF> take <COREF ID="20" REF="30">our</COREF> leave from <COREF ID="21" REF="32">Ron Brown</COREF> and all other
+senior U.S. officials, on behalf of the whole of <COREF ID="23" REF="-40">Croatia</COREF> and
 <COREF ID="24">myself</COREF>, <COREF ID="25">I</COREF> express <COREF ID="26">my</COREF> deepest sympathy to the families of those who
 have perished,'' <COREF ID="28" REF="-39">Tudjman</COREF> said. ``<COREF ID="29">You</COREF> will remain forever in <COREF ID="30" REF="20">our</COREF>
 memory.''
 
 
-<COREF ID="31" REF="52">He</COREF> posthumously awarded <COREF ID="32" REF="2">Brown</COREF> a high Croatian decoration.
+<COREF ID="31" REF="52">He</COREF> posthumously awarded <COREF ID="32" REF="21">Brown</COREF> a high Croatian decoration.
 
-In a brief euology, the American <COREF ID="-57" REF="37">ambassador</COREF> to <COREF ID="-58" REF="4">Croatia</COREF>, <COREF ID="34" REF="50">Peter W. Galbraith</COREF>, 
-reminded those present that <COREF ID="35" REF="58">Saturday</COREF> was <COREF ID="36">Easter eve</COREF>.
+In a brief euology, the American <COREF ID="-56" REF="37">ambassador</COREF> to <COREF ID="-57" REF="23">Croatia</COREF>, <COREF ID="34" REF="50">Peter W. Galbraith</COREF>, 
+reminded those present that <COREF ID="35" REF="-22">Saturday</COREF> was <COREF ID="36">Easter eve</COREF>.
 
-``As Jesus said in the Sermon on the Mount,'' <COREF ID="37" REF="-57">the ambassador</COREF>
+``As Jesus said in the Sermon on <COREF ID="-61">the Mount</COREF>,'' <COREF ID="37" REF="-61">the ambassador</COREF>
 said, ``blessed are the peacemakers, for <COREF ID="38">they</COREF> shall be called <COREF ID="39">the
 children of God</COREF>. Blessed indeed are our friends and colleagues who
 perished on a mission of peace.''
 
 
-<COREF ID="-70" REF="63">The Air Force T-43 plane</COREF> slammed into a rocky hill named after
+<COREF ID="-69" REF="63">The Air Force T-43 plane</COREF> slammed into a rocky hill named after
 St. John the Baptist on Wednesday in heavy rain and fog. <COREF ID="45">The 35
 passengers on board</COREF> were killed, most instantly.
 
 
-The two Croatians and <COREF ID="-78" REF="2">Brown</COREF> are <COREF ID="48" REF="-6">the only victims whose bodies
+The two Croatians and <COREF ID="-77" REF="32">Brown</COREF> are <COREF ID="48" REF="-6">the only victims whose bodies
 have been identified</COREF>. The remaining bodies, many badly burned or
 mutilated, will be identified by forensic experts in the <COREF ID="49">United
 States</COREF>.
@@ -63,25 +63,25 @@ States</COREF>.
 to people who in the last five years have suffered so much.''
 
 
-<COREF ID="52" REF="31">He</COREF> called on <COREF ID="-89" REF="5">Americans</COREF>, Croats and Bosnians to build the
-``decent, honorable and wonderfully ordinary lives that <COREF ID="53" REF="5">we
+<COREF ID="52" REF="31">He</COREF> called on <COREF ID="-88" REF="53">Americans</COREF>, Croats and Bosnians to build the
+``decent, honorable and wonderfully ordinary lives that <COREF ID="53" REF="-88">we
 Americans</COREF> too often take for granted.''
 
 
-The Roman Catholic archbishop of <COREF ID="-96" REF="11">Dubrovnik</COREF>, <COREF ID="55">Zelimir Puljic</COREF>, said
-a prayer <COREF ID="-109" REF="5">and</COREF> blessed the remains. A bugler played taps before <COREF ID="56" REF="-19">the
+The Roman Catholic archbishop of <COREF ID="-95" REF="61">Dubrovnik</COREF>, <COREF ID="55">Zelimir Puljic</COREF>, said
+a prayer and blessed the remains. A bugler played taps before <COREF ID="56" REF="-19">the
 planes</COREF> taxied to the runway and lifted off in a clear sky for the
 11-hour journey.
 
 
-American investigators continued to search the <COREF ID="57" REF="1">crash</COREF> site
-<COREF ID="58" REF="35">Saturday</COREF> and had cordoned off a debris-covered area with orange
+American investigators continued to search the <COREF ID="57" REF="-15">crash</COREF> site
+<COREF ID="58" REF="62">Saturday</COREF> and had cordoned off a debris-covered area with orange
 tape and also marked several pieces of wreckage with tape. The
 <COREF ID="59">investigating team</COREF> that will try to determine the causes of <COREF ID="60">the
-accident</COREF> arrived in <COREF ID="61" REF="11">Dubrovnik</COREF> on <COREF ID="62" REF="35">Saturday</COREF>.
+accident</COREF> arrived in <COREF ID="61" REF="-95">Dubrovnik</COREF> on <COREF ID="62" REF="58">Saturday</COREF>.
 
 
-The white tail section of <COREF ID="63" REF="-14">the plane</COREF>, with the Stars and Stripes
+The white tail section of <COREF ID="63" REF="-69">the plane</COREF>, with the Stars and Stripes
 visible, and a few rows of attached passenger seats are the only
 large pieces left. A long black burn mark outlined where the body
 of <COREF ID="64">the aircraft</COREF> probably had been. Down <COREF ID="65">the steep, rocky hillside</COREF>

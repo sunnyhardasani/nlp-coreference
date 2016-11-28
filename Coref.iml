@@ -44,5 +44,24 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/commons-lang3-3.5/commons-lang3-3.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/commons-lang3-3.1.jar.zip!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="jar://$USER_HOME$/Downloads/commons-lang3-3.1.jar.zip!/" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

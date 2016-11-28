@@ -40,32 +40,38 @@ public class ClusteringAlgorithm {
         this.listOfListOfNPObjs = new ArrayList<List<NPObj>>();
     }
 
+    List<NPObj> globalListNPObjs;
 
     public void loadData(List<NPObj> listNPObjs){
 
+        this.globalListNPObjs = listNPObjs;
+
         Collections.sort(listNPObjs, new Comparator<NPObj>() {
             public int compare(NPObj np1, NPObj np2) {
-                return Integer.parseInt(np1.getID()) - Integer.parseInt(np2.getID());
+                return  np1.getPos() - np2.getPos();
             }
         });
 
+        Distance distanceObj = Distance.getInstance();
+        distanceObj.setNPList(listNPObjs);
 
         for(NPObj npObj: listNPObjs){
-            List<NPObj> listOfNPObj = new ArrayList<NPObj>();
-            listOfNPObj.add(npObj);
 
-            System.out.println(" id:" + npObj.getID() + "\tstring :" + npObj.getStrNP());
-            this.listOfListOfNPObjs.add(listOfNPObj);
+//            if( npObj.getREF().equals("") ) {
+                List<NPObj> listOfNPObj = new ArrayList<NPObj>();
+                listOfNPObj.add(npObj);
+                this.listOfListOfNPObjs.add(listOfNPObj);
+//            }
         }
     }
 
 
     public boolean allNPCompatible(List<NPObj> Ci,List<NPObj> Cj){
         Distance distanceObj = Distance.getInstance();
-        Double maxValue = 1000000.0;
+        Double maxValue = Settings.getInstance().getMaxValue();
         for(NPObj NPa: Cj){
             for(NPObj NPb: Ci){
-                if(distanceObj.calculate(NPa,NPb) >= 5/*maxValue*/){
+                if(distanceObj.calculate(NPa,NPb) >= 5){
                     return false;
                 }
             }
@@ -94,21 +100,30 @@ public class ClusteringAlgorithm {
             }
         }
 
+
+        //clear
         int index = 0;
         for(List<NPObj> listNPObjs: this.listOfListOfNPObjs){
             index++;
             if(listNPObjs.size() > 1) {
                 for(NPObj npObj: listNPObjs){
-                    System.out.print( npObj.getStrNP() + "\t\t" ) ;
+                    System.out.println( npObj.getStrNP() +" \t\t: "+ npObj.getID()) ;
                 }
-                System.out.println("");
-                for(NPObj npObj: listNPObjs){
-                    System.out.print( npObj.getID() + "\t\t" );
-                }
-                System.out.println("\n\n");
+                System.out.println("---------------------------------------------------------------------");
             }
 
         }
+
+
+//        // add all the element which are defined for clustering
+//        for(NPObj npObj: this.globalListNPObjs){
+//
+//            if( !npObj.getREF().equals("") ) {
+//                List<NPObj> listOfNPObj = new ArrayList<NPObj>();
+//                listOfNPObj.add(npObj);
+//                this.listOfListOfNPObjs.add(listOfNPObj);
+//            }
+//        }
 
         return this.listOfListOfNPObjs;
     }

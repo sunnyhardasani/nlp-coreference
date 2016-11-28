@@ -35,22 +35,23 @@ public class FileObj {
 
         // read all the sentences of the file
         // and store in the sentences data structure
-        parse();
+        // parse();
 
         //read all the sentence from the map
         //create the list of NPObjs
         populateNPList();
 
-        //todo remove this function
-        for(NPObj npObj: this.npObjList){
-            npObj.setMaxDifference(this.npObjList.size());
-            npObj.loadFeatures();
-        }
+//        //todo remove this function
+//        for(NPObj npObj: this.npObjList){
+//            npObj.setMaxDifference(this.npObjList.size());
+//            npObj.loadFeatures();
+//        }
         ClusteringAlgorithm clusteringAlgorithmObj = new ClusteringAlgorithm();
         clusteringAlgorithmObj.loadData(this.npObjList);
         List<List<NPObj>> setOfCluster = clusteringAlgorithmObj.run(Settings.getInstance().getRadius());
 
         this.document = new PrintXML().print(setOfCluster,this.sentenceWithXML);
+        //this.document = new PrintXML().printWithNewAlgo(npObjList,this.sentenceWithXML);
 
         UtilitySingleton.getInstance().clearMap();
     }
@@ -71,6 +72,7 @@ public class FileObj {
         List<Integer>  listOfAllCurrentPos = new ArrayList<Integer>();
         while(it.hasNext()){
             Map.Entry me = (Map.Entry)it.next();
+            System.out.println("((NPObj) me.getValue()).getStrNP() = " + ((NPObj) me.getValue()).getStrNP());
             listOfAllCurrentPos.add(((NPObj) me.getValue()).getPos());
         }
         Collections.sort(listOfAllCurrentPos);
@@ -101,10 +103,90 @@ public class FileObj {
                 this.npObjList.add(npObj);
             }
         }
+
+        //sort all the np objs
+        Collections.sort(this.npObjList, new Comparator<NPObj>() {
+            public int compare(NPObj np1, NPObj np2) {
+                return np1.getPos() - np2.getPos();
+            }
+        });
+
+        ///////////////////////////////////  load all the features  //////////////////////
+        for(NPObj npObj: this.npObjList){
+            npObj.setMaxDifference(this.npObjList.size());
+            npObj.loadFeatures();
+        }
+
+        //////////////////////////////////// comma logic goes over here ////////////////////////////////////////
+
+        //this will look for the comma for next element
+        for(int n = 0; n < this.npObjList.size() - 1; n++){
+            NPObj np1 = this.npObjList.get(n);
+            NPObj np2 = this.npObjList.get(n+1);
+
+            String strNP1 = np1.getStrNP().trim();
+            String strNP2 = np2.getStrNP().trim();
+
+            if(!strNP1.equals(",") && strNP1.length() > 0){
+                char lastCharacterNP1 = strNP1.charAt(strNP1.length()-1);
+                if(lastCharacterNP1 == ','){
+                    np1.setEndingWithComma(true);
+                }
+                else if(strNP2.equals(",")){
+                    np1.setEndingWithComma(true);
+                }
+            }
+        }
+
+        // this will check for the
+        //apply coref identification
+        //this will look for the comma for next element
+        for(int n = 0; n < this.npObjList.size() - 3; n++){
+            NPObj np1 = this.npObjList.get(n);
+            NPObj np2 = this.npObjList.get(n+1);
+            NPObj np3 = this.npObjList.get(n+2);
+
+            if(true == np1.isEndingWithComma()
+                && ( Integer.parseInt(np1.getID()) > 0
+                    || Integer.parseInt(np3.getID()) > 0)){
+
+                List<String> allWords = np3.getFeaturesObj().getRuleOne_allWords();
+                for(String word: allWords){
+                    if(isArticle(word)){
+                        np3.setREF(np1.getID());
+                    }
+                }
+            }
+        }
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //this will print the csv files
+        for(int n = 0; n < this.npObjList.size() ; n++){
+            NPObj np1 = this.npObjList.get(n);
+
+            System.out.print(np1.getPos());
+            System.out.print(";" + np1.getID());
+            System.out.print(";" + np1.getStrNP().replaceAll("\\n",""));
+            System.out.print("; " + np1.isEndingWithComma());
+            System.out.print("; " + np1.getREF());
+            System.out.println("");
+        }
+
     }
 
     public Document getDocument(){
         return this.document;
+    }
+
+    public boolean isArticle(String word) {
+        if( word.equals("a") || word.equals("the") || word.equals("an") ){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     void generateMapOfNPToID(String fileName)  throws Exception{
@@ -115,12 +197,12 @@ public class FileObj {
         System.out.println(inputFile);
         this.sentenceWithXML = Files.toString(inputFile, Charset.forName("UTF-8"));
         //this.sentenceWithXML = new Scanner(new File(fileName)).useDelimiter("\\Z").next();
-//        this.sentenceWithXML = this.sentenceWithXML.replaceAll(" ", " ");
-//        this.sentenceWithXML = this.sentenceWithXML.replaceAll("-", " ");
-//        this.sentenceWithXML = this.sentenceWithXML.replaceAll("'s", " ");
-//        this.sentenceWithXML = this.sentenceWithXML.replaceAll("'S", " ");
-//        this.sentenceWithXML = this.sentenceWithXML.replaceAll("(\\r|\\n|\\r\\n)+", " ");
-//        this.sentenceWithXML = this.sentenceWithXML.replaceAll("[ ]{2,}", " ");
+//         this.sentenceWithXML = this.sentenceWithXML.replaceAll(" ", " ");
+//         this.sentenceWithXML = this.sentenceWithXML.replaceAll("-", " ");
+//         this.sentenceWithXML = this.sentenceWithXML.replaceAll("'s", " ");
+//         this.sentenceWithXML = this.sentenceWithXML.replaceAll("'S", " ");
+//         this.sentenceWithXML = this.sentenceWithXML.replaceAll("(\\r|\\n|\\r\\n)+", " ");
+//         this.sentenceWithXML = this.sentenceWithXML.replaceAll("[ ]{2,}", " ");
 
 
         //this will modify the files
@@ -138,30 +220,39 @@ public class FileObj {
             InputSource is = new InputSource(new StringReader(this.sentenceWithXML));
             Document doc = builder.parse(is);
 
-            NodeList nList2 = doc.getElementsByTagName("SENT");
-            for (int temp = 0; temp < nList2.getLength(); temp++) {
-                Node nNode = nList2.item(temp);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    String textContent = eElement.getTextContent();
-                    textContent = textContent.replaceAll("\u00A0"," ");
-                    this.allSentenceExceptCoref.add(textContent);
-                }
-            }
-
-
-            NodeList nList = doc.getElementsByTagName("COREF");
+            NodeList sentNodeList = doc.getElementsByTagName("SENT");
+            NodeList corefNodeList = doc.getElementsByTagName("COREF");
+            int sentIndex = 0;
+            int corefIndex = 0;
             int pos = 0;
-            for (int temp = 0; temp < nList.getLength(); temp++) {
-                Node nNode = nList.item(temp);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    String textContent = eElement.getTextContent();
-                    String ID = eElement.getAttribute("ID");
-                    UtilitySingleton.getInstance().updateMap(ID, textContent, pos);
+
+            while(sentIndex < sentNodeList.getLength() || corefIndex < corefNodeList.getLength()) {
+
+                if(sentIndex < sentNodeList.getLength()) {
+                    Node sentNode = sentNodeList.item(sentIndex);
+                    if (sentNode.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) sentNode;
+                        String textContent = eElement.getTextContent();
+                        textContent = textContent.replaceAll("\u00A0", " ");
+                        parse(textContent, pos);
+                    }
                     pos += 50;
+                    sentIndex++;
+                }
+
+                if(corefIndex < corefNodeList.getLength()) {
+                    Node corefNode = corefNodeList.item(corefIndex);
+                    if (corefNode.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) corefNode;
+                        String textContent = eElement.getTextContent();
+                        String ID = eElement.getAttribute("ID");
+                        UtilitySingleton.getInstance().updateMap(ID, textContent, pos);
+                    }
+                    pos += 50;
+                    corefIndex++;
                 }
             }
+
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -172,18 +263,16 @@ public class FileObj {
      * this function would be responsible
      * for the parsing of file into sentences
      */
-    void parse(){
+    void parse(String sent, int posStartIndex){
 
-        int posStartIndex = 1;
-        for(String sent : this.allSentenceExceptCoref ) {
+        //for(String sent : this.allSentenceExceptCoref ) {
             //System.out.println(sent);
             edu.stanford.nlp.simple.Document doc = new edu.stanford.nlp.simple.Document(sent);
             // will iterate over all the sentences in the text
             for (Sentence nlpSentence : doc.sentences()) {
                 SentenceObj sentenceObj = new SentenceObj(nlpSentence,posStartIndex);
                 this.sentencesObjList.add(sentenceObj);
-                posStartIndex += 50;
             }
-        }
+        //}
     }
 }

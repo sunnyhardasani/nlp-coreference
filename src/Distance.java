@@ -12,28 +12,22 @@ public class Distance {
 
     List<Double> listWeight;
     Map<String,Double> weightMap;
+    List<NPObj> listOfAllNPs = new ArrayList<NPObj>();
+    Map posToNPMap = new HashMap();
 
     private Distance() {
         this.weightMap = new HashMap<String,Double>();
+    }
 
-
-
+    //set list of all nps
+    public void setNPList(List<NPObj> listOfAllNPs){
+        this.listOfAllNPs = listOfAllNPs;
+        for(int p = 0 ; p < listOfAllNPs.size() ; p++){
+            this.posToNPMap.put(listOfAllNPs.get(p).getPos(),listOfAllNPs.get(p));
+        }
     }
 
     public void loadMap(Double radius){
-
-//        this.weightMap.put("words",10.0);
-//        this.weightMap.put("headnoun",1.0);
-//        this.weightMap.put("position",5.0);
-//        this.weightMap.put("pronoun",radius);
-//        this.weightMap.put("article",radius);
-//        this.weightMap.put("words-substring",Double.NEGATIVE_INFINITY);
-//        this.weightMap.put("appositive",Double.NEGATIVE_INFINITY);
-//        this.weightMap.put("number",Double.POSITIVE_INFINITY);
-//        this.weightMap.put("proper-name",Double.POSITIVE_INFINITY);
-//        this.weightMap.put("semantic-class",Double.POSITIVE_INFINITY);
-//        this.weightMap.put("gender",Double.POSITIVE_INFINITY);
-//        this.weightMap.put("animacy",Double.POSITIVE_INFINITY);
 
         Double maxValue = Settings.getInstance().maxValue;
         Double minValue = Settings.getInstance().minValue;
@@ -99,24 +93,33 @@ public class Distance {
         List<String> longerWords = allWordsOne.size() < allWordsTwo.size() ? allWordsTwo: allWordsOne;
         List<String> shortWords  = allWordsOne.size() >= allWordsTwo.size() ? allWordsTwo: allWordsOne;
 
-        int mactchCount = 0;
-        if(featureObj1.getRuleTwo_PronounType().equals("NONE") && featureObj2.getRuleTwo_PronounType().equals("NONE")) {
+        int matchCount = 0;
+       // if(featureObj1.getRuleTwo_PronounType().equals("NONE") && featureObj2.getRuleTwo_PronounType().equals("NONE")) {
             for (int sIndex = 0; sIndex < shortWords.size(); sIndex++) {
                 for (int lIndex = 0; lIndex < longerWords.size(); lIndex++) {
                     String longerWord = longerWords.get(lIndex).trim().toLowerCase();
                     String shortWord = shortWords.get(sIndex).trim().toLowerCase();
+
+                    //rule for considering complete names
+                    if(longerWord.equals("mr.") || shortWord.equals("mr.")
+                    || longerWord.equals("mrs.") || shortWord.equals("mrs.")
+                    || longerWord.equals("ms.") || shortWord.equals("ms.")
+                    || longerWord.equals(",") || shortWord.equals(",") ){
+
+                        continue;
+                    }
+
                     if (longerWord.equals(shortWord) && !isArticle(longerWord) && !isArticle(shortWord)) {
-                        mactchCount++;
-                        break;
+                        matchCount++;
                     }
                 }
             }
-        }
+        //}
         Double weight1 = this.weightMap.get("words");
-        if(mactchCount >= 1){
+        if(matchCount >= 1){
             weight1 = 0.0;
         }
-        //Double weight1 = (double)((shortWords.size() - mactchCount)/(double)longerWords.size()) *
+        //Double weight1 = (double)((longerWords.size() - matchCount)/(double)longerWords.size()) * this.weightMap.get("words");
         //system.out.println("\nWeight 1 - Words");
         //system.out.println(weight1);
 
@@ -151,21 +154,21 @@ public class Distance {
 
         //todo Apply Rule 5
         //todo modified rule
-        Double incompatibityFunction5 = 0.0;
-        if(featureObj2.getRuleThree_article().equals("INDEF") && featureObj2.getRuleFour_appositive().equals("NO")){
-            incompatibityFunction5 = 1.0;
-        }
-        Double weight5 = (incompatibityFunction5 * this.weightMap.get("article"));
+//        Double incompatibityFunction5 = 0.0;
+//        if(featureObj2.getRuleThree_article().equals("INDEF") && featureObj2.getRuleFour_appositive().equals("NO")){
+//            incompatibityFunction5 = 1.0;
+//        }
+//        Double weight5 = (incompatibityFunction5 * this.weightMap.get("article"));
         ////system.out.println("\nWeight 5 - Article");
         ////system.out.println(weight5);
         //this.listWeight.add(weight5);
 
         //Apply Rule 6
-        Double incompatibityFunction6 = 0.0;
-        if(np2.getStrNP().contains(np1.getStrNP())){
-            incompatibityFunction6 = 1.0;
-        }
-        Double weight6 = (incompatibityFunction6 * this.weightMap.get("words-substring"));
+//        Double incompatibityFunction6 = 0.0;
+//        if(np2.getStrNP().contains(np1.getStrNP())){
+//            incompatibityFunction6 = 1.0;
+//        }
+//        Double weight6 = (incompatibityFunction6 * this.weightMap.get("words-substring"));
         //system.out.println("\nWeight 6 - Words Substring");
         //system.out.println(weight6);
 
@@ -174,6 +177,16 @@ public class Distance {
         //APPOSITIVE
         //Double incompatibityFunction7 = 0.0;
         //String appositive = featureObj1
+//        Double weight7 = 0.0;
+//        if(np1.isEndingWithComma()){
+//            if((np2.getPos() - np1.getPos() == 2)){
+//                if(np1.getFeaturesObj().getRuleThree_article() != "NONE"
+//                    ||np2.getFeaturesObj().getRuleThree_article() != "NONE") {
+//
+//                    weight7 = Settings.getInstance().minValue;
+//                }
+//            }
+//        }
 
         //Apply Rule 8
         //NUMBER - Singular or Plural
@@ -244,12 +257,13 @@ public class Distance {
 
         //system.out.println("------------");
 
-        System.out.println(" words match count = " + Math.round(weight1) + "\t" + np1.getStrNP() + ",\t" + np2.getStrNP());
+        //System.out.println(" words match count = " + Math.round(weight1) + " : \t" + np1.getStrNP() + ",\t" + np2.getStrNP());
         this.listWeight.add(weight1);  //words
 //        this.listWeight.add(weight2);  //headnoun
 //        this.listWeight.add(weight3);  //position
 //        this.listWeight.add(weight4);  //pronoun
 //        this.listWeight.add(weight6);  //words substring
+//        this.listWeight.add(weight7);  //appositive
 //        this.listWeight.add(weight8);  //number
 //        this.listWeight.add(weight9);  //proper name
 //        this.listWeight.add(weight10); //semantic class
@@ -262,6 +276,7 @@ public class Distance {
         }
         //System.out.println("DISTANCE" + (distance));
         return (distance);
+        //return 10000;
     }
 
 
