@@ -33,6 +33,8 @@ public class Settings {
     NPTYPE nptype = NPTYPE.BASE;
 
 
+    boolean printcsv = true;
+
     //getters
 
     public Double getRadius() {

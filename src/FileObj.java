@@ -9,6 +9,8 @@ import com.google.common.io.Files;
 import java.nio.charset.Charset;
 import java.lang.String;
 import java.util.List;
+
+import edu.stanford.nlp.coref.data.Dictionaries;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.w3c.dom.Document;
@@ -72,7 +74,6 @@ public class FileObj {
         List<Integer>  listOfAllCurrentPos = new ArrayList<Integer>();
         while(it.hasNext()){
             Map.Entry me = (Map.Entry)it.next();
-            System.out.println("((NPObj) me.getValue()).getStrNP() = " + ((NPObj) me.getValue()).getStrNP());
             listOfAllCurrentPos.add(((NPObj) me.getValue()).getPos());
         }
         Collections.sort(listOfAllCurrentPos);
@@ -115,6 +116,14 @@ public class FileObj {
         for(NPObj npObj: this.npObjList){
             npObj.setMaxDifference(this.npObjList.size());
             npObj.loadFeatures();
+
+            List<String> words = npObj.getFeaturesObj().getRuleOne_allWords();
+            if(npObj.isPerson) {
+                npObj.setGender(Rules.getInstance().identifyGender(words));
+            }
+            else{
+                npObj.setGender(Dictionaries.Gender.UNKNOWN);
+            }
         }
 
         //////////////////////////////////// comma logic goes over here ////////////////////////////////////////
@@ -166,8 +175,32 @@ public class FileObj {
         }
 
 
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////Pronoun Resolution///////////////////////////////////////////////////
 
+        for(int n = this.npObjList.size()-1; n >= 0 ; n--){
+            NPObj nplast = this.npObjList.get(n);
+            Dictionaries.Gender npLastGender = Rules.getInstance().identifyGender(nplast.getFeaturesObj().getRuleOne_allWords());
+
+            if(nplast.getStrNP().equals("he")
+                || nplast.getStrNP().equals("she")){
+
+                for(int fromN = n-1; fromN >= 0 ;fromN--){
+                    NPObj npFromN = this.npObjList.get(fromN);
+                    if(npFromN.getStrNP().equals(nplast.getStrNP())){
+                        nplast.setREF(npFromN.getID());
+                        break;
+                    }
+                    else if(npFromN.isPerson){
+                        if(npFromN.getGender() == npLastGender){
+                            nplast.setREF(npFromN.getID());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //this will print the csv files
         for(int n = 0; n < this.npObjList.size() ; n++){
             NPObj np1 = this.npObjList.get(n);
@@ -178,6 +211,7 @@ public class FileObj {
             System.out.print("; " + np1.isEndingWithComma());
             System.out.print("; " + np1.getREF());
             System.out.print("; " + np1.isPerson());
+            System.out.print("; " + np1.getGender());
             System.out.println("");
         }
 

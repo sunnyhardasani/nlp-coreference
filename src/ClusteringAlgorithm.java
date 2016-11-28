@@ -101,17 +101,19 @@ public class ClusteringAlgorithm {
         }
 
 
-        //clear
-        int index = 0;
-        for(List<NPObj> listNPObjs: this.listOfListOfNPObjs){
-            index++;
-            if(listNPObjs.size() > 1) {
-                for(NPObj npObj: listNPObjs){
-                    System.out.println( npObj.getStrNP() +" \t\t: "+ npObj.getID()) ;
+        if(!Settings.getInstance().printcsv) {
+            //clear
+            int index = 0;
+            for (List<NPObj> listNPObjs : this.listOfListOfNPObjs) {
+                index++;
+                if (listNPObjs.size() > 1) {
+                    for (NPObj npObj : listNPObjs) {
+                        System.out.println(npObj.getStrNP() + " \t\t: " + npObj.getID());
+                    }
+                    System.out.println("---------------------------------------------------------------------");
                 }
-                System.out.println("---------------------------------------------------------------------");
-            }
 
+            }
         }
 
 

@@ -76,7 +76,10 @@ public class SentenceObj {
 
             // this will add the np by removing
             // all the unnecessary spaces
-            System.out.println("np = " + np);
+            if(!Settings.getInstance().printcsv) {
+                System.out.println("np = " + np);
+            }
+
             result.add(np);
         }
         return result;

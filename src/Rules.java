@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 
+import edu.stanford.nlp.coref.data.Dictionaries;
 import edu.stanford.nlp.simple.*;
 
 public class Rules {
@@ -225,6 +226,8 @@ public class Rules {
         return "INANIM";
     }
 
+
+
     List<String> getNERtype(String phrase, String tag) {
         Sentence sent = new Sentence(phrase);
         List<String> tags = sent.nerTags();
@@ -233,18 +236,15 @@ public class Rules {
         boolean istagpresent = false;
         boolean issomeothertagpresent = false;
         for (int i = 0; i < tags.size(); i++) {
-
             //to check if valid tag is present
             if ((tags.get(i).equals(tag))) {
                 istagpresent = true;
             }
-
             //to check if other tag is present
             if ((!(tags.get(i).equals(tag))) && (!(tags.get(i).equals("O")))) {
                 issomeothertagpresent = true;
             }
         }
-
         //if other tag is there return null
         if (issomeothertagpresent) {
             return null;
@@ -256,13 +256,14 @@ public class Rules {
         //in all other cases we go here.
         String finalname = "";
         for (int j = 0; j < tags.size(); j++) {
-            if (tags.get(j).equals(tag)) {
+            if ((tags.get(j).equals(tag))||(sent.word(j).toLowerCase().equals("mr."))||(sent.word(j).toLowerCase().equals("mr"))
+                    ||(sent.word(j).toLowerCase().equals("miss"))||(sent.word(j).toLowerCase().equals("mrs"))
+                    ||(sent.word(j).toLowerCase().equals("mrs."))) {
                 finalname = finalname + " " + sent.word(j);
                 if (j == tags.size() - 1) {
                     finaltag.add(finalname);
                 }
             } else {
-
                 if (finalname.trim().length() > 0) {
                     finaltag.add(finalname);
                 }
@@ -338,4 +339,63 @@ public class Rules {
 		}
 		return false;
 	}*/
+
+    Dictionaries.Gender identifyGender(List<String> words){
+        for(String word : words){
+            word = word.toLowerCase();
+            if(((word.trim().equals("mr"))||(word.trim().equals("mr.")))||(word.trim().equals("sir"))||(word.trim().equals("mister"))){
+                return Dictionaries.Gender.MALE;
+            }
+            if(((word.trim().equals("miss"))||(word.trim().equals("ms.")))||(word.trim().equals("mrs"))||(word.trim().equals("mrs."))||word.trim().equals("madam")){
+
+                return Dictionaries.Gender.FEMALE;
+            }
+            if(isItemInList(malesPronounList,word)){
+                return Dictionaries.Gender.MALE;
+            }
+            if(isItemInList(maleNamesList,word)){
+                return Dictionaries.Gender.MALE;
+            }
+            if(isItemInList(femalesPronounList,word)){
+                return Dictionaries.Gender.FEMALE;
+            }
+            if(isItemInList(femaleNamesList,word)){
+                return Dictionaries.Gender.FEMALE;
+            }
+            if(word.equals("it")){
+                return Dictionaries.Gender.NEUTRAL;
+            }
+            if(word.length() > 2 && word.substring(word.length()-2,word.length()-1).equals("yn")){
+                return Dictionaries.Gender.FEMALE;
+            }
+            if(word.length() > 2 && word.substring(word.length()-2,word.length()-1).equals("ch")) {
+                return Dictionaries.Gender.MALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='a'){
+                return Dictionaries.Gender.FEMALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='k'){
+                return Dictionaries.Gender.MALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='p'){
+                return Dictionaries.Gender.MALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='v'){
+                return Dictionaries.Gender.MALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='v'){
+                return Dictionaries.Gender.MALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='e'){
+                return Dictionaries.Gender.FEMALE;
+            }
+            if(word.length() > 1 && word.charAt(word.length()-1)=='i'){
+                return Dictionaries.Gender.FEMALE;
+            }
+
+        }
+        //if nothing found we can check with following pronouns
+        return Dictionaries.Gender.UNKNOWN;
+    }
+
 }

@@ -199,7 +199,9 @@ public class PrintXML {
                     NPObj idNPObj = (NPObj) mapIdToNPObj.get(idNP);
 
                     // this is the location which i have to mark
-                    arrNPObj[idNPObj.getPos()] = idNPObj;
+                    if(Integer.parseInt(idNPObj.getID()) < 0) {
+                        arrNPObj[idNPObj.getPos()] = idNPObj;
+                    }
                 }
             }
         }
