@@ -74,10 +74,6 @@ public class SentenceObj {
                 np = removeExtraSpace(np, sent);
             }
 
-            // remove all appositive and
-
-
-
             // this will add the np by removing
             // all the unnecessary spaces
             System.out.println("np = " + np);
@@ -127,29 +123,40 @@ public class SentenceObj {
             for (int t = 0; t < tokens.length; t++) {
 
                 String sentence = tokens[t].trim();
-                if (sentence.length() > 0) {
+                if(sentence.length() > 0) {
 
-                    Sentence sent = new Sentence(sentence);
+                    List<String> finalner = Rules.getInstance().getNERtype(sentence, "PERSON");
+                    if (finalner != null && finalner.size() > 0) {
 
-                    //parse result of all the sentence and
-                    //add to the nplist of object
-                    List<String> results = getNounPhrases(sent.parse(), sentence);
-                    for (String np : results) {
+                        for (int i = 0; i < finalner.size(); i++) {
 
-                        for(String npConj : breakAtConjunction(np)) {
+                            String ID = utilitySingletonObj.getGenerateNewKey();
 
-                            String ID = utilitySingletonObj.getInstance().getGenerateNewKey();
-                            utilitySingletonObj.getInstance().updateMap(ID, npConj, this.startPosIndex);
+                            utilitySingletonObj.addListPersonID(ID);
+                            utilitySingletonObj.updateMap(ID, finalner.get(i), this.startPosIndex);
                             this.startPosIndex++;
                         }
-
-//                        String ID = utilitySingletonObj.getInstance().getGenerateNewKey();
-//                        utilitySingletonObj.getInstance().updateMap(ID, np, this.startPosIndex);
-//                        this.startPosIndex++;
                     }
+                    else {
 
-                    if(results.size() == 0){
-                        commaCount = 0;
+                        Sentence sent = new Sentence(sentence);
+
+                        //parse result of all the sentence and
+                        //add to the nplist of object
+                        List<String> results = getNounPhrases(sent.parse(), sentence);
+                        for (String np : results) {
+
+                            for (String npConj : breakAtConjunction(np)) {
+
+                                String ID = utilitySingletonObj.getGenerateNewKey();
+                                utilitySingletonObj.updateMap(ID, npConj, this.startPosIndex);
+                                this.startPosIndex++;
+                            }
+                        }
+
+                        if (results.size() == 0) {
+                            commaCount = 0;
+                        }
                     }
                 }
 

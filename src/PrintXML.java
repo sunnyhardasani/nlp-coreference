@@ -79,12 +79,12 @@ public class PrintXML {
                 for (NPObj npObj : cluster) {
                     if (npObj.getID().equals(ID)) {
                         flag = true;
-//
+
                         if( largestClusterSize < cluster.size()){
                             largestClusterSize = cluster.size();
                             saveLargestCluster = cluster;
                         }
-//                        break;
+                        //break;
                     }
                 }
 //                if(flag) {
@@ -102,7 +102,7 @@ public class PrintXML {
 //                    }
 //                    flag = false;
 //                }
-//            }
+            }
         }
 
         if(flag){
@@ -110,43 +110,43 @@ public class PrintXML {
 
             for(NPObj npObj: saveLargestCluster){
 
-                int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
-
-                if(distance != 0
-                        && tempDis > distance
-                        && listOfConsideredIDs.contains(npObj.getID())
-                        && Integer.parseInt(npObj.getID()) > 0
-                        && Integer.parseInt(npObj.getID()) < Integer.parseInt(npIDObj.getID())){
-                    tempDis = distance;
-                    tempNPObj = npObj;
-                }
-
-                if(distance != 0 && closestDistance > distance && listOfConsideredIDs.contains(npObj.getID())){
-                    closestDistance = distance;
-                    closestNPObj = npObj;
-                }
-
-                if(!tempNPObj.getID().equals("") ){
-                    tempNPObj = closestNPObj;
-                }
-
-
-
-//                if(this.listOfConsideredIDs.contains(npObj.getID())
-//                        && npObj.getPos() < smallestPos
-//                        && !npObj.getID().equals(ID)
-//                        && Integer.parseInt(npObj.getID()) > 0 ) {
+//                int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
 //
-//                    smallestPos = npObj.getPos();
-//                    smallestPosNPObj = npObj;
+//                if(distance != 0
+//                        && tempDis > distance
+//                        && listOfConsideredIDs.contains(npObj.getID())
+//                        && Integer.parseInt(npObj.getID()) > 0
+//                        && Integer.parseInt(npObj.getID()) < Integer.parseInt(npIDObj.getID())){
+//                    tempDis = distance;
+//                    tempNPObj = npObj;
 //                }
 //
-//                if(this.listOfConsideredIDs.contains(npObj.getID())
-//                        && npObj.getPos() < smallestNeg
-//                        && !npObj.getID().equals(ID)) {
+//                if(distance != 0 && closestDistance > distance && listOfConsideredIDs.contains(npObj.getID())){
+//                    closestDistance = distance;
+//                    closestNPObj = npObj;
+//                }
 //
-//                    smallestNeg = npObj.getPos();
-//                    smallestNegNPObj = npObj;
+//                if(!tempNPObj.getID().equals("") ){
+//                    tempNPObj = closestNPObj;
+//                }
+
+
+
+                if(this.listOfConsideredIDs.contains(npObj.getID())
+                        && npObj.getPos() < smallestPos
+                        && !npObj.getID().equals(ID)
+                        && Integer.parseInt(npObj.getID()) > 0 ) {
+
+                    smallestPos = npObj.getPos();
+                    smallestPosNPObj = npObj;
+                }
+
+                if(this.listOfConsideredIDs.contains(npObj.getID())
+                        && npObj.getPos() < smallestNeg
+                        && !npObj.getID().equals(ID)) {
+
+                    smallestNeg = npObj.getPos();
+                    smallestNegNPObj = npObj;
                 }
             }
         }
@@ -155,7 +155,7 @@ public class PrintXML {
             return smallestNegNPObj.getID();
         }
         return smallestPosNPObj.getID();
-//        return closestNPObj.getID();
+        //return closestNPObj.getID();
     }
 
 

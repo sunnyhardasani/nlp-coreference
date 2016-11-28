@@ -154,6 +154,7 @@ public class FileObj {
                 for(String word: allWords){
                     if(isArticle(word)){
                         np3.setREF(np1.getID());
+                        break;
                     }
                 }
             }

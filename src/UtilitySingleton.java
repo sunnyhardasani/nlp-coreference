@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +18,7 @@ public class UtilitySingleton {
     int index = 0;
 
     Map<String,NPObj> mapOfNPToMarkedID = new HashMap();
+    List<String> listPersonID = new ArrayList<String>();
 
     public String getGenerateNewKey(){
         return Integer.toString(--index);
@@ -36,6 +39,14 @@ public class UtilitySingleton {
     public void clearMap(){
         index = 0;
         this.mapOfNPToMarkedID.clear();
+    }
+
+    public List<String> getListPersonID() {
+        return listPersonID;
+    }
+
+    public void addListPersonID(String personID) {
+        this.listPersonID.add(personID);
     }
 
     public boolean removeKey(String key){
