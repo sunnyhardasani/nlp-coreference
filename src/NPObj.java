@@ -19,7 +19,6 @@ public class NPObj {
     ENUM_ANIM_TYPE anim_type = ENUM_ANIM_TYPE.UNKNOWN;
     List<String> abbreviationList = new ArrayList<String>();
 
-
     public NPObj(String strNP, String ID, String REF, int pos, boolean isPerson){
         this.strNP = strNP;
         this.ID = ID;
@@ -109,5 +108,13 @@ public class NPObj {
 
     public void setAnim_type(ENUM_ANIM_TYPE anim_type) {
         this.anim_type = anim_type;
+    }
+
+    public List<String> getAbbreviationList() {
+        return abbreviationList;
+    }
+
+    public void setAbbreviationList(List<String> abbreviationList) {
+        this.abbreviationList = abbreviationList;
     }
 }

@@ -7,7 +7,7 @@
  PET MON
 
 
- <COREF ID="2">The Organization of Petroleum Exporting Countries</COREF> appears to be pulling back from the brink of <COREF ID="3" REF="X5">a possible price war</COREF>.
+ <COREF ID="2" REF="X23">The Organization of Petroleum Exporting Countries</COREF> appears to be pulling back from the brink of <COREF ID="3" REF="X5">a possible price war</COREF>.
 
 
  After recent major price declines because of a sharp rise in <COREF ID="X23" REF="11">OPEC</COREF> <COREF ID="X24" REF="42">production</COREF>, <COREF ID="7" REF="X6">total cartel output</COREF> has now dropped as much as one million barrels a <COREF ID="X27" REF="54">day</COREF> -- from the year's peak of 20 million barrels a <COREF ID="X31" REF="54">day</COREF> early this month.

@@ -130,7 +130,55 @@ public class FileObj {
             npObj.setAnim_type(npObj.getFeaturesObj().getRuleNine_animacy());
         }
 
-        //////////////////////////////////// abbreviation /////////////////////////////////////////////////////
+        ///////////////////////////////////////// abbreviation /////////////////////////////////////////////////
+        for(int n = 0; n < this.npObjList.size(); n++){
+            NPObj npObjN = this.npObjList.get(n);
+
+            for(int s = n+1; s < this.npObjList.size(); s++){
+                NPObj npObjS = this.npObjList.get(s);
+
+                String npS = npObjS.getStrNP().replaceAll("\\ba\\b","");
+                npS = npS.replaceAll("\\ban\\b","");
+                npS = npS.replaceAll("\\bthe\\b","");
+                npS = npS.replaceAll("\\bA\\b","");
+                npS = npS.replaceAll("\\bAN\\b","");
+                npS = npS.replaceAll("\\bTHE\\b","");
+                npS = npS.replaceAll("\\bAn\\b","");
+                npS = npS.replaceAll("\\bThe\\b","");
+                npS = npS.trim().toUpperCase();
+
+                boolean flag = false;
+                for(String abbrvN : npObjN.abbreviationList){
+                    if(npS.equals(abbrvN)){
+                        if(npObjN.getREF().equals("")) {
+                            npObjN.setREF(npObjS.getID());
+                        }
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag){
+                    break;
+                }
+            }
+        }
+
+        ////////////////////////////////////////////exact same match//////////////////////////////////////
+        for(int n = this.npObjList.size()-1; n >= 0 ; n--){
+            NPObj npN = this.npObjList.get(n);
+
+            for(int s = n-1; s >= 0 ;s--){
+                NPObj npS = this.npObjList.get(s);
+
+                if(npS.getStrNP().equals(npN.getStrNP())){
+                    if(npN.getREF().equals("")) {
+                        npN.setREF(npS.getID());
+                    }
+                    break;
+                }
+            }
+        }
+
 
         //////////////////////////////////// comma logic goes over here ////////////////////////////////////////
 
@@ -241,6 +289,11 @@ public class FileObj {
                             break;
                         }
                     }
+//                    else if(npFromN.getAnim_type() == ENUM_ANIM_TYPE.ANIMATE){
+//                        if(nplast.getREF().equals("")) {
+//                            nplast.setREF(npFromN.getID());
+//                        }
+//                    }
                 }
             }
         }
@@ -327,9 +380,6 @@ public class FileObj {
                 }
             }
         }
-
-
-
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //this will print the csv files

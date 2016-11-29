@@ -445,11 +445,40 @@ public class Rules {
 
     List<String> getAbbreviation(String nounPhrase){
 
+//        Sentence np = new Sentence(nounPhrase);
+//        List<String> words = np.words();
+//
+//        //remove any article
+//        if(words.size() > 0){
+//            if((words.get(0).toLowerCase().equals("a"))
+//                    ||(words.get(0).toLowerCase().equals("an"))
+//                    ||(words.get(0).toLowerCase().equals("the"))
+//                    ||(words.get(0).toLowerCase().equals("this"))){
+//
+//                words.remove(0);
+//            }
+//        }
+//
+//        String withDots;
+//        String withoutDots;
+//        for(String word: words){
+//            if(word.length() > 0 && Character.isUpperCase(word.charAt(0))){
+//                withDots += word.charAt(0)
+//            }
+//            else{
+//                break;
+//            }
+//        }
+
+
         List<String> allabbs= new ArrayList<String>();
         String[] npbreak=nounPhrase.split("\\s+");
         int startindex=0;
-        if((npbreak[0].toLowerCase().equals("a"))||(npbreak[0].toLowerCase().equals("an"))
-                ||(npbreak[0].toLowerCase().equals("the"))||(npbreak[0].toLowerCase().equals("this"))){
+        if(npbreak[0].length() > 0
+                && (npbreak[0].toLowerCase().equals("a"))
+                    ||(npbreak[0].toLowerCase().equals("an"))
+                    ||(npbreak[0].toLowerCase().equals("the"))
+                    ||(npbreak[0].toLowerCase().equals("this"))){
             startindex++;
         }
 
@@ -457,19 +486,26 @@ public class Rules {
             String finalabb="";
             String finalabbinc="";
             for(int i=startindex;i<npbreak.length;i++) {
-                if(Character.isUpperCase(npbreak[i].charAt(0))){
-                    finalabb=finalabb.trim()+npbreak[i].charAt(0);
-                    finalabbinc=finalabbinc.trim()+npbreak[i].charAt(0);
-                }else{
-                    if((npbreak[i].toLowerCase().equals("in"))||(npbreak[i].toLowerCase().equals("of"))){
-                        finalabbinc=finalabbinc.trim()+Character.toUpperCase(npbreak[i].charAt(0));
-                    }else{
-                        return allabbs;
+                if(npbreak[i].length() > 0) {
+                    if (Character.isUpperCase(npbreak[i].charAt(0))) {
+                        finalabb = finalabb.trim() + npbreak[i].charAt(0);
+                        finalabbinc = finalabbinc.trim() + npbreak[i].charAt(0);
+                    } else {
+                        if ((npbreak[i].toLowerCase().equals("in")) || (npbreak[i].toLowerCase().equals("of"))) {
+                            finalabbinc = finalabbinc.trim() + Character.toUpperCase(npbreak[i].charAt(0));
+                        } else {
+                            return allabbs;
+                        }
                     }
                 }
             }
+
+            if(0 == finalabb.length() || 0 == finalabbinc.length()){
+                return allabbs;
+            }
+
             String finalabbwithdots=Character.toString(finalabb.charAt(0));
-            String finalabbincwithdots=Character.toString(finalabbinc.charAt(0));;
+            String finalabbincwithdots=Character.toString(finalabbinc.charAt(0));
             for(int k=1;k<finalabb.length();k++){
                 finalabbwithdots=finalabbwithdots+"."+finalabb.charAt(k);
             }
