@@ -120,7 +120,7 @@ public class PrintXML {
         }
 
         ////////////////////////////////////////////////////////////////////////////////
-        //check for subsume if bottom stack from top
+        //check for subsume in bottom stack from top
         ////////////////////////////////////////////////////////////////////////////////
         for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
             NPObj topNP =bottomStack.get(topIndex);
@@ -145,7 +145,7 @@ public class PrintXML {
         for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
             NPObj topNP =bottomStack.get(topIndex);
             if(Integer.parseInt(topNP.getID()) > 0){
-                return topNP.getID();
+                //return topNP.getID();
             }
         }
 

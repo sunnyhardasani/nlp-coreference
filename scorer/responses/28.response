@@ -13,7 +13,7 @@
  SEATTLE  
 
 
- <COREF ID="3" REF="11">Boeing Co.</COREF> said <COREF ID="4">it</COREF> agreed to pay <COREF ID="5" REF="14">$200,000</COREF> to settle seven civil cases brought by the Federal Aviation Administration in connection with the <COREF ID="-26" REF="25">miswiring</COREF> of fire-protection systems on its jetliners. 
+ <COREF ID="3" REF="-3">Boeing Co.</COREF> said <COREF ID="4">it</COREF> agreed to pay <COREF ID="5" REF="14">$200,000</COREF> to settle seven civil cases brought by the Federal Aviation Administration in connection with the <COREF ID="-26" REF="25">miswiring</COREF> of fire-protection systems on its jetliners. 
 
 
  <COREF ID="10">The fine</COREF> is <COREF ID="11" REF="3">the biggest ever collected from Boeing and perhaps from any airplane maker</COREF>. 
@@ -26,7 +26,7 @@
  But <COREF ID="19" REF="13">the FAA</COREF> and <COREF ID="20" REF="11">Boeing</COREF> worked out a deal in which six other cases related to <COREF ID="-46" REF="25">miswiring</COREF> were included as part of a comprehensive settlement. 
 
 
- <COREF ID="22" REF="19">The FAA</COREF> said <COREF ID="23">the agreement</COREF> specifies a number of corrective actions and design changes to be made by <COREF ID="24" REF="20">Boeing</COREF> "to ensure <COREF ID="25" REF="31">the miswiring conditions that are the subject of these cases</COREF> will not be repeated." 
+ <COREF ID="22" REF="19">The FAA</COREF> said <COREF ID="23">the agreement</COREF> specifies a number of corrective actions and design changes to be made by <COREF ID="24" REF="20">Boeing</COREF> "to ensure <COREF ID="25" REF="-46">the miswiring conditions that are the subject of these cases</COREF> will not be repeated." 
  The fire-extinguishing systems have never failed in service. 
 
 
