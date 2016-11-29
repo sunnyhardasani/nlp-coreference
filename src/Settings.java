@@ -33,7 +33,7 @@ public class Settings {
     NPTYPE nptype = NPTYPE.BASE;
 
 
-    boolean printcsv = true;
+    boolean printcsv = false;
 
     //getters
 

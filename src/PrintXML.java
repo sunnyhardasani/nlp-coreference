@@ -41,6 +41,9 @@ public class PrintXML {
 
     public String getReferenceID(String ID){
 
+        //todo
+        ID = ID.replaceAll("X","-");
+
         boolean flag = false;
         String REF = "";
         NPObj npIDObj = (NPObj) mapIdToNPObj.get(ID);
@@ -65,7 +68,7 @@ public class PrintXML {
         // for which the screen id are matched
         ////////////////////////////////////////////////////////////////////////////////
         for(List<NPObj> cluster : this.clustersToCheckForRef){
-            if(cluster.size() > 1) {
+            //if(cluster.size() > 1) {
                 for (NPObj npObj : cluster) {
                     if (npObj.getID().equals(ID)) {
                         flag = true;
@@ -80,7 +83,7 @@ public class PrintXML {
                     }
                     flag = false;
                 }
-            }
+            //}
         }
 
         ////////////////////////////////////////////////////////////////////////////////
@@ -110,7 +113,7 @@ public class PrintXML {
         }
 
         ////////////////////////////////////////////////////////////////////////////////
-        //check for subsume in top stack from bottom
+        //check for subsume in TOP stack from bottom
         ////////////////////////////////////////////////////////////////////////////////
         for(int bottomIndex = topStack.size() - 1; bottomIndex >=0 ; bottomIndex-- ){
             NPObj bottomNP = topStack.get(bottomIndex);
@@ -119,12 +122,59 @@ public class PrintXML {
             }
         }
 
+
         ////////////////////////////////////////////////////////////////////////////////
-        //check for subsume in bottom stack from top
+        //check for subsume in BOTTOM stack from top
         ////////////////////////////////////////////////////////////////////////////////
         for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
             NPObj topNP =bottomStack.get(topIndex);
             if( Integer.parseInt(topNP.getID()) > 0  && topNP.getStrNP().contains(npIDObj.getStrNP())){
+                return topNP.getID();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //match head noun in top stack
+        ////////////////////////////////////////////////////////////////////////////////
+        for(int bottomIndex = topStack.size() - 1; bottomIndex >=0 ; bottomIndex-- ){
+            NPObj bottomNP = topStack.get(bottomIndex);
+            String bottomNPHeadNoun = bottomNP.getFeaturesObj().getRuleSeven_headNoun().toLowerCase();
+            String idNPHeadNoun = npIDObj.getFeaturesObj().getRuleSeven_headNoun().toLowerCase();
+
+            if(bottomNP.getStrNP().contains(idNPHeadNoun)){
+                return bottomNP.getID();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //match head noun in bottom stack
+        ////////////////////////////////////////////////////////////////////////////////
+        for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
+            NPObj topNP =bottomStack.get(topIndex);
+            String topNPHeadNoun = topNP.getFeaturesObj().getRuleSeven_headNoun().toLowerCase();
+            String idNPHeadNoun = npIDObj.getFeaturesObj().getRuleSeven_headNoun().toLowerCase();
+
+            if(topNP.getStrNP().contains(idNPHeadNoun)){
+                return topNP.getID();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //check for subsume in TOP stack from bottom
+        ////////////////////////////////////////////////////////////////////////////////
+        for(int bottomIndex = topStack.size() - 1; bottomIndex >=0 ; bottomIndex-- ){
+            NPObj bottomNP = topStack.get(bottomIndex);
+            if(Integer.parseInt(bottomNP.getID()) < 0 && bottomNP.getStrNP().contains(npIDObj.getStrNP())){
+                return bottomNP.getID();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //check for subsume in BOTTOM stack from top
+        ////////////////////////////////////////////////////////////////////////////////
+        for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
+            NPObj topNP =bottomStack.get(topIndex);
+            if( Integer.parseInt(topNP.getID()) < 0  && topNP.getStrNP().contains(npIDObj.getStrNP())){
                 return topNP.getID();
             }
         }
@@ -150,7 +200,7 @@ public class PrintXML {
         }
 
         ///////////////////////////////////////////////////////////////////////////////
-        //search for the closest position np object
+        //search for the closest position np object, this will pick negative from top
         ///////////////////////////////////////////////////////////////////////////////
         int closestDistance = Integer.MAX_VALUE;
         NPObj closestNP =  new NPObj("", "", "", 0, false);
@@ -162,8 +212,6 @@ public class PrintXML {
             }
         }
         REF = closestNP.getID();
-
-
 
         return REF;
     }
@@ -330,9 +378,6 @@ public class PrintXML {
             }
         }
 
-
-
-
         //if cluster size is greater
         for(List<NPObj> cluster: clusters){
             if(cluster.size() > 1){
@@ -354,6 +399,16 @@ public class PrintXML {
                         if(Integer.parseInt(npobj.getID()) < 0) {
                             arrNPObj[npobj.getPos()] = npobj;
                         }
+                    }
+                }
+            }
+            else if(cluster.size() == 1){
+                NPObj npObj = ((NPObj)cluster.get(0));
+                if(!npObj.getREF().equals("")){
+                    if (!listOfConsideredIDs.contains(npObj.getREF())
+                            && Integer.parseInt(npObj.getREF()) > 0) {
+
+                        this.listOfConsideredIDs.add(npObj.getREF());
                     }
                 }
             }
@@ -384,7 +439,7 @@ public class PrintXML {
 
                     if( getSubtringCount(xml,"COREF") % 2 == 0 ) {
 
-                        String REF = npObj.getID();//.replaceAll("-","X");
+                        String REF = npObj.getID().replaceAll("-","X");
                         remainingXML = remainingXML.substring(endloc);
                         String corefXML = xml.substring(0,startLoc)
                                         + "<COREF ID=\"" + REF
@@ -419,8 +474,8 @@ public class PrintXML {
 
                     if(!REF.equals("") && !REF.equals(ID)) {
 
-                        //REF = REF.replaceAll("-","X");
-                        eElement.setAttribute("REF", REF);
+                        String negIDREF = REF.replaceAll("-","X");
+                        eElement.setAttribute("REF", negIDREF);
                     }
                 }
             }
@@ -433,106 +488,108 @@ public class PrintXML {
         return doc;
     }
 
-    public Document printWithNewAlgo(List<NPObj> clusters, String sentenceWithXML){
-
-        Document doc;
-        DocumentBuilderFactory factory = null;
-        DocumentBuilder builder = null;
-
-        this.listOfConsideredIDs = new ArrayList<String>();
-
-        //this will iterate over the cluster
-        //and set the id to ref id map
-        Map mapIdToNPObj = new HashMap();
-        for(int i = 0 ; i < clusters.size() ; i++){
-            NPObj npobj = clusters.get(i);
-            mapIdToNPObj.put(npobj.getID(),npobj);
-        }
-
-
-
-        try {
-            factory = DocumentBuilderFactory.newInstance();
-            builder = factory.newDocumentBuilder();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        doc = builder.newDocument();
-
-        sentenceWithXML = sentenceWithXML.replaceAll("<SENT>","");
-        sentenceWithXML = sentenceWithXML.replaceAll("</SENT>","");
-
-        NPObj arrNPObj[] = new NPObj[clusters.size()+1];
-        for(int i = 0 ; i < clusters.size() ; i++){
-            NPObj npobj = clusters.get(i);
-            if( !npobj.getREF().equals("") && Integer.parseInt(npobj.getREF()) < 0 ) {
-                NPObj npIDObj = (NPObj) mapIdToNPObj.get(npobj.getREF());
-
-                arrNPObj[npIDObj.getPos()] = npIDObj;
-            }
-        }
-
-
-        String newXML = "";
-        String remainingXML = sentenceWithXML;
-        for(int arrIndex = 0; arrIndex < arrNPObj.length ; arrIndex++){
-            NPObj npObj = arrNPObj[arrIndex];
-            if(npObj != null){
-
-                int startLoc = remainingXML.toLowerCase().indexOf(npObj.getStrNP().toLowerCase());
-                if(startLoc >= 0) {
-                    int endloc = startLoc + npObj.getStrNP().length();
-                    String xml = remainingXML.substring(0, endloc);
-
-                    if( getSubtringCount(xml,"COREF") % 2 == 0 ) {
-
-                        remainingXML = remainingXML.substring(endloc);
-                        String corefXML = xml.substring(0,startLoc)
-                                + "<COREF ID=\"" + npObj.getID()
-                                + "\">"
-                                + xml.substring(startLoc, startLoc + npObj.getStrNP().length())
-                                + "</COREF>"
-                                + xml.substring(endloc);
-
-                        newXML += corefXML;
-
-                        //listOfConsideredIDs.add(npObj.getID());
-                    }
-                }
-            }
-        }
-        newXML += remainingXML;
-
-        try {
-
-            //now add attribute to xml
-            InputSource is = new InputSource(new StringReader(newXML));
-            builder = factory.newDocumentBuilder();
-            doc = builder.parse(is);
-
-            NodeList nList = doc.getElementsByTagName("COREF");
-            for (int temp = 0; temp < nList.getLength(); temp++) {
-                Node nNode = nList.item(temp);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-
-                    String ID = eElement.getAttribute("ID");
-                    String REF = ((NPObj)mapIdToNPObj.get(ID)).getREF();
-
-                    if(!REF.equals("") && !REF.equals(ID)) {
-                        eElement.setAttribute("REF", REF);
-                    }
-                }
-            }
-
-            print(doc);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return doc;
-    }
+//    public Document printWithNewAlgo(List<NPObj> clusters, String sentenceWithXML){
+//
+//        Document doc;
+//        DocumentBuilderFactory factory = null;
+//        DocumentBuilder builder = null;
+//
+//        this.listOfConsideredIDs = new ArrayList<String>();
+//
+//        //this will iterate over the cluster
+//        //and set the id to ref id map
+//        Map mapIdToNPObj = new HashMap();
+//        for(int i = 0 ; i < clusters.size() ; i++){
+//            NPObj npobj = clusters.get(i);
+//            mapIdToNPObj.put(npobj.getID(),npobj);
+//        }
+//
+//
+//
+//        try {
+//            factory = DocumentBuilderFactory.newInstance();
+//            builder = factory.newDocumentBuilder();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        doc = builder.newDocument();
+//
+//        sentenceWithXML = sentenceWithXML.replaceAll("<SENT>","");
+//        sentenceWithXML = sentenceWithXML.replaceAll("</SENT>","");
+//
+//        NPObj arrNPObj[] = new NPObj[clusters.size()+1];
+//        for(int i = 0 ; i < clusters.size() ; i++){
+//            NPObj npobj = clusters.get(i);
+//            if( !npobj.getREF().equals("") && Integer.parseInt(npobj.getREF()) < 0 ) {
+//                NPObj npIDObj = (NPObj) mapIdToNPObj.get(npobj.getREF());
+//
+//                arrNPObj[npIDObj.getPos()] = npIDObj;
+//            }
+//        }
+//
+//
+//        String newXML = "";
+//        String remainingXML = sentenceWithXML;
+//        for(int arrIndex = 0; arrIndex < arrNPObj.length ; arrIndex++){
+//            NPObj npObj = arrNPObj[arrIndex];
+//            if(npObj != null){
+//
+//                int startLoc = remainingXML.toLowerCase().indexOf(npObj.getStrNP().toLowerCase());
+//                if(startLoc >= 0) {
+//                    int endloc = startLoc + npObj.getStrNP().length();
+//                    String xml = remainingXML.substring(0, endloc);
+//
+//                    if( getSubtringCount(xml,"COREF") % 2 == 0 ) {
+//
+//                        remainingXML = remainingXML.substring(endloc);
+//                        String negID = npObj.getID().replaceAll("-","X");
+//                        String corefXML = xml.substring(0,startLoc)
+//                                + "<COREF ID=\"" + negID
+//                                + "\">"
+//                                + xml.substring(startLoc, startLoc + npObj.getStrNP().length())
+//                                + "</COREF>"
+//                                + xml.substring(endloc);
+//
+//                        newXML += corefXML;
+//
+//                        listOfConsideredIDs.add(npObj.getID());
+//                    }
+//                }
+//            }
+//        }
+//        newXML += remainingXML;
+//
+//        try {
+//
+//            //now add attribute to xml
+//            InputSource is = new InputSource(new StringReader(newXML));
+//            builder = factory.newDocumentBuilder();
+//            doc = builder.parse(is);
+//
+//            NodeList nList = doc.getElementsByTagName("COREF");
+//            for (int temp = 0; temp < nList.getLength(); temp++) {
+//                Node nNode = nList.item(temp);
+//                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+//                    Element eElement = (Element) nNode;
+//
+//                    String ID = eElement.getAttribute("ID");
+//                    String REF = ((NPObj)mapIdToNPObj.get(ID)).getREF();
+//
+//                    if(!REF.equals("") && !REF.equals(ID)) {
+//                        REF = REF.replaceAll("-","X");
+//                        eElement.setAttribute("REF", REF);
+//                    }
+//                }
+//            }
+//
+//            print(doc);
+//        }
+//        catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return doc;
+//    }
 
     public int getSubtringCount(String str, String findStr){
         int lastIndex = 0;

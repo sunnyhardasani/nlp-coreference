@@ -5,42 +5,42 @@
  04-09 
  0270 
 
-BC-HK-<COREF ID="1">AIRCRASH</COREF>-<COREF ID="2">CHINA</COREF>-SCMP
-<COREF ID="-3">TWO</COREF> DIE IN <COREF ID="40">HELO CRASH</COREF> OFF <COREF ID="4" REF="2">CHINA</COREF>
+BC-HK-<COREF ID="1">AIRCRASH</COREF>-<COREF ID="2" REF="4">CHINA</COREF>-SCMP
+<COREF ID="X3" REF="5">TWO</COREF> DIE IN <COREF ID="40" REF="26">HELO CRASH</COREF> OFF <COREF ID="4" REF="2">CHINA</COREF>
 c.1996 South China Morning Post
-By JONATHAN HILL and ADAM LEE in <COREF ID="-15">Macau</COREF> <COREF ID="5" REF="-3">Two Chinese crew members</COREF>
-were killed Tuesday when their <COREF ID="-17">helicopter</COREF> crashed near <COREF ID="8" REF="-15">Macau</COREF>.
+By JONATHAN HILL and ADAM LEE in <COREF ID="X15" REF="8">Macau</COREF> <COREF ID="5" REF="X3">Two Chinese crew members</COREF>
+were killed Tuesday when their <COREF ID="X17" REF="13">helicopter</COREF> crashed near <COREF ID="8" REF="16">Macau</COREF>.
 
 
-The <COREF ID="-19" REF="4">China</COREF> Southern <COREF ID="-21" REF="-17">Helicopter</COREF> Company <COREF ID="9">aircraft</COREF> was on <COREF ID="10">its</COREF> way to
-<COREF ID="-24">Zhuhai</COREF>, apparently returning from an oil rig, when <COREF ID="11">it</COREF> crashed, said
-a spokesman for Hong Kong's Civil <COREF ID="-33">Aviation</COREF> <COREF ID="-34">Department</COREF>.
+The <COREF ID="X19" REF="4">China</COREF> Southern <COREF ID="X21" REF="13">Helicopter</COREF> Company <COREF ID="9">aircraft</COREF> was on <COREF ID="10">its</COREF> way to
+<COREF ID="X24" REF="23">Zhuhai</COREF>, apparently returning from an oil rig, when <COREF ID="11">it</COREF> crashed, said
+a spokesman for Hong Kong's Civil <COREF ID="X33" REF="38">Aviation</COREF> <COREF ID="X34" REF="20">Department</COREF>.
 
 
-Other reports said <COREF ID="13" REF="-21">the helicopter</COREF>, which went down 10 to 15
+Other reports said <COREF ID="13" REF="X21">the helicopter</COREF>, which went down 10 to 15
 nautical miles southeast of the Portuguese enclave, was gathering
 weather information.
 
 
-<COREF ID="14">The incident</COREF> fell within Hong Kong airspace, triggering a <COREF ID="-48">search</COREF>
-by Civil <COREF ID="-49" REF="-33">Aviation</COREF> <COREF ID="-50" REF="-34">Department</COREF> rescuers.
+<COREF ID="14" REF="37">The incident</COREF> fell within Hong Kong airspace, triggering a <COREF ID="X48" REF="17">search</COREF>
+by Civil <COREF ID="X49" REF="38">Aviation</COREF> <COREF ID="X50" REF="20">Department</COREF> rescuers.
 
 
 Two Government Flying Service helicopters joined <COREF ID="16" REF="8">Macau</COREF> Marine
-Police in <COREF ID="17" REF="-48">the search</COREF> for <COREF ID="18">the Sikorsky 76</COREF>.
+Police in <COREF ID="17" REF="X48">the search</COREF> for <COREF ID="18">the Sikorsky 76</COREF>.
 
 
-<COREF ID="19">Mainland</COREF> authorities later told <COREF ID="20" REF="-50">the department</COREF>'s Aeronautical
+<COREF ID="19">Mainland</COREF> authorities later told <COREF ID="20" REF="X50">the department</COREF>'s Aeronautical
 Rescue Co-ordination Centre the wreckage had been recovered from
-the Chinese <COREF ID="-64">island</COREF> of <COREF ID="21">Daiwaishan</COREF>.
+the Chinese <COREF ID="X64" REF="22">island</COREF> of <COREF ID="21">Daiwaishan</COREF>.
 
 
-``Someone on <COREF ID="22" REF="-64">the island</COREF> heard a noise and called <COREF ID="23" REF="-24">Zhuhai</COREF> airport
-authorities,'' said a <COREF ID="24" REF="16">Macau</COREF> <COREF ID="-70" REF="-49">aviation</COREF> source. ``<COREF ID="25" REF="-19">China</COREF> sent a
-<COREF ID="-72" REF="13">helicopter</COREF> and confirmed <COREF ID="26" REF="40">the crash</COREF> on <COREF ID="27" REF="22">the island</COREF>.''
+``Someone on <COREF ID="22" REF="27">the island</COREF> heard a noise and called <COREF ID="23" REF="30">Zhuhai</COREF> airport
+authorities,'' said a <COREF ID="24" REF="16">Macau</COREF> <COREF ID="X70" REF="38">aviation</COREF> source. ``<COREF ID="25" REF="4">China</COREF> sent a
+<COREF ID="X72" REF="13">helicopter</COREF> and confirmed <COREF ID="26" REF="40">the crash</COREF> on <COREF ID="27" REF="22">the island</COREF>.''
 
 
-<COREF ID="28" REF="24">Macau</COREF> authorities, who lost radar <COREF ID="-76">contact</COREF> at 10 am, said <COREF ID="29" REF="-76">the
+<COREF ID="28" REF="24">Macau</COREF> authorities, who lost radar <COREF ID="X76">contact</COREF> at 10 am, said <COREF ID="29" REF="X76">the
 pilots</COREF> had been found at the site ``and appeared dead''.
 
 
@@ -56,7 +56,7 @@ time</COREF>. Rescuers also reported poor visibility.
 
 
 <COREF ID="35" REF="25">China</COREF>, as <COREF ID="36" REF="35">the country of registration</COREF>, would investigate <COREF ID="37" REF="36">the
-incident</COREF>, the <COREF ID="38" REF="-70">Civil Aviation Department</COREF> said.
+incident</COREF>, the <COREF ID="38" REF="X70">Civil Aviation Department</COREF> said.
 
 
 

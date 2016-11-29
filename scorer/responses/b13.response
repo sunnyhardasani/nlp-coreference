@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
  880111-0081
- Federal Mediators Expected to Release <COREF ID="-4">Pan</COREF> Am, Teamsters From <COREF ID="-6">Contract</COREF> <COREF ID="-7">Talks</COREF>
+ Federal Mediators Expected to Release <COREF ID="X4" REF="1">Pan</COREF> Am, Teamsters From <COREF ID="X6" REF="77">Contract</COREF> <COREF ID="X7" REF="19">Talks</COREF>
  Teri Agins (WSJ Staff)
 
  GOVMT PN LABOR
@@ -8,56 +8,56 @@
  NEW YORK
 
 
- The National Mediation <COREF ID="-20">Board</COREF> is expected to release <COREF ID="1" REF="-4">Pan Am Corp.</COREF> and <COREF ID="2">its Teamsters union</COREF> from <COREF ID="77" REF="-6">their long-stalled contract negotiations</COREF>, throwing into question a wage-concession <COREF ID="-22">agreement</COREF>.
+ The National Mediation <COREF ID="X20" REF="11">Board</COREF> is expected to release <COREF ID="1" REF="X4">Pan Am Corp.</COREF> and <COREF ID="2" REF="31">its Teamsters union</COREF> from <COREF ID="77" REF="13">their long-stalled contract negotiations</COREF>, throwing into question a wage-concession <COREF ID="X22" REF="29">agreement</COREF>.
 
 
- The release means both sides will be asked to submit to <COREF ID="-25">arbitration</COREF>; if one of the <COREF ID="-26">parties</COREF> refuses, as is expected, a 30-day cooling off period will go into effect, after which <COREF ID="6" REF="2">the Teamsters</COREF> are free to strike.
+ The release means both sides will be asked to submit to <COREF ID="X25" REF="16">arbitration</COREF>; if one of the <COREF ID="X26" REF="12">parties</COREF> refuses, as is expected, a 30-day cooling off period will go into effect, after which <COREF ID="6" REF="31">the Teamsters</COREF> are free to strike.
 
 
- <COREF ID="-31">William Genoese</COREF>, <COREF ID="7" REF="-31">head of the airline division of the International Brotherhood of Teamsters</COREF>, said <COREF ID="9" REF="-31">he</COREF> was "shocked and surprised" when <COREF ID="10" REF="9">he</COREF> heard late Friday from negotiator Walter Wallace of <COREF ID="11" REF="-20">the board</COREF>'s plans to release <COREF ID="12" REF="-26">the parties</COREF> from <COREF ID="13" REF="77">negotiations</COREF>.
+ <COREF ID="X31" REF="48">William Genoese</COREF>, <COREF ID="7" REF="X31">head of the airline division of the International Brotherhood of Teamsters</COREF>, said <COREF ID="9" REF="X31">he</COREF> was "shocked and surprised" when <COREF ID="10" REF="9">he</COREF> heard late Friday from negotiator Walter Wallace of <COREF ID="11" REF="22">the board</COREF>'s plans to release <COREF ID="12" REF="X26">the parties</COREF> from <COREF ID="13" REF="77">negotiations</COREF>.
 
 
- At noon EST <COREF ID="-39">today</COREF>, <COREF ID="14" REF="-39">the mediation board</COREF> is expected to ask <COREF ID="15" REF="12">both parties</COREF> to submit to <COREF ID="16" REF="-25">arbitration</COREF>.
+ At noon EST <COREF ID="X39" REF="81">today</COREF>, <COREF ID="14" REF="X39">the mediation board</COREF> is expected to ask <COREF ID="15" REF="12">both parties</COREF> to submit to <COREF ID="16" REF="71">arbitration</COREF>.
 
 
- As previously reported, <COREF ID="17" REF="1">Pan Am</COREF> had asked <COREF ID="18" REF="14">the National Mediation Board</COREF> to declare an impasse in <COREF ID="19" REF="-7">the talks</COREF> in late December.
- But <COREF ID="20" REF="17">Pan Am</COREF>, sensing progress in <COREF ID="21" REF="2">its</COREF> recent <COREF ID="-45" REF="13">negotiations</COREF> with the <COREF ID="-46">unions</COREF>, asked <COREF ID="22" REF="-46">the board</COREF> to delay acting on <COREF ID="23">the company</COREF>'s request, a source close to <COREF ID="24" REF="22">the board</COREF> said.
+ As previously reported, <COREF ID="17" REF="1">Pan Am</COREF> had asked <COREF ID="18" REF="14">the National Mediation Board</COREF> to declare an impasse in <COREF ID="19" REF="X7">the talks</COREF> in late December.
+ But <COREF ID="20" REF="17">Pan Am</COREF>, sensing progress in <COREF ID="21" REF="2">its</COREF> recent <COREF ID="X45" REF="13">negotiations</COREF> with the <COREF ID="X46">unions</COREF>, asked <COREF ID="22" REF="X46">the board</COREF> to delay acting on <COREF ID="23" REF="52">the company</COREF>'s request, a source close to <COREF ID="24" REF="22">the board</COREF> said.
 
 
- Also as previously reported, <COREF ID="25" REF="20">Pan Am</COREF> said last week <COREF ID="26">it</COREF> would make "changes in senior <COREF ID="-54">management</COREF>" in exchange for labor-cost concessions of $180 million a year for three years from the unions of its <COREF ID="-60" REF="25">Pan</COREF> American World Airways unit.
- <COREF ID="29" REF="-22">The agreement</COREF> was reached by a <COREF ID="-65">coalition</COREF> of four of <COREF ID="-66" REF="-60">Pan</COREF> <COREF ID="-67" REF="25">Am</COREF>'s five unions; <COREF ID="31" REF="7">the Teamsters union</COREF> was part of <COREF ID="32" REF="-65">that coalition</COREF> -- but has made it clear recently <COREF ID="33" REF="26">it</COREF> did not necessarily go along with <COREF ID="34" REF="29">the agreement</COREF>.
+ Also as previously reported, <COREF ID="25" REF="20">Pan Am</COREF> said last week <COREF ID="26" REF="33">it</COREF> would make "changes in senior <COREF ID="X54" REF="37">management</COREF>" in exchange for labor-cost concessions of $180 million a year for three years from the unions of its <COREF ID="X60" REF="25">Pan</COREF> American World Airways unit.
+ <COREF ID="29" REF="34">The agreement</COREF> was reached by a <COREF ID="X65" REF="32">coalition</COREF> of four of <COREF ID="X66" REF="25">Pan</COREF> <COREF ID="X67" REF="25">Am</COREF>'s five unions; <COREF ID="31" REF="2">the Teamsters union</COREF> was part of <COREF ID="32" REF="X65">that coalition</COREF> -- but has made it clear recently <COREF ID="33" REF="26">it</COREF> did not necessarily go along with <COREF ID="34" REF="29">the agreement</COREF>.
 
 
- For the past <COREF ID="-71">year</COREF>, <COREF ID="35" REF="-71">the coalition</COREF> has been trying to force a restructuring of <COREF ID="36" REF="25">Pan Am</COREF> and <COREF ID="37" REF="-54">a change in top management</COREF>.
- Negotiations have been held with <COREF ID="-74">William T. Coleman</COREF>, <COREF ID="39" REF="-74">a Pan Am director and Washington attorney</COREF>.
+ For the past <COREF ID="X71">year</COREF>, <COREF ID="35" REF="X71">the coalition</COREF> has been trying to force a restructuring of <COREF ID="36" REF="25">Pan Am</COREF> and <COREF ID="37" REF="X54">a change in top management</COREF>.
+ Negotiations have been held with <COREF ID="X74" REF="X84">William T. Coleman</COREF>, <COREF ID="39" REF="X74">a Pan Am director and Washington attorney</COREF>.
 
 
- <COREF ID="42" REF="39">Pan Am</COREF>'s directors are scheduled to meet <COREF ID="-78">tomorrow</COREF>, <COREF ID="43" REF="-78">the deadline set for the union's wage-concession agreement</COREF>.
- <COREF ID="-80" REF="33">It</COREF> wasn't immediately clear if <COREF ID="46" REF="31">the Teamsters</COREF>'s release might jeopardize <COREF ID="47" REF="43">that agreement</COREF>.
+ <COREF ID="42" REF="39">Pan Am</COREF>'s directors are scheduled to meet <COREF ID="X78">tomorrow</COREF>, <COREF ID="43" REF="X78">the deadline set for the union's wage-concession agreement</COREF>.
+ <COREF ID="X80" REF="33">It</COREF> wasn't immediately clear if <COREF ID="46" REF="31">the Teamsters</COREF>'s release might jeopardize <COREF ID="47" REF="43">that agreement</COREF>.
 
 
- Last Saturday, <COREF ID="48" REF="-31">Mr. Genoese</COREF> said <COREF ID="49" REF="48">he</COREF> sent a telegram to <COREF ID="-84" REF="-74">Mr. Coleman</COREF> to announce that <COREF ID="51" REF="46">the Teamsters</COREF> plan to end <COREF ID="52" REF="23">their talks with the company</COREF>.
- <COREF ID="55" REF="48">Mr. Genoese</COREF> said <COREF ID="56" REF="55">he</COREF> had a "cordial" initial <COREF ID="-85">meeting</COREF> with Mr. <COREF ID="-87" REF="-84">Coleman</COREF> last Thursday, but made no comm<COREF ID="-92" REF="-80">it</COREF>ment to provide concessions.
+ Last Saturday, <COREF ID="48" REF="55">Mr. Genoese</COREF> said <COREF ID="49" REF="48">he</COREF> sent a telegram to <COREF ID="X84" REF="59">Mr. Coleman</COREF> to announce that <COREF ID="51" REF="46">the Teamsters</COREF> plan to end <COREF ID="52" REF="23">their talks with the company</COREF>.
+ <COREF ID="55" REF="48">Mr. Genoese</COREF> said <COREF ID="56" REF="55">he</COREF> had a "cordial" initial <COREF ID="X85" REF="58">meeting</COREF> with Mr. <COREF ID="X87" REF="59">Coleman</COREF> last Thursday, but made no comm<COREF ID="X92" REF="33">it</COREF>ment to provide concessions.
 
 
- "<COREF ID="58" REF="-85">That meeting</COREF> made it clear to <COREF ID="59" REF="-84">Mr. Coleman</COREF> that <COREF ID="60" REF="51">the Teamsters</COREF> and <COREF ID="61" REF="42">Pan Am</COREF> are still deadlocked," one source close to <COREF ID="62" REF="13">the negotiations</COREF> said.
+ "<COREF ID="58" REF="X85">That meeting</COREF> made it clear to <COREF ID="59" REF="X87">Mr. Coleman</COREF> that <COREF ID="60" REF="51">the Teamsters</COREF> and <COREF ID="61" REF="42">Pan Am</COREF> are still deadlocked," one source close to <COREF ID="62" REF="76">the negotiations</COREF> said.
 
 
- "As far as <COREF ID="63">we</COREF>'re concerned, <COREF ID="64" REF="52">the company</COREF> triggered this," <COREF ID="65" REF="55">Mr. Genoese</COREF> said.
+ "As far as <COREF ID="63" REF="66">we</COREF>'re concerned, <COREF ID="64" REF="52">the company</COREF> triggered this," <COREF ID="65" REF="55">Mr. Genoese</COREF> said.
  "<COREF ID="66" REF="63">We</COREF>'re not negotiating any more with <COREF ID="67" REF="61">Pan Am</COREF>.
  <COREF ID="68" REF="66">We</COREF>'re in strike procedure now."
- <COREF ID="69" REF="43">The union</COREF> has already indicated <COREF ID="70" REF="-92">it</COREF> would not be willing to submit to <COREF ID="71" REF="16">arbitration</COREF>.
+ <COREF ID="69" REF="43">The union</COREF> has already indicated <COREF ID="70" REF="33">it</COREF> would not be willing to submit to <COREF ID="71" REF="16">arbitration</COREF>.
 
 
  A <COREF ID="72" REF="67">Pan Am</COREF> spokesman declined to comment.
 
 
- <COREF ID="73" REF="60">The Teamsters</COREF>, which represent about 4,500 ticket agents, reservation agents and clerical workers, have been working under a <COREF ID="-104" REF="77">contract</COREF> that was negotiated in 1978 and scheduled to be renegotiated in 1981.
+ <COREF ID="73" REF="60">The Teamsters</COREF>, which represent about 4,500 ticket agents, reservation agents and clerical workers, have been working under a <COREF ID="X104" REF="77">contract</COREF> that was negotiated in 1978 and scheduled to be renegotiated in 1981.
  <COREF ID="74" REF="24">The federal mediation board</COREF> has rejected several earlier requests by <COREF ID="75" REF="69">the union</COREF> to declare <COREF ID="76" REF="62">the negotiations</COREF> deadlocked.
 
 
- Meanwhile, <COREF ID="-106" REF="72">Pan</COREF> <COREF ID="-107" REF="72">Am</COREF>'s pilots <COREF ID="-109" REF="75">union</COREF> said <COREF ID="78" REF="70">it</COREF> is preparing to sign an <COREF ID="-110" REF="47">agreement</COREF> to deliver concessions to the <COREF ID="-112" REF="64">company</COREF> <COREF ID="81" REF="-39">today</COREF>.
- A pilot's <COREF ID="-114" REF="-109">union</COREF> spokesman said the leaders plan to take <COREF ID="83" REF="34">the agreement</COREF> to <COREF ID="84" REF="52">their</COREF> membership for ratification.
+ Meanwhile, <COREF ID="X106" REF="72">Pan</COREF> <COREF ID="X107" REF="72">Am</COREF>'s pilots <COREF ID="X109" REF="75">union</COREF> said <COREF ID="78" REF="70">it</COREF> is preparing to sign an <COREF ID="X110" REF="47">agreement</COREF> to deliver concessions to the <COREF ID="X112" REF="64">company</COREF> <COREF ID="81" REF="X39">today</COREF>.
+ A pilot's <COREF ID="X114" REF="75">union</COREF> spokesman said the leaders plan to take <COREF ID="83" REF="34">the agreement</COREF> to <COREF ID="84" REF="52">their</COREF> membership for ratification.
  <COREF ID="85" REF="65">He</COREF> said <COREF ID="86" REF="85">he</COREF> didn't know how <COREF ID="87" REF="73">the Teamsters</COREF> action would affect <COREF ID="88" REF="83">the union's agreement with the company</COREF>.
 
 

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
  870622-0030. 
- <COREF ID="-1">NBC</COREF> to Put <COREF ID="-2">Contract</COREF> <COREF ID="-3">Offer</COREF>
-Into Effect; <COREF ID="-6">Strike</COREF> Possible
+ <COREF ID="X1" REF="16">NBC</COREF> to Put <COREF ID="X2" REF="4">Contract</COREF> <COREF ID="X3" REF="4">Offer</COREF>
+Into Effect; <COREF ID="X6" REF="15">Strike</COREF> Possible
  06/22/87
  WALL STREET JOURNAL (J)
  GE LABOR 
  NEW YORK  
 
 
- <COREF ID="1">National Broadcasting Co.</COREF> told its technicians and news employees <COREF ID="-18">union</COREF> that <COREF ID="3">the network</COREF> will put into effect next Monday <COREF ID="4" REF="-3">its latest contract offer</COREF>. 
- <COREF ID="6" REF="-18">Union</COREF> leaders said the move probably means the union's 2,800 <COREF ID="-26" REF="-1">NBC</COREF> members -- <COREF ID="9">about a third of the company's work force</COREF> -- will <COREF ID="-29" REF="-6">strike</COREF>. 
+ <COREF ID="1" REF="X47">National Broadcasting Co.</COREF> told its technicians and news employees <COREF ID="X18" REF="6">union</COREF> that <COREF ID="3">the network</COREF> will put into effect next Monday <COREF ID="4" REF="X3">its latest contract offer</COREF>. 
+ <COREF ID="6" REF="17">Union</COREF> leaders said the move probably means the union's 2,800 <COREF ID="X26" REF="16">NBC</COREF> members -- <COREF ID="9">about a third of the company's work force</COREF> -- will <COREF ID="X29" REF="15">strike</COREF>. 
 
 
- "It looks like <COREF ID="11">we</COREF>'re going to be there on the street, unless there is a miracle," said <COREF ID="-35">John Krieger</COREF>, <COREF ID="12" REF="-35">a spokesman</COREF> for the <COREF ID="-37" REF="1">National</COREF> Association of Broadcast Employees and Technicians, which last struck <COREF ID="-43" REF="-26">NBC</COREF>, a General Electric <COREF ID="-47" REF="1">Co.</COREF> unit, in 1976. 
+ "It looks like <COREF ID="11">we</COREF>'re going to be there on the street, unless there is a miracle," said <COREF ID="X35">John Krieger</COREF>, <COREF ID="12" REF="X35">a spokesman</COREF> for the <COREF ID="X37" REF="1">National</COREF> Association of Broadcast Employees and Technicians, which last struck <COREF ID="X43" REF="16">NBC</COREF>, a General Electric <COREF ID="X47" REF="1">Co.</COREF> unit, in 1976. 
 
 
- The possibility of <COREF ID="15" REF="-29">a strike</COREF> comes amid growing signs of a strike among members of the Directors Guild of America, whose talks with the three major networks on a <COREF ID="-60" REF="4">contract</COREF> to replace an agreement expiring June 30 appear to be stalling. 
+ The possibility of <COREF ID="15" REF="X29">a strike</COREF> comes amid growing signs of a strike among members of the Directors Guild of America, whose talks with the three major networks on a <COREF ID="X60" REF="4">contract</COREF> to replace an agreement expiring June 30 appear to be stalling. 
 
 
- On Tuesday, a federal mediator brought <COREF ID="16" REF="-43">NBC</COREF> and <COREF ID="17" REF="6">the union</COREF> together for the first time since <COREF ID="18" REF="17">the union</COREF>'s four-year <COREF ID="-67" REF="-60">contract</COREF> expired March 31. 
+ On Tuesday, a federal mediator brought <COREF ID="16" REF="19">NBC</COREF> and <COREF ID="17" REF="18">the union</COREF> together for the first time since <COREF ID="18" REF="17">the union</COREF>'s four-year <COREF ID="X67" REF="4">contract</COREF> expired March 31. 
  Both sides were deadlocked. 
- Areas of dispute include use of temporary workers at <COREF ID="19" REF="16">NBC</COREF>, the length of the new <COREF ID="-76" REF="-67">contract</COREF> and use of non-network news services. 
+ Areas of dispute include use of temporary workers at <COREF ID="19" REF="16">NBC</COREF>, the length of the new <COREF ID="X76" REF="4">contract</COREF> and use of non-network news services. 
 
 
 </TXT>
