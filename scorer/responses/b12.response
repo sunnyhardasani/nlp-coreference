@@ -5,10 +5,10 @@
  11/25/87
  WALL STREET JOURNAL (J)
  CQ T
-TELECOMMUNICATIONS, BROADCASTING, <COREF ID="X16" REF="8">TELEPHONE</COREF>, TELEGRAPH (TEL) 
+TELECOMMUNICATIONS, BROADCASTING, <COREF ID="X16" REF="8">TELEPHONE</COREF>, <COREF ID="X19">TEL</COREF>EGRAPH (TEL) 
 
 
- <COREF ID="1" REF="X5">Communications Satellite Corp., Washington</COREF>, said <COREF ID="3">it</COREF> submitted to the Federal Communications Commission a proposal to reduce by 50% rates for certain international telecommunication services. 
+ <COREF ID="1" REF="X5">Communications Satellite Corp., Washington</COREF>, said <COREF ID="3" REF="X19">it</COREF> submitted to the Federal Communications Commission a proposal to reduce by 50% rates for certain international telecommunication services. 
 
 
  In exchange for the <COREF ID="X30" REF="12">reductions</COREF>, customers such as American <COREF ID="X34" REF="8">Telephone</COREF> @amp; Telegraph Co. would have to commit themselves to using one of two new types of digital <COREF ID="X40" REF="1">satellite</COREF> services for a 10-year period, <COREF ID="4" REF="5">Comsat</COREF> said. 

@@ -1,5 +1,8 @@
 import edu.stanford.nlp.coref.data.Dictionaries;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by sunny on 11/4/16.
  */
@@ -13,6 +16,8 @@ public class NPObj {
     boolean isPerson = false;
     Dictionaries.Gender gender = Dictionaries.Gender.UNKNOWN;
     FeaturesObj featuresObj;
+    ENUM_ANIM_TYPE anim_type = ENUM_ANIM_TYPE.UNKNOWN;
+    List<String> abbreviationList = new ArrayList<String>();
 
 
     public NPObj(String strNP, String ID, String REF, int pos, boolean isPerson){
@@ -21,6 +26,8 @@ public class NPObj {
         this.REF = REF;
         this.pos = pos;
         this.isPerson = isPerson;
+
+        this.abbreviationList = Rules.getInstance().getAbbreviation(strNP);
     }
 
     public void setREF(String REF) {
@@ -93,5 +100,14 @@ public class NPObj {
 
     public void setPerson(boolean person) {
         isPerson = person;
+    }
+
+
+    public ENUM_ANIM_TYPE getAnim_type() {
+        return anim_type;
+    }
+
+    public void setAnim_type(ENUM_ANIM_TYPE anim_type) {
+        this.anim_type = anim_type;
     }
 }

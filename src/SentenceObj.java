@@ -146,16 +146,32 @@ public class SentenceObj {
 
                         //parse result of all the sentence and
                         //add to the nplist of object
+                        //List<String> results = sent.algorithms().keyphrases();//getNounPhrases(sent.parse(), sentence);
                         List<String> results = getNounPhrases(sent.parse(), sentence);
                         for (String np : results) {
 
+
                             for (String npConj : breakAtConjunction(np)) {
+                                System.out.println("np = " + npConj);
 
                                 String ID = utilitySingletonObj.getGenerateNewKey();
                                 utilitySingletonObj.updateMap(ID, npConj, this.startPosIndex, false);
                                 this.startPosIndex++;
                             }
                         }
+
+//                        //parse result of all the sentence and
+//                        //add to the nplist of object
+//                        List<String> results = getNounPhrases(sent.parse(), sentence);
+//                        for (String np : results) {
+//
+//                            for (String npConj : breakAtConjunction(np)) {
+//
+//                                String ID = utilitySingletonObj.getGenerateNewKey();
+//                                utilitySingletonObj.updateMap(ID, npConj, this.startPosIndex, false);
+//                                this.startPosIndex++;
+//                            }
+//                        }
 
                         if (results.size() == 0) {
                             commaCount = 0;

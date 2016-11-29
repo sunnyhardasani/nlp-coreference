@@ -14,7 +14,7 @@ c.1996 Bloomberg Business News
 
 
 Washington, <COREF ID="6">Feb. 22</COREF> (<COREF ID="7">Bloomberg</COREF>) -- The <COREF ID="X28" REF="15">Navy</COREF> ordered <COREF ID="8" REF="X9">its Northrop
-Grumman Corp. F-14s</COREF> out of the skies for three days while <COREF ID="11" REF="38">it</COREF>
+Grumman Corp. F-14s</COREF> out of the skies for three <COREF ID="X30">days</COREF> while <COREF ID="11" REF="X30">it</COREF>
 investigates <COREF ID="12" REF="X135">three recent F-14 crashes</COREF>.
 
 
@@ -25,7 +25,7 @@ the <COREF ID="15" REF="19">Navy</COREF> said.
 
 
 Sunday, an F-14D crashed into the Pacific Ocean off southern
-California, killing <COREF ID="16" REF="8">its</COREF> two crew members. And on <COREF ID="X54" REF="8">Jan.</COREF> 29, an F-14A
+California, <COREF ID="X51">killing</COREF> <COREF ID="16" REF="X51">its</COREF> two crew members. And on <COREF ID="X54" REF="8">Jan.</COREF> 29, an F-14A
 crashed into houses in Nashville, Tennessee, after takeoff, killing
 the two crew members and three people on the ground.
 
@@ -33,13 +33,13 @@ the two crew members and three people on the ground.
 The cause of <COREF ID="17" REF="14">today</COREF>'s crash is undetermined.
 
 
-``In light of <COREF ID="18" REF="12">the recent mishaps involving F-14As and Ds</COREF>, the
+``In light of <COREF ID="18" REF="25">the recent mishaps involving F-14As and Ds</COREF>, the
 <COREF ID="19" REF="15">Navy</COREF> has ordered a 72-hour safety <COREF ID="X74" REF="29">standdown</COREF> for <COREF ID="21" REF="X38">all F-14
 aircraft</COREF>,'' said Lt. <COREF ID="X76" REF="32">Greg Geisen</COREF>, <COREF ID="22" REF="X76">a Navy spokesman</COREF> at the Pentagon.
 
 
 ``Although different models of the <COREF ID="X80" REF="21">F-14</COREF> have been involved in
-<COREF ID="25" REF="18">these mishaps</COREF>, <COREF ID="X82" REF="11">it</COREF> is prudent to temporarily suspend routine flight
+<COREF ID="25" REF="18">these mishaps</COREF>, <COREF ID="X82" REF="25">it</COREF> is prudent to temporarily suspend routine flight
 operations for <COREF ID="26" REF="8">all F-14s</COREF> in order to assess the available
 information and determine if procedural or other modifications to
 <COREF ID="27" REF="21">F-14</COREF> operations are warranted,<COREF ID="X90" REF="35">''</COREF> the <COREF ID="28" REF="22">Navy</COREF> said.
@@ -51,7 +51,7 @@ States from the <COREF ID="31" REF="X35">Persian Gulf</COREF> and Bosnia, <COREF
 will be permitted to fly to Oceana Naval Air Station, Virginia, as the ship nears port.
 
 
-<COREF ID="35" REF="X90">The F14 ``Tomcat''</COREF> is <COREF ID="36" REF="21">the Navy's first-line fighter aircraft</COREF>. <COREF ID="38" REF="11">It</COREF>
+<COREF ID="35" REF="X90">The F14 ``Tomcat''</COREF> is <COREF ID="36" REF="21">the Navy's first-line fighter aircraft</COREF>. <COREF ID="38" REF="36">It</COREF>
 has two-engines and is capable of action in all weather, day or night. The <COREF ID="39" REF="36">Navy</COREF> has <COREF ID="40" REF="X93">about 330 F-14s</COREF> in three models, As, Bs and Ds.
 
 

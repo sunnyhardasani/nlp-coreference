@@ -11,6 +11,7 @@ import java.lang.String;
 import java.util.List;
 
 import edu.stanford.nlp.coref.data.Dictionaries;
+import edu.stanford.nlp.ie.machinereading.structure.Span;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.w3c.dom.Document;
@@ -125,7 +126,11 @@ public class FileObj {
             else{
                 npObj.setGender(Dictionaries.Gender.UNKNOWN);
             }
+
+            npObj.setAnim_type(npObj.getFeaturesObj().getRuleNine_animacy());
         }
+
+        //////////////////////////////////// abbreviation /////////////////////////////////////////////////////
 
         //////////////////////////////////// comma logic goes over here ////////////////////////////////////////
 
@@ -167,7 +172,9 @@ public class FileObj {
                     List<String> allWords = np3.getFeaturesObj().getRuleOne_allWords();
                     for (String word : allWords) {
                         if (isArticle(word)) {
-                            np3.setREF(np1.getID());
+                            if(np3.getREF().equals("")) {
+                                np3.setREF(np1.getID());
+                            }
                             break;
                         }
                     }
@@ -176,7 +183,9 @@ public class FileObj {
         }
 
 
+
         ///////////////////////////////////Pronoun Resolution///////////////////////////////////////////////////
+        //////////////////////  he his himself him she her herself hers ////////////////////////////////////////
 
         for(int n = this.npObjList.size()-1; n >= 0 ; n--){
             NPObj nplast = this.npObjList.get(n);
@@ -220,17 +229,107 @@ public class FileObj {
                     }
                     else if(npFromN.isPerson){
                         if(npFromN.getGender() == npLastGender){
-                            nplast.setREF(npFromN.getID());
+                            if(nplast.getREF().equals("")) {
+                                nplast.setREF(npFromN.getID());
+                            }
                             break;
                         }
                         else if(npFromN.getGender() == Dictionaries.Gender.UNKNOWN){
-                            nplast.setREF(npFromN.getID());
+                            if(nplast.getREF().equals("")) {
+                                nplast.setREF(npFromN.getID());
+                            }
                             break;
                         }
                     }
                 }
             }
         }
+
+
+        ///////////////////////////////////Pronoun Resolution///////////////////////////////////////////
+        // they them
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        for(int n = this.npObjList.size()-1; n >= 0 ; n--){
+
+            NPObj nplast = this.npObjList.get(n);
+            if(nplast.getStrNP().equals("them") || nplast.getStrNP().equals("they") || nplast.getStrNP().equals("their")){
+
+                for(int fromN = n-1; fromN >= 0 ;fromN--){
+
+                    NPObj npFromN = this.npObjList.get(fromN);
+                    if(npFromN.getStrNP().equals("them")
+                            || npFromN.getStrNP().equals("they")
+                            || npFromN.getStrNP().equals("their")
+                            || ( ENUM_NUMBER_TYPE.PLURAL == npFromN.getFeaturesObj().getRuleFive_number()
+                                    && ENUM_ANIM_TYPE.ANIMATE == npFromN.getAnim_type()
+                                    && ENUM_ANIM_TYPE.INANIMATE == npFromN.getAnim_type())){
+
+                        if(nplast.getREF().equals("")) {
+                            nplast.setREF(npFromN.getID());
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        ///////////////////////////////////Pronoun Resolution///////////////////////////////////////////
+        // we our ours
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        for(int n = this.npObjList.size()-1; n >= 0 ; n--){
+
+            NPObj nplast = this.npObjList.get(n);
+            if( nplast.getStrNP().equals("we")
+                    || nplast.getStrNP().equals("our")
+                    || nplast.getStrNP().equals("ours") ){
+
+                for(int fromN = n-1; fromN >= 0 ;fromN--){
+
+                    NPObj npFromN = this.npObjList.get(fromN);
+                    if(npFromN.getStrNP().equals("we")
+                            || npFromN.getStrNP().equals("our")
+                            || npFromN.getStrNP().equals("ours")
+                            || ( ENUM_NUMBER_TYPE.PLURAL == npFromN.getFeaturesObj().getRuleFive_number()
+                                    && ENUM_ANIM_TYPE.ANIMATE == npFromN.getAnim_type())){
+
+                        if(nplast.getREF().equals("")) {
+                            nplast.setREF(npFromN.getID());
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        ///////////////////////////////////Pronoun Resolution///////////////////////////////////////////
+        // it its
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        for(int n = this.npObjList.size()-1; n >= 0 ; n--){
+
+            NPObj nplast = this.npObjList.get(n);
+            if( nplast.getStrNP().equals("it")
+                    || nplast.getStrNP().equals("its")){
+
+                for(int fromN = n-1; fromN >= 0 ;fromN--){
+
+                    NPObj npFromN = this.npObjList.get(fromN);
+                    if(npFromN.getStrNP().equals("it")
+                            || npFromN.getStrNP().equals("its")
+                            || ENUM_ANIM_TYPE.INANIMATE == npFromN.getAnim_type()){
+
+                        if(nplast.getREF().equals("")) {
+                            nplast.setREF(npFromN.getID());
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //this will print the csv files
@@ -244,6 +343,7 @@ public class FileObj {
             System.out.print("; " + np1.getREF());
             System.out.print("; " + np1.isPerson());
             System.out.print("; " + np1.getGender());
+            System.out.print("; " + np1.getAnim_type());
             System.out.println("");
         }
 

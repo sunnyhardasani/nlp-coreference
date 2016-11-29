@@ -63,5 +63,16 @@
         <jarDirectory url="jar://$USER_HOME$/Downloads/commons-lang3-3.1.jar.zip!/" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/edu.mit.jwi_2.4.0_jdk.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/Downloads/edu.mit.jwi_2.4.0_jdk.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

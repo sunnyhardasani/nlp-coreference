@@ -7,17 +7,17 @@ import java.util.*;
 public class FeaturesObj {
 
 
-    private List<String>    ruleOne_allWords;
-    private String          ruleTwo_PronounType;
-    private String          ruleThree_article;
-    private String          ruleFour_appositive;
-    private String          ruleFive_number;
-    private boolean         ruleSix_properName;
-    private String          ruleSeven_headNoun;
-    private String          ruleEight_gender;
-    private String          ruleNine_animacy;
-    private String          ruleTen_semanticClass;
-    private int             ruleEleven_position;
+    private List<String>        ruleOne_allWords;
+    private String              ruleTwo_PronounType;
+    private String              ruleThree_article;
+    private String              ruleFour_appositive;
+    private ENUM_NUMBER_TYPE    ruleFive_number;
+    private boolean             ruleSix_properName;
+    private String              ruleSeven_headNoun;
+    private String              ruleEight_gender;
+    private ENUM_ANIM_TYPE      ruleNine_animacy;
+    private String              ruleTen_semanticClass;
+    private int                 ruleEleven_position;
 
 
     //constructor all the feature and set
@@ -55,7 +55,7 @@ public class FeaturesObj {
 
         //rule 7:
         //SEMANTIC CLASS
-        this.ruleSeven_headNoun =  rules.ruleSevenHeadNoun(this.ruleOne_allWords);
+        this.ruleSeven_headNoun =  rules.ruleSevenHeadNoun(npObj.getStrNP());
 
         //rule 8:
         //GENDER
@@ -63,7 +63,7 @@ public class FeaturesObj {
 
         //rule 9:
         //ANIMACY
-        this.ruleNine_animacy = rules.ruleNineAnimacy(this.ruleOne_allWords, npObj);
+        this.ruleNine_animacy = rules.ruleNineAnimacy(this.ruleSeven_headNoun);
 
         //rule 10:
         //SEMANTIC CLASS
@@ -95,8 +95,8 @@ public class FeaturesObj {
         return ruleFour_appositive.trim().toLowerCase();
     }
 
-    public String getRuleFive_number() {
-        return ruleFive_number.trim().toLowerCase();
+    public ENUM_NUMBER_TYPE getRuleFive_number() {
+        return ruleFive_number;
     }
 
     public boolean isRuleSix_properName() {
@@ -111,7 +111,7 @@ public class FeaturesObj {
         return ruleEight_gender;
     }
 
-    public String getRuleNine_animacy() {
+    public ENUM_ANIM_TYPE getRuleNine_animacy() {
         return ruleNine_animacy;
     }
 

@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.util.*;
 
 import edu.stanford.nlp.coref.data.Dictionaries;
+import edu.stanford.nlp.ie.machinereading.structure.Span;
 import edu.stanford.nlp.simple.*;
 
 public class Rules {
@@ -22,6 +23,8 @@ public class Rules {
     List<String> femalesPronounList = Arrays.asList("she", "her", "herself", "hers");
     List<String> maleNamesList = new ArrayList<String>();
     List<String> femaleNamesList = new ArrayList<String>();
+    List<String> animateList = new ArrayList<String>();
+    List<String> inanimateList = new ArrayList<String>();
 
     private static Rules ourInstance = new Rules();
 
@@ -55,6 +58,28 @@ public class Rules {
             }
         } catch (Exception e) {
             System.out.println("ERROR: FEMALE FILE ERROR");
+        }
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/data/animate.unigrams.txt"));
+            String line;
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                animateList.add(line.toLowerCase());
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: ANIMATE FILE ERROR");
+        }
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/data/inanimate.unigrams.txt"));
+            String line;
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                inanimateList.add(line.toLowerCase());
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: INANIMATE FILE ERROR");
         }
     }
 
@@ -142,14 +167,14 @@ public class Rules {
      * @param allWords
      * @return
      */
-    String ruleFiveGetNumber(List<String> allWords) {
-        String number = "SING";
+    ENUM_NUMBER_TYPE ruleFiveGetNumber(List<String> allWords) {
+        ENUM_NUMBER_TYPE number = ENUM_NUMBER_TYPE.SINGULAR;
 
         int wordsSize = allWords.size();
         if (wordsSize > 0) {
             String lastWord = allWords.get(wordsSize - 1).toLowerCase();
             if (lastWord.endsWith("s")) {
-                number = "PLURAL";
+                number = ENUM_NUMBER_TYPE.PLURAL;
                 return number;
             }
         }
@@ -157,7 +182,7 @@ public class Rules {
         //two way to check this case
         for (String pronoun : pluralPronoun) {
             if (allWords.contains(pronoun)) {
-                number = "PLURAL";
+                number = ENUM_NUMBER_TYPE.PLURAL;
                 break;
             }
         }
@@ -179,12 +204,26 @@ public class Rules {
         return false;
     }
 
-    String ruleSevenHeadNoun(List<String> words) {
-        int wordsSize = words.size();
-        if (wordsSize > 0) {
-            return words.get(wordsSize - 1);
+    String ruleSevenHeadNoun(String sentence) {
+
+        Sentence nlpSentence = new Sentence(sentence);
+        int headIndex = nlpSentence.algorithms().headOfSpan(new Span(0,nlpSentence.length()));
+        String head = nlpSentence.words().get(headIndex);
+
+        if(head.length() > 0) {
+            return head;
         }
-        return "";
+        else{
+            return "";
+        }
+//        Sentence sent = new Sentence("your text should go here");
+//        sent.algorithms()..headOfSpan(new Span(0, 2));  // Should return 1
+//
+//        int wordsSize = words.size();
+//        if (wordsSize > 0) {
+//            return words.get(wordsSize - 1);
+//        }
+//        return "";
     }
 
     //todo imporove this feature
@@ -211,20 +250,23 @@ public class Rules {
     /**
      * Nin Animacy
      *
-     * @param words
-     * @param npObj
+     * @param headNoun
      * @return
      */
-    String ruleNineAnimacy(List<String> words, NPObj npObj) {
-        String gender = ruleEightGender(words);
-        boolean isProperName = ruleSixGetProperNames(npObj);
-        if (isProperName) {
-            return "ANIM";
-        } else if (gender.equals("MAS") || gender.equals("FEM")) {
-            return "ANIM";
+    ENUM_ANIM_TYPE ruleNineAnimacy(String headNoun) {
+
+
+        if(isItemInList(animateList, headNoun)){
+            return ENUM_ANIM_TYPE.ANIMATE;
         }
-        return "INANIM";
+        else if(isItemInList(inanimateList, headNoun)){
+            return ENUM_ANIM_TYPE.INANIMATE;
+        }
+
+
+        return ENUM_ANIM_TYPE.UNKNOWN;
     }
+
 
 
 
@@ -232,6 +274,8 @@ public class Rules {
         Sentence sent = new Sentence(phrase);
         List<String> tags = sent.nerTags();
         List<String> finaltag = new ArrayList();
+
+        Pair<String,Dictionaries.Person> check  = new Pair<String,Dictionaries.Person> ("sunny", Dictionaries.Person.IT);
 
         boolean istagpresent = false;
         boolean issomeothertagpresent = false;
@@ -282,20 +326,20 @@ public class Rules {
      * @param animacy
      * @return
      */
-    String ruleTenSemanticClass(String headNoun, boolean isPerson, String gender, String animacy) {
-        if (isPerson) {
-            return "HUMAN";
-        } else if (animacy.equals("ANIM")) {
-            return "HUMAN";
-        }
-
-        Sentence sent = new Sentence(headNoun);
-        List<String> tags = sent.nerTags();
-        if (tags.size() > 0) {
-            if ((!tags.get(0).equals("O"))) {
-                return tags.get(0);
-            }
-        }
+    String ruleTenSemanticClass(String headNoun, boolean isPerson, String gender, ENUM_ANIM_TYPE animacy) {
+//        if (isPerson) {
+//            return "HUMAN";
+//        } else if (animacy.equals("ANIM")) {
+//            return "HUMAN";
+//        }
+//
+//        Sentence sent = new Sentence(headNoun);
+//        List<String> tags = sent.nerTags();
+//        if (tags.size() > 0) {
+//            if ((!tags.get(0).equals("O"))) {
+//                return tags.get(0);
+//            }
+//        }
         return "OBJECT";
     }
 //	//features extracted from the parsing the corpus.
@@ -397,5 +441,53 @@ public class Rules {
         //if nothing found we can check with following pronouns
         return Dictionaries.Gender.UNKNOWN;
     }
+
+
+    List<String> getAbbreviation(String nounPhrase){
+
+        List<String> allabbs= new ArrayList<String>();
+        String[] npbreak=nounPhrase.split("\\s+");
+        int startindex=0;
+        if((npbreak[0].toLowerCase().equals("a"))||(npbreak[0].toLowerCase().equals("an"))
+                ||(npbreak[0].toLowerCase().equals("the"))||(npbreak[0].toLowerCase().equals("this"))){
+            startindex++;
+        }
+
+        if((npbreak.length-startindex)>1){
+            String finalabb="";
+            String finalabbinc="";
+            for(int i=startindex;i<npbreak.length;i++) {
+                if(Character.isUpperCase(npbreak[i].charAt(0))){
+                    finalabb=finalabb.trim()+npbreak[i].charAt(0);
+                    finalabbinc=finalabbinc.trim()+npbreak[i].charAt(0);
+                }else{
+                    if((npbreak[i].toLowerCase().equals("in"))||(npbreak[i].toLowerCase().equals("of"))){
+                        finalabbinc=finalabbinc.trim()+Character.toUpperCase(npbreak[i].charAt(0));
+                    }else{
+                        return allabbs;
+                    }
+                }
+            }
+            String finalabbwithdots=Character.toString(finalabb.charAt(0));
+            String finalabbincwithdots=Character.toString(finalabbinc.charAt(0));;
+            for(int k=1;k<finalabb.length();k++){
+                finalabbwithdots=finalabbwithdots+"."+finalabb.charAt(k);
+            }
+            finalabbwithdots=finalabbwithdots+".";
+
+            for(int z=1;z<finalabbinc.length();z++){
+                finalabbincwithdots=finalabbincwithdots+"."+finalabbinc.charAt(z);
+            }
+            finalabbincwithdots=finalabbincwithdots+".";
+            allabbs.add(finalabb.trim());
+            allabbs.add(finalabbwithdots.trim());
+            if(finalabb.length()!=finalabbinc.length()){
+                allabbs.add(finalabbinc.trim());
+                allabbs.add(finalabbincwithdots.trim());
+            }
+        }
+        return allabbs;
+    }
+
 
 }

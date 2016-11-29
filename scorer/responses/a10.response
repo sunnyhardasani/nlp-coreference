@@ -6,15 +6,15 @@
  02-22 
 
 BC-<COREF ID="1">GROUNDED-JETS</COREF>-BOS
-<COREF ID="X9" REF="3">NAVY</COREF> GROUNDS <COREF ID="2">F-14'S</COREF> AFTER THIRD RECENT <COREF ID="X12" REF="6">CRASH</COREF>
+<COREF ID="X9" REF="3">NAVY</COREF> GROUNDS <COREF ID="2" REF="X32">F-14'S</COREF> AFTER THIRD RECENT <COREF ID="X12" REF="6">CRASH</COREF>
 (For use by New York Times News Service clients)
 By CHRIS BLACK
 c.1996 The Boston Globe
 
 
 
-WASHINGTON  @amp;MD;  The <COREF ID="3" REF="10">Navy</COREF> suspended operations for <COREF ID="4">its</COREF> entire fleet
-of <COREF ID="X32" REF="2">F-14</COREF> airplanes <COREF ID="X34" REF="17">Thursday</COREF> after <COREF ID="6" REF="X71">the third ``Tomcat'' crash in a
+WASHINGTON  @amp;MD;  The <COREF ID="3" REF="10">Navy</COREF> suspended <COREF ID="X30">operations</COREF> for <COREF ID="4" REF="X30">its</COREF> entire fleet
+of <COREF ID="X32" REF="2">F-14</COREF> airplanes <COREF ID="X34" REF="17">Thursday</COREF> after <COREF ID="6" REF="X12">the third ``Tomcat'' crash in a
 month</COREF>  @amp;MD;  <COREF ID="8" REF="6">the second in a week</COREF>.
 
 
@@ -32,7 +32,7 @@ suffered minor abrasions. The <COREF ID="15" REF="13">Navy</COREF> is investigat
 Another <COREF ID="X60" REF="6">Tomcat</COREF> crashed off the coast of California during
 exercises on the <COREF ID="X64" REF="12">aircraft</COREF> <COREF ID="X65" REF="29">carrier</COREF> Carl Vinson on Sunday. Both crew
 members were killed. Late last <COREF ID="X71" REF="6">month</COREF>, an <COREF ID="X73" REF="2">F-14</COREF> crashed near
-Nashville, killing both crew members and three civilians on the
+Nashville, killing both crew members and three <COREF ID="X78">civilians</COREF> on the
 ground.
 
 
@@ -61,7 +61,7 @@ out to look at everything involved with <COREF ID="35" REF="X103">the F-14s</COR
 
 Adm. <COREF ID="X119">Jeremy Boorda</COREF>, <COREF ID="36" REF="X119">the chief of Naval Operations</COREF>, informed
 Deputy Defense Secretary John White of <COREF ID="38" REF="18">the latest crash</COREF> <COREF ID="39" REF="17">Thursday</COREF>
-morning and told <COREF ID="40" REF="X119">him</COREF> <COREF ID="41" REF="40">he</COREF> was ordering <COREF ID="42">the standdown</COREF> for <COREF ID="43" REF="29">the entire
+morning and told <COREF ID="40" REF="X119">him</COREF> <COREF ID="41" REF="40">he</COREF> was ordering <COREF ID="42">the standdown</COREF> for <COREF ID="43" REF="36">the entire
 fleet of more than 300 aircraft</COREF>, <COREF ID="45" REF="33">Bacon</COREF> said.
 
 

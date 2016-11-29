@@ -14,7 +14,7 @@ c.1996 <COREF ID="X22" REF="24">Seattle</COREF> Post-Intelligencer
 
 
 <COREF ID="X24" REF="24">SEATTLE</COREF>  @amp;MD;  The <COREF ID="5" REF="X39">National Transportation Safety Board</COREF> is borrowing
-<COREF ID="6" REF="29">a Boeing 737</COREF> from <COREF ID="X29" REF="24">Seattle</COREF>'s <COREF ID="X30" REF="11">Museum</COREF> of <COREF ID="X31" REF="16">Flight</COREF> as part of <COREF ID="9" REF="23">its
+<COREF ID="6" REF="X101">a Boeing 737</COREF> from <COREF ID="X29" REF="24">Seattle</COREF>'s <COREF ID="X30" REF="11">Museum</COREF> of <COREF ID="X31" REF="16">Flight</COREF> as part of <COREF ID="9" REF="23">its
 investigation</COREF> into why a similar jetliner crashed near <COREF ID="X34" REF="18">Pittsburgh</COREF>
 in 1994.
 
@@ -25,7 +25,7 @@ which operated <COREF ID="13">the airplane that crashed</COREF>, killing 132 peo
 
 
 <COREF ID="14" REF="45">The board</COREF> is testing the <COREF ID="X40" REF="19">plane</COREF>'s rudder controls to learn why
-<COREF ID="16" REF="X31">Flight 427</COREF> suddenly rolled and crashed while on <COREF ID="17" REF="9">its</COREF> approach to the
+<COREF ID="16" REF="X31">Flight 427</COREF> suddenly rolled and crashed while on <COREF ID="17" REF="16">its</COREF> approach to the
 <COREF ID="18" REF="X34">Pittsburgh</COREF> airport Sept. 8, 1994. Aviation <COREF ID="X46" REF="5">safety</COREF> <COREF ID="X47" REF="28">investigators</COREF> say
 a sharp movement of the <COREF ID="X49" REF="29">rudder</COREF>  @amp;MD;  <COREF ID="19" REF="X40">the movable vertical piece in the
 plane's tail</COREF>  @amp;MD;  could have caused <COREF ID="21">the jet</COREF>'s deadly roll.
@@ -37,11 +37,11 @@ said <COREF ID="26" REF="X57">Hall</COREF> isn't expected to announce any findin
 
 
 <COREF ID="27" REF="43">Benson</COREF> said <COREF ID="28" REF="41">investigators</COREF> are simulating air loads on <COREF ID="29" REF="X49">the 737's
-rudder</COREF>. ``It's a slow, methodical job since <COREF ID="31">we</COREF> don't have adequate
+rudder</COREF>. ``It's a slow, methodical job since <COREF ID="31" REF="28">we</COREF> don't have adequate
 black boxes,'' <COREF ID="32" REF="27">he</COREF> said.
 
 
-Newer models of <COREF ID="X71" REF="16">flight</COREF> data <COREF ID="X73" REF="44">recorders</COREF>, or ``black boxes,'' would
+Newer models of <COREF ID="X71" REF="16">flight</COREF> data <COREF ID="X73" REF="44">recorders</COREF>, or ``black <COREF ID="X75">boxes</COREF>,'' would
 record the angle of the rudder and the <COREF ID="X78" REF="42">pedal</COREF> controlling it. But
 because <COREF ID="37" REF="49">the plane</COREF> was reduced to debris by the force of <COREF ID="38" REF="X10">the crash</COREF>,
 and <COREF ID="39" REF="38">the 737</COREF> was equipped with older-model <COREF ID="X83" REF="16">flight</COREF> <COREF ID="X84" REF="44">recorders</COREF> that
@@ -54,10 +54,10 @@ recommendation of <COREF ID="45" REF="14">the board</COREF> after earlier hearin
 <COREF ID="46" REF="38">Pittsburgh crash</COREF>.
 
 
-<COREF ID="48" REF="44">Museum of Flight</COREF> spokesman Bill Hayes said <COREF ID="49" REF="37">the plane</COREF>, donated
+<COREF ID="48" REF="11">Museum of Flight</COREF> spokesman Bill Hayes said <COREF ID="49" REF="37">the plane</COREF>, donated
 last <COREF ID="X94" REF="58">September</COREF>, was to be partially dismantled as an exhibit. The
-<COREF ID="50" REF="3">NTSB</COREF> was looking for <COREF ID="51" REF="X86">an intact plane on which to conduct tests</COREF>, so
-<COREF ID="53" REF="51">the museum</COREF> delayed <COREF ID="54" REF="17">its</COREF> plans.
+<COREF ID="50" REF="3">NTSB</COREF> was looking for <COREF ID="51" REF="49">an intact plane on which to conduct tests</COREF>, so
+<COREF ID="53" REF="51">the museum</COREF> delayed <COREF ID="54" REF="53">its</COREF> plans.
 
 
 <COREF ID="55" REF="51">The tests</COREF> are being conducted at a <COREF ID="X101" REF="6">Boeing</COREF> hangar at Boeing

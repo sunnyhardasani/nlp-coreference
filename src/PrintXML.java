@@ -338,6 +338,8 @@ public class PrintXML {
         DocumentBuilderFactory factory = null;
         DocumentBuilder builder = null;
 
+        System.out.println("check");
+
         try {
             factory = DocumentBuilderFactory.newInstance();
             builder = factory.newDocumentBuilder();
@@ -364,7 +366,7 @@ public class PrintXML {
         //iterate all the elements
         for(List<NPObj> cluster: clusters){
             for(NPObj npobj: cluster){
-                mapIdToNPObj.put(npobj.getID(),npobj);
+                //mapIdToNPObj.put(npobj.getID(),npobj);
 
                 if(!npobj.getREF().equals("")){
                     String idNP = npobj.getREF();
