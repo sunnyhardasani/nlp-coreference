@@ -22,12 +22,12 @@ nautical miles southeast of the Portuguese enclave, was gathering
 weather information.
 
 
-<COREF ID="14" REF="37">The incident</COREF> fell within Hong Kong airspace, triggering a search
-by Civil Aviation Department rescuers.
+<COREF ID="14" REF="37">The incident</COREF> fell within Hong Kong airspace, triggering a <COREF ID="-33" REF="17">search</COREF>
+by <COREF ID="-34" REF="38">Civil Aviation Department rescuers</COREF>.
 
 
 <COREF ID="-36" REF="5">Two Government Flying Service helicopters</COREF> joined <COREF ID="16" REF="8">Macau</COREF> Marine
-Police in <COREF ID="17">the search</COREF> for <COREF ID="18">the Sikorsky 76</COREF>.
+Police in <COREF ID="17" REF="-33">the search</COREF> for <COREF ID="18">the Sikorsky 76</COREF>.
 
 
 <COREF ID="19">Mainland</COREF> authorities later told <COREF ID="20" REF="-19">the department</COREF>'s Aeronautical

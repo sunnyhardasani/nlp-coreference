@@ -59,7 +59,7 @@ public class SentenceObj {
         //TregexPattern pattern = TregexPattern.compile("(NP < (NNP $++ NNP $++ NNP)) | (NP < (NNP $++ NNP )) | (@NNS) | (@NN) |(@NNPS) | (@PRP) | (@VBD)");
         //TregexPattern pattern = TregexPattern.compile("(@NP < @NNP & < @NNP) | (@NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP) | (@VBD)");
         //TregexPattern pattern = TregexPattern.compile("(@NP < @NNP & < @NNP) | (@NP < @NNP & < @NNP & < @NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP)");
-        TregexPattern pattern = TregexPattern.compile("(@NP < @NNP & < @NNP)  | (@NP < @NNP & < @NNP & < @NNP) | (@NNS) | (@NN) |(@NNPS) | (@PRP) ");
+        TregexPattern pattern = TregexPattern.compile(" (@NNS) | (@NN) |(@NNPS) | (@PRP) | (@NNP)");
         TregexMatcher matcher = pattern.matcher(parse);
 
         while (matcher.findNextMatchingNode()) {

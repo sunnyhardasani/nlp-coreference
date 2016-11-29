@@ -25,6 +25,7 @@ public class FileObj {
     List<String> allSentenceExceptCoref = new ArrayList<String>();
     String sentenceWithXML;
     Document document;
+    int pos = 0;
     /**
      *
      * @param fileName
@@ -196,13 +197,33 @@ public class FileObj {
                 for(int fromN = n-1; fromN >= 0 ;fromN--){
                     NPObj npFromN = this.npObjList.get(fromN);
 
-                    if(npFromN.getStrNP().equals(nplast.getStrNP())){
-                    //if(npFromN.getGender() == npLastGender){
+                    Dictionaries.Gender npFromNGender
+                            = Dictionaries.Gender.UNKNOWN;
+
+                    if(npFromN.getStrNP().equals("he")
+                            || npFromN.getStrNP().equals("his")
+                            || npFromN.getStrNP().equals("himself")
+                            || npFromN.getStrNP().equals("him")
+                            || npFromN.getStrNP().equals("she")
+                            || npFromN.getStrNP().equals("her")
+                            || npFromN.getStrNP().equals("herself")
+                            || npFromN.getStrNP().equals("hers")){
+
+                        npFromNGender = Rules.getInstance().identifyGender(npFromN.getFeaturesObj()
+                                                        .getRuleOne_allWords());
+                    }
+
+                    //if(npFromN.getStrNP().equals(nplast.getStrNP())){
+                    if(npFromNGender == npLastGender && npFromNGender != Dictionaries.Gender.UNKNOWN){
                         nplast.setREF(npFromN.getID());
                         break;
                     }
                     else if(npFromN.isPerson){
                         if(npFromN.getGender() == npLastGender){
+                            nplast.setREF(npFromN.getID());
+                            break;
+                        }
+                        else if(npFromN.getGender() == Dictionaries.Gender.UNKNOWN){
                             nplast.setREF(npFromN.getID());
                             break;
                         }
@@ -278,7 +299,7 @@ public class FileObj {
 
             int sentIndex = 0;
             int corefIndex = 0;
-            int pos = 0;
+
 
             while(sentIndex < sentNodeList.getLength() || corefIndex < corefNodeList.getLength()) {
 
@@ -288,7 +309,7 @@ public class FileObj {
                         Element eElement = (Element) sentNode;
                         String textContent = eElement.getTextContent();
                         textContent = textContent.replaceAll("\u00A0", " ");
-                        parse(textContent, pos);
+                        parse(textContent);
                     }
                     pos += 50;
                     sentIndex++;
@@ -323,15 +344,17 @@ public class FileObj {
      * this function would be responsible
      * for the parsing of file into sentences
      */
-    void parse(String sent, int posStartIndex){
+    void parse(String sent){
 
         //for(String sent : this.allSentenceExceptCoref ) {
             //System.out.println(sent);
             edu.stanford.nlp.simple.Document doc = new edu.stanford.nlp.simple.Document(sent);
             // will iterate over all the sentences in the text
             for (Sentence nlpSentence : doc.sentences()) {
-                SentenceObj sentenceObj = new SentenceObj(nlpSentence,posStartIndex);
+                SentenceObj sentenceObj = new SentenceObj(nlpSentence,pos);
                 this.sentencesObjList.add(sentenceObj);
+
+                pos += 50;
             }
         //}
     }

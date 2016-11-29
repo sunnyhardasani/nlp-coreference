@@ -104,7 +104,13 @@ public class Distance {
                     if(longerWord.equals("mr.") || shortWord.equals("mr.")
                     || longerWord.equals("mrs.") || shortWord.equals("mrs.")
                     || longerWord.equals("ms.") || shortWord.equals("ms.")
-                    || longerWord.equals(",") || shortWord.equals(",") ){
+                    || longerWord.equals(",") || shortWord.equals(",")
+                    || longerWord.equals(";") || shortWord.equals(";")
+                    || longerWord.equals("'") || shortWord.equals("'")
+                    || longerWord.equals("\"") || shortWord.equals("\"")
+                    || longerWord.equals(" ") || shortWord.equals(" ")
+                    || longerWord.equals("") || shortWord.equals("")
+                    || longerWord.equals("'s") || shortWord.equals("'s")){
 
                         continue;
                     }

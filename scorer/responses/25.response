@@ -2,33 +2,33 @@
   890803-0024. 
  = 890803 
  890803-0024. 
- <COREF ID="-2" REF="3">Eastern Pilots Win Round</COREF>
-@  In <COREF ID="-4" REF="49">Battle</COREF> Over Back Pay 
+ <COREF ID="-2" REF="3">Eastern</COREF> <COREF ID="-3" REF="3">Pilots</COREF> Win Round
+@  In <COREF ID="-7" REF="49">Battle</COREF> Over Back Pay 
  08/03/89 
  WALL STREET JOURNAL (J) 
  TEX LABOR 
- <COREF ID="-7" REF="3">AIRLINES</COREF> (<COREF ID="-8" REF="50">AIR</COREF>)
+ <COREF ID="-16" REF="3">AIRLINES</COREF> (<COREF ID="-17" REF="-37">AIR</COREF>)
 BANKRUPTCIES (BCY) 
  NEW YORK  
 
 
- <COREF ID="3" REF="20">Eastern Airlines pilots</COREF> won a round in <COREF ID="-12" REF="29">bankruptcy</COREF> court that <COREF ID="6" REF="9">they</COREF> say could bring <COREF ID="7" REF="-52">them</COREF> as much as $250 million in back pay, but an arbitrator must decide how much -- if anything -- <COREF ID="9" REF="6">they</COREF> are owed. 
+ <COREF ID="3" REF="-16">Eastern Airlines pilots</COREF> won a round in <COREF ID="-23" REF="-30">bankruptcy</COREF> court that <COREF ID="6" REF="9">they</COREF> say could bring <COREF ID="7" REF="-73">them</COREF> as much as $250 million in back pay, but an arbitrator must decide how much -- if anything -- <COREF ID="9" REF="6">they</COREF> are owed. 
 
 
- The decision by Bankruptcy Judge Burton R. Lifland in New York will allow the Air Line Pilots Association to go forward with a claim that a "pay parity" clause in their contract was triggered when another <COREF ID="-31" REF="3">Eastern</COREF> union received a pay raise. 
+ The decision by <COREF ID="-30" REF="-23">Bankruptcy</COREF> <COREF ID="-31" REF="22">Judge</COREF> Burton R. <COREF ID="-34" REF="22">Lifland</COREF> in New York will allow the <COREF ID="-37" REF="-54">Air</COREF> Line <COREF ID="-39" REF="3">Pilots</COREF> Association to go forward with a <COREF ID="-41" REF="23">claim</COREF> that a "pay parity" clause in their contract was triggered when another <COREF ID="-46" REF="-50">Eastern</COREF> union received a pay raise. 
 
 
- All legal proceedings against Eastern, a unit of Texas Air Corp., were put on hold when <COREF ID="20" REF="3">Eastern</COREF> filed for bankruptcy-law protection March 9. 
- But <COREF ID="22" REF="27">Judge Lifland</COREF> lifted that stay to let <COREF ID="23" REF="52">the three-year-old back-pay claim</COREF> go to <COREF ID="-40" REF="33">arbitration</COREF>, provided <COREF ID="25">that process</COREF> is swift. 
- If <COREF ID="26" REF="-51">it</COREF> doesn't go quickly enough, <COREF ID="27" REF="22">the judge</COREF> said <COREF ID="28">he</COREF> may invoke a provision of <COREF ID="29" REF="-12">the bankruptcy code</COREF> that would let <COREF ID="31">him</COREF> estimate what <COREF ID="32" REF="3">pilots</COREF> are owed. 
- <COREF ID="33" REF="-40">The arbitration</COREF> is scheduled to begin Aug. 9. 
+ All legal proceedings against <COREF ID="-50" REF="-46">Eastern</COREF>, a unit of Texas <COREF ID="-54" REF="-37">Air</COREF> Corp., were put on hold when <COREF ID="20" REF="-50">Eastern</COREF> filed for bankruptcy-law protection March 9. 
+ But <COREF ID="22" REF="27">Judge Lifland</COREF> lifted that stay to let <COREF ID="23" REF="34">the three-year-old back-pay claim</COREF> go to <COREF ID="-61" REF="33">arbitration</COREF>, provided <COREF ID="25">that process</COREF> is swift. 
+ If <COREF ID="26" REF="-72">it</COREF> doesn't go quickly enough, <COREF ID="27" REF="22">the judge</COREF> said <COREF ID="28">he</COREF> may invoke a provision of <COREF ID="29" REF="-30">the bankruptcy code</COREF> that would let <COREF ID="31">him</COREF> estimate what <COREF ID="32" REF="48">pilots</COREF> are owed. 
+ <COREF ID="33" REF="-61">The arbitration</COREF> is scheduled to begin Aug. 9. 
 
 
- At issue is <COREF ID="34" REF="23">a three-year-old effort</COREF> by the pilots to prove <COREF ID="-46" REF="6">they</COREF> had a valid contract in 1986, and that <COREF ID="-49" REF="3">Eastern</COREF> violated a clause in <COREF ID="-51" REF="26">it</COREF> that would give <COREF ID="-52" REF="7">them</COREF> raises if any other group got raises. 
- Shortly after <COREF ID="50" REF="-8">Texas Air</COREF> took over <COREF ID="45" REF="3">Eastern</COREF>, management supervisors for the machinists' union received a 20% pay raise. 
+ At issue is <COREF ID="34" REF="23">a three-year-old effort</COREF> by the pilots to prove <COREF ID="-67" REF="9">they</COREF> had a valid contract in 1986, and that <COREF ID="-70" REF="45">Eastern</COREF> violated a clause in <COREF ID="-72" REF="26">it</COREF> that would give <COREF ID="-73" REF="7">them</COREF> raises if any other group got raises. 
+ Shortly after <COREF ID="50" REF="-54">Texas Air</COREF> took over <COREF ID="45" REF="-70">Eastern</COREF>, management supervisors for the machinists' union received a 20% pay raise. 
 
 
- <COREF ID="48" REF="3">The pilots</COREF> have won two rounds of <COREF ID="49" REF="-4">this battle</COREF> in federal court, with federal district court and an appeals court deciding that the pilots' contract was valid. 
+ <COREF ID="48" REF="32">The pilots</COREF> have won two rounds of <COREF ID="49" REF="-7">this battle</COREF> in federal court, with federal district court and an appeals court deciding that the pilots' contract was valid. 
  Neither court, however, ruled on the merits of <COREF ID="52" REF="23">their claim</COREF>. 
 
 
