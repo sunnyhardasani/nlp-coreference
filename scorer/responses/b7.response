@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
  870805-0035. 
  Business Brief:
-<COREF ID="-2" REF="1">Western Union Corp.</COREF>
+Western <COREF ID="-4">Union</COREF> <COREF ID="-5">Corp.</COREF>
  08/05/87
  WALL STREET JOURNAL (J)
  WU LABOR 
 
 
- <COREF ID="1" REF="3">Western Union Corp.</COREF> said its subsidiary, <COREF ID="3" REF="1">Western Union Telegraph Co.</COREF>, agreed to extend labor <COREF ID="-11" REF="6">contracts</COREF> with <COREF ID="-12" REF="3">the United Telegraph Workers</COREF> and the <COREF ID="-14" REF="8">Communications</COREF> Workers of America for three years. 
- <COREF ID="6" REF="9">The contracts</COREF>, signed in 1985 following strikes by the <COREF ID="17" REF="11">unions</COREF>, were to expire Aug. 6, according to the Upper Saddle River, N.J.-based <COREF ID="8" REF="10">communications systems company</COREF>. 
+ <COREF ID="1" REF="-5">Western Union Corp.</COREF> said its subsidiary, <COREF ID="3" REF="1">Western Union Telegraph Co.</COREF>, agreed to extend labor <COREF ID="-16">contracts</COREF> with the United <COREF ID="-18" REF="3">Telegraph</COREF> Workers and the <COREF ID="-20">Communications</COREF> Workers of America for three years. 
+ <COREF ID="6" REF="-16">The contracts</COREF>, signed in 1985 following strikes by the <COREF ID="17">unions</COREF>, were to expire <COREF ID="-27" REF="3">Aug.</COREF> 6, according to the Upper Saddle River, N.J.-based <COREF ID="8" REF="-20">communications systems company</COREF>. 
  The agreement provides for a one-year extension of <COREF ID="9" REF="6">the existing contracts</COREF>. 
- At the end of the first and second years, <COREF ID="10" REF="8">the company</COREF> or <COREF ID="11" REF="17">the unions</COREF> may choose to renegotiate wages, pensions and health care. 
+ At the end of the first and second <COREF ID="-36">years</COREF>, <COREF ID="10" REF="-36">the company</COREF> or <COREF ID="11" REF="17">the unions</COREF> may choose to renegotiate wages, pensions and health care. 
  <COREF ID="12">The accord</COREF> also provides for cost-of-living adjustments in the second and third years. 
- <COREF ID="-38" REF="1">The United Telegraph Workers union</COREF> represents 4,400 <COREF ID="14" REF="1">Western Union</COREF> employees around the country. 
- The <COREF ID="-44" REF="8">Communications</COREF> Workers of America represents 300 <COREF ID="16" REF="8">company</COREF> employees in New York City. 
+ The United <COREF ID="-46" REF="-18">Telegraph</COREF> Workers <COREF ID="-48" REF="3">union</COREF> represents 4,400 <COREF ID="14" REF="3">Western Union</COREF> employees around the country. 
+ The <COREF ID="-52" REF="8">Communications</COREF> Workers of America represents 300 <COREF ID="16" REF="10">company</COREF> employees in New York City. 
 
 
 </TXT>

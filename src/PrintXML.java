@@ -39,29 +39,11 @@ public class PrintXML {
         }
     }
 
-
     public String getReferenceID(String ID){
 
         boolean flag = false;
-
-        List<NPObj> saveLargestCluster = new ArrayList<NPObj>();
-        int largestClusterSize = Integer.MIN_VALUE;
-
-        int smallestPos = Integer.MAX_VALUE;
-        NPObj smallestPosNPObj = new NPObj("", "", "", 0, false);
-
-        int smallestNeg = Integer.MAX_VALUE;
-        NPObj smallestNegNPObj = new NPObj("", "", "", 0, false);
-
-        int closestDistance = Integer.MAX_VALUE;
-        NPObj closestNPObj = new NPObj("", "", "", 0, false);
-
-
-        int tempDis = Integer.MAX_VALUE;
-        NPObj tempNPObj = new NPObj("","","",0, false);
-
+        String REF = "";
         NPObj npIDObj = (NPObj) mapIdToNPObj.get(ID);
-
 
         //if already assigned then return ref
         if(!npIDObj.getREF().equals("")){
@@ -74,25 +56,167 @@ public class PrintXML {
         }
 
 
+        List<NPObj> possibleReference = new ArrayList<NPObj>();
+        List<NPObj> topStack = new ArrayList<NPObj>();
+        List<NPObj> bottomStack = new ArrayList<NPObj>();
+
+        ////////////////////////////////////////////////////////////////////////////////
+        // differentiate all the np object
+        // for which the screen id are matched
+        ////////////////////////////////////////////////////////////////////////////////
         for(List<NPObj> cluster : this.clustersToCheckForRef){
             if(cluster.size() > 1) {
                 for (NPObj npObj : cluster) {
                     if (npObj.getID().equals(ID)) {
                         flag = true;
-
-                        if( largestClusterSize < cluster.size()){
-                            largestClusterSize = cluster.size();
-                            saveLargestCluster = cluster;
-                        }
-
-//                        break;
                     }
                 }
-//                if(flag) {
+                if(flag) {
+                    for (NPObj npObj : cluster) {
+                        if(!possibleReference.contains(npObj) && !npObj.getID().equals(ID)
+                                && listOfConsideredIDs.contains(npObj.getID())){
+                            possibleReference.add(npObj);
+                        }
+                    }
+                    flag = false;
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        // sort all the possible reference with respect
+        // to position
+        ////////////////////////////////////////////////////////////////////////////////
+        Collections.sort(possibleReference, new Comparator<NPObj>() {
+            public int compare(NPObj np1, NPObj np2) {
+                return  np1.getPos() - np2.getPos();
+            }
+        });
+
+
+        ////////////////////////////////////////////////////////////////////////////////
+        // divide the possible reference into two half
+        // on less than and greater than
+        ////////////////////////////////////////////////////////////////////////////////
+        for(int index = 0 ; index < possibleReference.size() ; index++){
+            NPObj possibleRefNP = possibleReference.get(index);
+            if(possibleRefNP.getPos() < npIDObj.getPos()){
+                topStack.add(possibleRefNP);
+            }
+            else{
+                bottomStack.add(possibleRefNP);
+            }
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //check for subsume in top stack from bottom
+        ////////////////////////////////////////////////////////////////////////////////
+        for(int bottomIndex = topStack.size() - 1; bottomIndex >=0 ; bottomIndex-- ){
+            NPObj bottomNP = topStack.get(bottomIndex);
+            if(Integer.parseInt(bottomNP.getID()) > 0 && bottomNP.getStrNP().contains(npIDObj.getStrNP())){
+                return bottomNP.getID();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //check for subsume if bottom stack from top
+        ////////////////////////////////////////////////////////////////////////////////
+        for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
+            NPObj topNP =bottomStack.get(topIndex);
+            if( Integer.parseInt(topNP.getID()) > 0  && topNP.getStrNP().contains(npIDObj.getStrNP())){
+                return topNP.getID();
+            }
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////
+        //search in top stack if there is any positive index close by
+        /////////////////////////////////////////////////////////////////////////////////
+        for(int bottomIndex = topStack.size() - 1; bottomIndex >=0 ; bottomIndex-- ){
+            NPObj bottomNP = topStack.get(bottomIndex);
+            if(Integer.parseInt(bottomNP.getID()) > 0){
+                return bottomNP.getID();
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////
+        //search in bottom stack for positive number
+        ////////////////////////////////////////////////////////////////////////////////
+        for( int topIndex = 0; topIndex < bottomStack.size() ; topIndex++ ){
+            NPObj topNP =bottomStack.get(topIndex);
+            if(Integer.parseInt(topNP.getID()) > 0){
+                return topNP.getID();
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////
+        //search for the closest position np object
+        ///////////////////////////////////////////////////////////////////////////////
+        int closestDistance = Integer.MAX_VALUE;
+        NPObj closestNP =  new NPObj("", "", "", 0, false);
+        for( int index = 0 ; index < topStack.size() ; index++){
+            int distance = Math.abs(npIDObj.getPos() - topStack.get(index).getPos());
+            if(closestDistance > distance){
+                closestDistance = distance;
+                closestNP = topStack.get(index);
+            }
+        }
+        REF = closestNP.getID();
+
+
+
+        return REF;
+    }
+
+//    public String getReferenceID(String ID){
 //
+//        boolean flag = false;
+//
+//        List<NPObj> saveLargestCluster = new ArrayList<NPObj>();
+//        int largestClusterSize = Integer.MIN_VALUE;
+//
+//        int smallestPos = Integer.MAX_VALUE;
+//        NPObj smallestPosNPObj = new NPObj("", "", "", 0, false);
+//
+//        int smallestNeg = Integer.MAX_VALUE;
+//        NPObj smallestNegNPObj = new NPObj("", "", "", 0, false);
+//
+//        int closestDistance = Integer.MAX_VALUE;
+//        NPObj closestNPObj = new NPObj("", "", "", 0, false);
+//
+//
+//        int tempDis = Integer.MAX_VALUE;
+//        NPObj tempNPObj = new NPObj("","","",0, false);
+//
+//        NPObj npIDObj = (NPObj) mapIdToNPObj.get(ID);
+//
+//
+//        //if already assigned then return ref
+//        if(!npIDObj.getREF().equals("")){
+//            if(this.listOfConsideredIDs.contains(npIDObj.getREF())) {
+//                return npIDObj.getREF();
+//            }
+//            else{
+//                System.out.println("NOT FOUND = " + npIDObj.getREF());
+//            }
+//        }
+//
+//
+//        for(List<NPObj> cluster : this.clustersToCheckForRef){
+//            if(cluster.size() > 1) {
+//                for (NPObj npObj : cluster) {
+//                    if (npObj.getID().equals(ID)) {
+//                        flag = true;
+////                        if( largestClusterSize < cluster.size()){
+////                            largestClusterSize = cluster.size();
+////                            saveLargestCluster = cluster;
+////                        }
+////                        break;
+//                    }
+//                }
+//                if(flag) {
 //                    for (NPObj npObj : cluster) {
 //                        int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
-//
 //                        if (distance != 0
 //                                && closestDistance > distance
 //                                && listOfConsideredIDs.contains(npObj.getID())) {
@@ -103,14 +227,14 @@ public class PrintXML {
 //                    }
 //                    flag = false;
 //                }
-            }
-        }
-
-        if(flag){
-
-
-            for(NPObj npObj: saveLargestCluster){
-
+//            }
+//        }
+//
+//        if(flag){
+//
+//
+//            for(NPObj npObj: saveLargestCluster){
+//
 //                int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
 //
 //                if(distance != 0
@@ -130,34 +254,34 @@ public class PrintXML {
 //                if(!tempNPObj.getID().equals("") ){
 //                    tempNPObj = closestNPObj;
 //                }
-
-
-
-                if(this.listOfConsideredIDs.contains(npObj.getID())
-                        && npObj.getPos() < smallestPos
-                        && !npObj.getID().equals(ID)
-                        && Integer.parseInt(npObj.getID()) > 0 ) {
-
-                    smallestPos = npObj.getPos();
-                    smallestPosNPObj = npObj;
-                }
-
-                if(this.listOfConsideredIDs.contains(npObj.getID())
-                        && npObj.getPos() < smallestNeg
-                        && !npObj.getID().equals(ID)) {
-
-                    smallestNeg = npObj.getPos();
-                    smallestNegNPObj = npObj;
-                }
-            }
-        }
-
-        if(smallestPos == Integer.MAX_VALUE){
-            return smallestNegNPObj.getID();
-        }
-        return smallestPosNPObj.getID();
-        //return closestNPObj.getID();
-    }
+//
+//
+//
+//                if(this.listOfConsideredIDs.contains(npObj.getID())
+//                        && npObj.getPos() < smallestPos
+//                        && !npObj.getID().equals(ID)
+//                        && Integer.parseInt(npObj.getID()) > 0 ) {
+//
+//                    smallestPos = npObj.getPos();
+//                    smallestPosNPObj = npObj;
+//                }
+//
+//                if(this.listOfConsideredIDs.contains(npObj.getID())
+//                        && npObj.getPos() < smallestNeg
+//                        && !npObj.getID().equals(ID)) {
+//
+//                    smallestNeg = npObj.getPos();
+//                    smallestNegNPObj = npObj;
+//                }
+//            }
+//        }
+//
+//        if(smallestPos == Integer.MAX_VALUE){
+//           // return smallestNegNPObj.getID();
+//        }
+//        //return smallestPosNPObj.getID();
+//        return closestNPObj.getID();
+//    }
 
 
     public Document print(List<List<NPObj>> clusters, String sentenceWithXML){
