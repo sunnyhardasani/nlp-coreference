@@ -85,24 +85,24 @@ public class PrintXML {
                             saveLargestCluster = cluster;
                         }
 
-                        break;
+//                        break;
                     }
                 }
-                if(flag) {
-
-                    for (NPObj npObj : cluster) {
-                        int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
-
-                        if (distance != 0
-                                && closestDistance > distance
-                                && listOfConsideredIDs.contains(npObj.getID())) {
-
-                            closestDistance = distance;
-                            closestNPObj = npObj;
-                        }
-                    }
-                    flag = false;
-                }
+//                if(flag) {
+//
+//                    for (NPObj npObj : cluster) {
+//                        int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
+//
+//                        if (distance != 0
+//                                && closestDistance > distance
+//                                && listOfConsideredIDs.contains(npObj.getID())) {
+//
+//                            closestDistance = distance;
+//                            closestNPObj = npObj;
+//                        }
+//                    }
+//                    flag = false;
+//                }
             }
         }
 
@@ -111,25 +111,25 @@ public class PrintXML {
 
             for(NPObj npObj: saveLargestCluster){
 
-                int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
-
-                if(distance != 0
-                        && tempDis > distance
-                        && listOfConsideredIDs.contains(npObj.getID())
-                        && Integer.parseInt(npObj.getID()) > 0
-                        && Integer.parseInt(npObj.getID()) < Integer.parseInt(npIDObj.getID())){
-                    tempDis = distance;
-                    tempNPObj = npObj;
-                }
-
-                if(distance != 0 && closestDistance > distance && listOfConsideredIDs.contains(npObj.getID())){
-                    closestDistance = distance;
-                    closestNPObj = npObj;
-                }
-
-                if(!tempNPObj.getID().equals("") ){
-                    tempNPObj = closestNPObj;
-                }
+//                int distance = Math.abs(npIDObj.getPos() - npObj.getPos());
+//
+//                if(distance != 0
+//                        && tempDis > distance
+//                        && listOfConsideredIDs.contains(npObj.getID())
+//                        && Integer.parseInt(npObj.getID()) > 0
+//                        && Integer.parseInt(npObj.getID()) < Integer.parseInt(npIDObj.getID())){
+//                    tempDis = distance;
+//                    tempNPObj = npObj;
+//                }
+//
+//                if(distance != 0 && closestDistance > distance && listOfConsideredIDs.contains(npObj.getID())){
+//                    closestDistance = distance;
+//                    closestNPObj = npObj;
+//                }
+//
+//                if(!tempNPObj.getID().equals("") ){
+//                    tempNPObj = closestNPObj;
+//                }
 
 
 
@@ -153,10 +153,10 @@ public class PrintXML {
         }
 
         if(smallestPos == Integer.MAX_VALUE){
-           // return smallestNegNPObj.getID();
+            return smallestNegNPObj.getID();
         }
-        //return smallestPosNPObj.getID();
-        return closestNPObj.getID();
+        return smallestPosNPObj.getID();
+        //return closestNPObj.getID();
     }
 
 
